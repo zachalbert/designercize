@@ -104,9 +104,27 @@ section {
   }
 }
 
-.jSlots-wrapper {
-    overflow: hidden; /* to hide the magic */
-    height: 20px; /* whatever the height of your list items are */
-    display: inline-block; /* to size width correctly, can use float too, or width*/
-    border: 1px solid #999;
+.timesup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: red;
+  color: white;
+  z-index: 999;
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 100vh;
+
+  &.hide {
+    display: none;
+  }
+
+  .close {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3rem;
+    text-shadow: none;
+    cursor: pointer;
+  }
 }

@@ -110,6 +110,11 @@ $(document).ready( function() {
     roll(difficulty);
   });
 
+  $('.timesup .close').click( function(e) {
+    e.preventDefault();
+    $('.timesup').addClass('hide');
+  });
+
   // Local storage example with Jsonified variables
   // var car = {};
   // car.wheels = 4;
@@ -215,11 +220,14 @@ function roll( difficulty ) {
   $('#device').text(randomDevice);
   $('#need').text(randomNeed);
 
-  // var deadline = new Date(Date.parse(new Date()) + 15 * 24 * 60 * 60 * 1000);
-  var countdown = $('#timer-selection').val();
-  console.log(countdown);
+  // Get the selected time from the dropdown, turn it into a date object, start the clock
+  var challengeLengthMinutes = $('#timer-selection').val();
+  if( challengeLengthMinutes != "dev" ) {
+    var countdown = new Date( Date.parse(new Date()) + 1 * 1 * challengeLengthMinutes * 60 * 1000 )
+  } else {
+    var countdown = new Date( Date.parse(new Date()) + 1 * 1 * 1 * 3 * 1000 ) // 3 second timer for dev purposes
+  }
   initializeClock('timer', countdown);
-
 }
 
 function getTimeRemaining(endtime) {
@@ -254,6 +262,7 @@ function initializeClock(id, endtime) {
 
     if (t.total <= 0) {
       clearInterval(timeinterval);
+      $('.timesup').removeClass('hide');
     }
   }
 

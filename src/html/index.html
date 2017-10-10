@@ -31,6 +31,7 @@
       <div class="col-3 ml-auto align-self-center">
         <i class="icon ion-ios-timer-outline"></i>&nbsp;
         <select name="timer-selection" id="timer-selection">
+          <option value="dev">DEV ONLY</option>
           <option value="5">5 min</option>
           <option value="10">10 min</option>
           <option value="15" selected="selected">15 min</option>
@@ -57,7 +58,7 @@
 
     <section>
       <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">For</div>
+        <div class="col-2 ml-auto text-right align-self-end">for</div>
         <div class="col-7"><h2 class="output" id="useCase">Any use case</h2></div>
         <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-useCase"></a></div>
       </div>
@@ -65,7 +66,7 @@
 
     <section>
       <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">To help</div>
+        <div class="col-2 ml-auto text-right align-self-end">to help</div>
         <div class="col-7"><h2 class="output" id="audience">Any audience</h2></div>
         <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-audience"></a></div>
       </div>
@@ -73,7 +74,7 @@
 
     <section>
       <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">Using</div>
+        <div class="col-2 ml-auto text-right align-self-end">using</div>
         <div class="col-7"><h2 class="output" id="device">Any device</h2></div>
         <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-device"></a></div>
       </div>
@@ -81,61 +82,11 @@
 
     <section>
       <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">Who need</div>
+        <div class="col-2 ml-auto text-right align-self-end">who need</div>
         <div class="col-7"><h2 class="output" id="need">Anything</h2></div>
         <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-need"></a></div>
       </div>
     </section>
   </div>
-<!--
-  <p>
-    <label for="feature">Design&hellip;</label>
-    <select name="feature" id="feature" class="prompt-selection prompt-unlocked">
-      <option value="default" selected="selected">Any feature</option>
-      {% for feature in features %}
-      <option value="{{feature}}">{{feature}}</option>
-      {% endfor %}
-    </select>
-  </p>
-
-  <p>
-    <label for="context">For&hellip;</label>
-    <select name="context" id="context" class="prompt-selection prompt-unlocked">
-      <option value="default" selected="selected">Any use case</option>
-      {% for context in contexts %}
-      <option value="{{context}}">{{context}}</option>
-      {% endfor %}
-    </select>
-  </p>
-
-  <p>
-    <label for="audience">To help&hellip;</label>
-    <select name="audience" id="audience" class="prompt-selection prompt-unlocked">
-      <option value="default" selected="selected">Any audience</option>
-      {% for audience in audiences %}
-      <option value="{{audience}}">{{audience}}</option>
-      {% endfor %}
-    </select>
-  </p>
-
-  <p>
-    <label for="device">Using&hellip;</label>
-    <select name="device" id="device" class="prompt-selection prompt-unlocked">
-      <option value="default" selected="selected">Any device</option>
-      {% for device in devices %}
-      <option value="{{device}}">{{device}}</option>
-      {% endfor %}
-    </select>
-  </p>
-
-  <p>
-    <label for="needs">Who Need To&hellip;</label>
-    <select name="needs" id="needs" class="prompt-selection prompt-unlocked">
-      <option value="default" selected="selected">Any need</option>
-      {% for need in needs %}
-      <option value="{{need}}">{{need}}</option>
-      {% endfor %}
-    </select>
-  </p> -->
 
 {% endblock %}
