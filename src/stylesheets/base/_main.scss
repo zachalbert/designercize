@@ -1,0 +1,81 @@
+body,
+html {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+
+  &:active {
+    position: relative;
+    top: 2px;
+  }
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin: 0;
+  padding: 0.35em 0 0.65em;
+}
+
+.nav {
+  background: #53c7a2;
+  color: #fff;
+  margin-bottom: 1rem;
+
+  a {
+    color: #fff;
+  }
+}
+
+section {
+  padding: 1.5em 0;
+}
+
+.output {
+  margin: 0;
+  padding: 0.25em 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.btn {
+  padding: 1em 2em;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 0;
+  border: 0;
+}
+
+[data-difficulty="hard"] {
+  background-color: #5c61ff;
+
+  &:hover {
+    background-color: darken(#5c61ff, 5%);
+  }
+}
+
+[data-difficulty="medium"] {
+  background-color: #5dadff;
+
+  &:hover {
+    background-color: darken(#5dadff, 5%);
+  }
+}
+
+[data-difficulty="easy"] {
+  background-color: #5de1ff;
+
+  &:hover {
+    background-color: darken(#5de1ff, 5%);
+  }
+}
+
+.jSlots-wrapper {
+    overflow: hidden; /* to hide the magic */
+    height: 20px; /* whatever the height of your list items are */
+    display: inline-block; /* to size width correctly, can use float too, or width*/
+    border: 1px solid #999;
+}

@@ -7,5 +7,110 @@
 {% extends 'layouts/application.html' %}
 
 {% block content %}
-  <h1 data-module="example">{{ message }}</h1>
+  <!-- <h1 data-module="example">{{ message }}</h1> -->
+
+  <nav class="nav">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col align-self-center"><h1><a href="/">WBC</a></h1></div>
+        <div class="col p-0">
+          <a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="easy">EASY</a>
+        </div>
+        <div class="col p-0">
+          <a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="medium">MEDIUM</a>
+        </div>
+        <div class="col p-0">
+          <a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="hard">HARD</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center">
+    <section>
+      <div class="row">
+        <div class="col-3 text-right align-self-end">Design</div>
+        <div class="col-9"><h2 class="output" id="feature">Any feature</h2></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-3 text-right align-self-end">For</div>
+        <div class="col-9"><h2 class="output" id="useCase">Any use case</h2></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-3 text-right align-self-end">To help</div>
+        <div class="col-9"><h2 class="output" id="audience">Any audience</h2></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-3 text-right align-self-end">Using</div>
+        <div class="col-9"><h2 class="output" id="device">Any device</h2></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-3 text-right align-self-end">Who need</div>
+        <div class="col-9"><h2 class="output" id="need">Anything</h2></div>
+      </div>
+    </section>
+  </div>
+<!--
+  <p>
+    <label for="feature">Design&hellip;</label>
+    <select name="feature" id="feature" class="prompt-selection prompt-unlocked">
+      <option value="default" selected="selected">Any feature</option>
+      {% for feature in features %}
+      <option value="{{feature}}">{{feature}}</option>
+      {% endfor %}
+    </select>
+  </p>
+
+  <p>
+    <label for="context">For&hellip;</label>
+    <select name="context" id="context" class="prompt-selection prompt-unlocked">
+      <option value="default" selected="selected">Any use case</option>
+      {% for context in contexts %}
+      <option value="{{context}}">{{context}}</option>
+      {% endfor %}
+    </select>
+  </p>
+
+  <p>
+    <label for="audience">To help&hellip;</label>
+    <select name="audience" id="audience" class="prompt-selection prompt-unlocked">
+      <option value="default" selected="selected">Any audience</option>
+      {% for audience in audiences %}
+      <option value="{{audience}}">{{audience}}</option>
+      {% endfor %}
+    </select>
+  </p>
+
+  <p>
+    <label for="device">Using&hellip;</label>
+    <select name="device" id="device" class="prompt-selection prompt-unlocked">
+      <option value="default" selected="selected">Any device</option>
+      {% for device in devices %}
+      <option value="{{device}}">{{device}}</option>
+      {% endfor %}
+    </select>
+  </p>
+
+  <p>
+    <label for="needs">Who Need To&hellip;</label>
+    <select name="needs" id="needs" class="prompt-selection prompt-unlocked">
+      <option value="default" selected="selected">Any need</option>
+      {% for need in needs %}
+      <option value="{{need}}">{{need}}</option>
+      {% endfor %}
+    </select>
+  </p> -->
+
 {% endblock %}
