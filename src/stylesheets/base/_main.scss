@@ -2,10 +2,15 @@ body,
 html {
   font-size: 20px;
   line-height: 1.5;
+  background: #f9f9f9;
 }
 
 a {
   text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
 
   &:active {
     position: relative;
@@ -13,20 +18,41 @@ a {
   }
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 900;
+h1,
+h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
   margin: 0;
-  padding: 0.35em 0 0.65em;
+  padding: 0.5rem;
+  letter-spacing: 2px;
+}
+
+.icon {
+  &--small path {
+    font-size: 0.25rem;
+  }
 }
 
 .nav {
   background: #53c7a2;
   color: #fff;
-  margin-bottom: 1rem;
 
   a {
     color: #fff;
+  }
+
+  h2 {
+    padding: 0;
+  }
+}
+
+.countdown {
+  background: rgba(0,0,0,0.05);
+
+  &__timer {
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: rgba(0,0,0,0.5);
   }
 }
 
