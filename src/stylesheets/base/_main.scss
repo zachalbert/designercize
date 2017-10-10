@@ -28,8 +28,12 @@ h2 {
 }
 
 .icon {
-  &--small path {
+  &--small {
     font-size: 0.25rem;
+  }
+
+  &--medium {
+    font-size: 1.5rem;
   }
 }
 
@@ -52,7 +56,8 @@ h2 {
   &__timer {
     font-size: 2rem;
     padding: 1rem 0;
-    color: rgba(0,0,0,0.5);
+    font-weight: 700;
+    color: rgba(0,0,0,0.25);
   }
 }
 
