@@ -1,6 +1,6 @@
 {
   "src": "./src",
-  "dest": "./public/assets",
+  "dest": "./docs/assets",
 
   "javascripts": {
     "src": "javascripts",

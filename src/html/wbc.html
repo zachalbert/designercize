@@ -1,0 +1,92 @@
+{#
+  Nunjucks Templating!
+  Homepage: https://mozilla.github.io/nunjucks/
+  Docs: https://mozilla.github.io/nunjucks/api.html
+#}
+
+{% extends 'layouts/application.html' %}
+
+{% block content %}
+  <!-- <h1 data-module="example">{{ message }}</h1> -->
+
+  <nav class="nav">
+    <div class="container-fluid text-center">
+      <div class="row">
+        <div class="col align-self-center"><h1><a href="/"><i class="icon ion-trophy"></i> WBC</a></h1></div>
+        <div class="col p-0">
+          <h2><a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="easy">EASY <i data-feather="play" class="icon--small"></i></a></h2>
+        </div>
+        <div class="col p-0">
+          <h2><a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="medium">MEDIUM <i data-feather="play" class="icon--small"></i></a></h2>
+        </div>
+        <div class="col p-0">
+          <h2><a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="hard">HARD <i data-feather="play" class="icon--small"></i></a></h2>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="countdown container-fluid text-center">
+    <div class="row">
+      <div class="col-3 ml-auto align-self-center">
+        <i class="icon ion-ios-timer-outline"></i>&nbsp;
+        <select name="timer-selection" id="timer-selection">
+          <option value="dev">DEV ONLY</option>
+          <option value="5">5 min</option>
+          <option value="10">10 min</option>
+          <option value="15" selected="selected">15 min</option>
+          <option value="20">20 min</option>
+        </select>
+      </div>
+      <div class="col-3 mr-auto">
+        <div class="countdown__timer mr-auto" id="timer">
+          <!-- 15:00:00 -->
+          <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid text-center">
+    <section>
+      <div class="row">
+        <div class="col-2 ml-auto text-right align-self-end">Design</div>
+        <div class="col-7"><h2 class="output" id="feature">Any feature</h2></div>
+        <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-feature" hidden></a></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-2 ml-auto text-right align-self-end">for</div>
+        <div class="col-7"><h2 class="output" id="useCase">Any use case</h2></div>
+        <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-useCase" hidden></a></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-2 ml-auto text-right align-self-end">to help</div>
+        <div class="col-7"><h2 class="output" id="audience">Any audience</h2></div>
+        <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-audience" hidden></a></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-2 ml-auto text-right align-self-end">using</div>
+        <div class="col-7"><h2 class="output" id="device">Any device</h2></div>
+        <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-device" hidden></a></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-2 ml-auto text-right align-self-end">who need</div>
+        <div class="col-7"><h2 class="output" id="need">Anything</h2></div>
+        <div class="col-1 mr-auto text-left align-self-end"><a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-need" hidden></a></div>
+      </div>
+    </section>
+  </div>
+
+{% endblock %}
