@@ -172,6 +172,10 @@ var prompts = {
 $(document).ready( function() {
   $('.trigger-roll').click( function( data ) {
     var difficulty = $(this).data('difficulty');
+    // Store the difficulty level clicked in localStorage for later access
+    localStorage.setItem('difficulty', difficulty);
+
+    // Roll a new prompt
     roll(difficulty);
   });
 
@@ -179,16 +183,6 @@ $(document).ready( function() {
     e.preventDefault();
     $('.timesup').addClass('hide');
   });
-
-  // Local storage example with Jsonified variables
-  // var car = {};
-  // car.wheels = 4;
-  // car.doors = 2;
-  // car.sound = 'vroom';
-  // car.name = 'Lightning McQueen';
-  // console.log( car );
-  // localStorage.setItem( 'car', JSON.stringify(car) );
-  // console.log( JSON.parse( localStorage.getItem( 'car' ) ) );
 
 });
 
