@@ -5,7 +5,8 @@ var prompts = {
     "easy": [
       "a user profile view",
       "a modal confirmation dialog",
-      "a login and create account view"
+      "a login and create account view",
+      "settings page"
     ],
     "medium": [
       "a dashboard",
@@ -16,7 +17,8 @@ var prompts = {
       "a multi-user dashboard",
       "a scheduling feature",
       "an onboarding process",
-      "the homepage of a marketing site"
+      "the homepage of a marketing site",
+      "interactive map with geofencing capabilities"
     ]
   },
   "useCases": {
@@ -25,20 +27,35 @@ var prompts = {
       "a professional networking site",
       "a book discovery app",
       "a live show recommendations app",
-      "a dating app"
+      "a dating app",
+      "a price comparison site",
+    	"a habit-tracking app",
+    	"a mindfulness app",
+    	"a ticket purchasing site",
+    	"an insult-generator",
+    	"a calendar app"
     ],
     "medium": [
       "a smart home watering system",
       "a wine tracking app",
       "a pet care app",
-      "a caltrain dating app"
+      "a caltrain dating app",
+      "a novel weather app",
+    	"a geocaching app",
+    	"a news aggregating site",
+    	"an outfit-assessment app"
     ],
     "hard": [
       "a flight management app",
       "a small business management platform",
       "a learning management system",
       "a content management system",
-      "a dating app that matches based on compatible allergies"
+      "a dating app that matches based on compatible allergies",
+      "a recipe app that bases options off of what you ate that day",
+    	"a blood sugar management app",
+    	"a ride-sharing app for 2-seater bicycles",
+    	"an app that likes your friends’ social media posts for you",
+    	"a music platform that generates new singles by splicing together top 40 hits"
     ]
   },
   "audiences": {
@@ -46,7 +63,11 @@ var prompts = {
       "kids",
       "families",
       "early adopters",
-      "college students"
+      "college students",
+      "moms",
+      "homeowners",
+      "teachers	",
+      "athletes"
     ],
     "medium": [
       "working professionals",
@@ -54,7 +75,20 @@ var prompts = {
       "landscape architects",
       "professional clowns",
       "concert goers",
-      "social media managers"
+      "social media managers",
+      "entrepreneurs",
+    	"plumbers",
+    	"small business owners",
+    	"musicophiles",
+    	"film snobs",
+    	"designers",
+    	"dog walkers",
+    	"baristas",
+    	"janitors",
+    	"chefs",
+    	"restaurant patrons",
+    	"swimmers",
+    	"foodies"
     ],
     "hard": [
       "astronauts on the ISS",
@@ -62,7 +96,17 @@ var prompts = {
       "political campaign managers",
       "geologists in the field",
       "families on vacation",
-      "fortune 100 CEOs"
+      "fortune 100 CEOs",
+      "sports enthusiasts after 6 drinks",
+    	"families of ICU patients",
+    	"war reporters",
+    	"disaster relief coordinators",
+    	"teachers in inner-city schools",
+    	"Zac & Jake",
+    	"the supreme court",
+    	"famous 1980s rock bands",
+    	"podcast creators",
+    	"concrete driveway specialists"
     ]
   },
   "devices": {
@@ -81,30 +125,51 @@ var prompts = {
       "smart TVs",
       "virtual reality headsets",
       "augmented reality glasses",
-      "autonomous car dashboard interfaces"
+      "autonomous car dashboard interfaces",
+      "iPhone-integrated haptic feedback vests",
+    	"smart kitchen appliances",
+    	"touch-screen yard tools",
+    	"interactive touch-screen security doors"
     ]
   },
   "needs": {
     "easy": [
       "to save time",
       "to save money",
-      "to be efficient"
+      "to be efficient",
+      "to be less stressed",
+    	"to connect with people",
+    	"to experience new things",
+    	"to be healthier"
     ],
     "medium": [
       "to be more green",
       "to get promoted",
-      "to impress their friends"
+      "to impress their friends",
+      "to increase IQ",
+    	"to get in shape",
+    	"to be famous",
+    	"to travel more",
+    	"to reduce time spent on devices",
+    	"to increase productivity"
     ],
     "hard": [
       "to appear busy at work while actually checking facebook",
       "to go on a vacation",
-      "to find inner peace"
+      "to find inner peace",
+      "to make amends for past wrongdoings",
+    	"to find themselves",
+    	"to generate fake news without violating the law",
+    	"to win a nobel prize",
+    	"to smash the patriarchy ",
+    	"to close the wage gap",
+    	"to overcome a fear of touchscreen devices",
+    	"to commit crimes without being caught"
     ]
   }
 }
 
 $(document).ready( function() {
-
   $('.trigger-roll').click( function( data ) {
     var difficulty = $(this).data('difficulty');
     roll(difficulty);
@@ -227,6 +292,7 @@ function roll( difficulty ) {
   } else {
     var countdown = new Date( Date.parse(new Date()) + 1 * 1 * 1 * 3 * 1000 ) // 3 second timer for dev purposes
   }
+
   initializeClock('timer', countdown);
 }
 
@@ -235,10 +301,9 @@ function getTimeRemaining(endtime) {
   var seconds = Math.floor((t / 1000) % 60);
   var minutes = Math.floor((t / 1000 / 60) % 60);
   var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
-  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+
   return {
     'total': t,
-    'days': days,
     'hours': hours,
     'minutes': minutes,
     'seconds': seconds
@@ -246,26 +311,28 @@ function getTimeRemaining(endtime) {
 }
 
 function initializeClock(id, endtime) {
+  // TODO: This is janky, but effectively clears all intervals running.
+  for (var i = 1; i < 99999; i++) {
+    window.clearInterval(i);
+  }
+
   var clock = document.getElementById(id);
-  var daysSpan = clock.querySelector('.days');
   var hoursSpan = clock.querySelector('.hours');
   var minutesSpan = clock.querySelector('.minutes');
   var secondsSpan = clock.querySelector('.seconds');
 
   function updateClock() {
     var t = getTimeRemaining(endtime);
-
-    daysSpan.innerHTML = t.days;
     hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
 
     if (t.total <= 0) {
-      clearInterval(timeinterval);
+      clearInterval(timeInterval);
       $('.timesup').removeClass('hide');
     }
   }
 
   updateClock();
-  var timeinterval = setInterval(updateClock, 1000);
+  var timeInterval = setInterval(updateClock, 1000);
 }
