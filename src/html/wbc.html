@@ -2,11 +2,11 @@
   Nunjucks Templating!
   Homepage: https://mozilla.github.io/nunjucks/
   Docs: https://mozilla.github.io/nunjucks/api.html
-#}
+  #}
 
-{% extends 'layouts/application.html' %}
+  {% extends 'layouts/application.html' %}
 
-{% block content %}
+  {% block content %}
   <!-- <h1 data-module="example">{{ message }}</h1> -->
 
   <nav class="nav">
@@ -14,32 +14,70 @@
       <div class="row">
         <div class="col-12 col-sm align-self-center"><h1><a href="/"><i class="icon ion-trophy"></i> WBC</a></h1></div>
       </div>
-      <div class="row justify-content-center">
-        <div class="btn-group" data-toggle="buttons">
-          <label class="btn btn-secondary active">
-            <input type="radio" name="difficulty" id="easy" data-difficulty="easy" autocomplete="off" checked>Easy
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="difficulty" id="medium" data-difficulty="medium" autocomplete="off">Medium
-          </label>
-          <label class="btn btn-secondary">
-            <input type="radio" name="difficulty" id="hard" data-difficulty="hard" autocomplete="off">Hard
-          </label>
-        </div>
+    </div>
+  </div>
+</nav>
+
+<section class="section section--prompt">
+  <div class="container-fluid text-center">
+    <div class="row justify-content-center">
+      <div class="button button--small button--secondary">
+        <span class="button__text">Easy</span>
       </div>
-        <!-- <div class="col-4 col-sm p-0">
-          <h2><a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="easy">EASY <i data-feather="play" class="icon--small"></i></a></h2>
-        </div>
-        <div class="col-4 col-sm p-0">
-          <h2><a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="medium">MEDIUM <i data-feather="play" class="icon--small"></i></a></h2>
-        </div>
-        <div class="col-4 col-sm p-0">
-          <h2><a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="hard">HARD <i data-feather="play" class="icon--small"></i></a></h2>
-        </div> -->
+      <div class="button button--small button--secondary">
+        <span class="button__text">Medium</span>
+      </div>
+      <div class="button button--small button--secondary">
+        <span class="button__text">Hard</span>
       </div>
     </div>
-  </nav>
+    <div class="row">
+      <div class="col-2 ml-auto text-right align-self-end">Design</div>
+      <div class="col-6"><h2 class="output" id="feature">Any feature</h2></div>
+      <div class="col-2 mr-auto text-left align-self-end">
+        <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-feature" hidden></a> -->
+        <input type="checkbox" name="feature-hide"> <label for="feature-hide">Hide</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2 ml-auto text-right align-self-end">for</div>
+      <div class="col-6"><h2 class="output" id="useCase">Any use case</h2></div>
+      <div class="col-2 mr-auto text-left align-self-end">
+        <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-useCase" hidden></a> -->
+        <input type="checkbox" name="useCase-hide"> <label for="useCase-hide">Hide</label>
+      </div>
+    </div>
 
+    <div class="row">
+      <div class="col-2 ml-auto text-right align-self-end">to help</div>
+      <div class="col-6"><h2 class="output" id="audience">Any audience</h2></div>
+      <div class="col-2 mr-auto text-left align-self-end">
+        <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-audience" hidden></a> -->
+        <input type="checkbox" name="audience-hide"> <label for="audience-hide">Hide</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 ml-auto text-right align-self-end">using</div>
+      <div class="col-6"><h2 class="output" id="device">Any device</h2></div>
+      <div class="col-2 mr-auto text-left align-self-end">
+        <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-device" hidden></a> -->
+        <input type="checkbox" name="device-hide"> <label for="device-hide">Hide</label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 ml-auto text-right align-self-end">who need</div>
+      <div class="col-6"><h2 class="output" id="need">Anything</h2></div>
+      <div class="col-2 mr-auto text-left align-self-end">
+        <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-need" hidden></a> -->
+        <input type="checkbox" name="need-hide"> <label for="need-hide">Hide</label>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="section section--footer">
   <div class="countdown container-fluid text-center">
     <div class="row">
       <div class="col-6 col-sm-3 ml-auto align-self-center">
@@ -59,66 +97,11 @@
       </div>
     </div>
   </div>
-
-  <div class="container-fluid text-center">
-    <section>
-      <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">Design</div>
-        <div class="col-6"><h2 class="output" id="feature">Any feature</h2></div>
-        <div class="col-2 mr-auto text-left align-self-end">
-          <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-feature" hidden></a> -->
-          <input type="checkbox" name="feature-hide"> <label for="feature-hide">Hide</label>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">for</div>
-        <div class="col-6"><h2 class="output" id="useCase">Any use case</h2></div>
-        <div class="col-2 mr-auto text-left align-self-end">
-          <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-useCase" hidden></a> -->
-          <input type="checkbox" name="useCase-hide"> <label for="useCase-hide">Hide</label>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">to help</div>
-        <div class="col-6"><h2 class="output" id="audience">Any audience</h2></div>
-        <div class="col-2 mr-auto text-left align-self-end">
-          <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-audience" hidden></a> -->
-          <input type="checkbox" name="audience-hide"> <label for="audience-hide">Hide</label>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">using</div>
-        <div class="col-6"><h2 class="output" id="device">Any device</h2></div>
-        <div class="col-2 mr-auto text-left align-self-end">
-          <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-device" hidden></a> -->
-          <input type="checkbox" name="device-hide"> <label for="device-hide">Hide</label>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="row">
-        <div class="col-2 ml-auto text-right align-self-end">who need</div>
-        <div class="col-6"><h2 class="output" id="need">Anything</h2></div>
-        <div class="col-2 mr-auto text-left align-self-end">
-          <!-- <a href="#" class="icon ion-ios-refresh-empty icon--medium" id="reroll-need" hidden></a> -->
-          <input type="checkbox" name="need-hide"> <label for="need-hide">Hide</label>
-        </div>
-      </div>
-    </section>
-
+  <div class="text-center">
     <a href="#" class="button" id="start-button"><span class="button__text">Start</span></a>
   </div>
+</section>
 
-  DEV: <a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="easy">EASY <i data-feather="play" class="icon--small"></i></a>
+DEV: <a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="easy">EASY <i data-feather="play" class="icon--small"></i></a>
 
 {% endblock %}
