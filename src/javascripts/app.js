@@ -4,18 +4,23 @@ import './data/prompts.js'
 // Make prompts json accessible
 var prompts = window.prompts;
 
-// Deal with all the # links
+// Ignore default behavior for all href="#" links
 $('a[href="#"]').click( function(e) {
   e.preventDefault();
 });
 
+// All interactivity and click events
 $(document).ready( function() {
-  $('.trigger-roll').click( function( data ) {
-    var difficulty = $(this).data('difficulty');
-    // Store the difficulty level clicked in localStorage for later access
+
+  // Start button is clicked. Do stuff to start the whole thing.
+  $('#start-button').click( function() {
+    // Which difficulty level is selected?
+    var difficulty = $('input[name="difficulty"]:checked').data('difficulty');
+
+    // Set the difficulty to local storage
     localStorage.setItem('difficulty', difficulty);
 
-    // Roll a new prompt
+    // START THE THING!
     roll(difficulty);
   });
 
@@ -26,7 +31,11 @@ $(document).ready( function() {
 
 });
 
+// Roll a new prompt
 function roll( difficulty ) {
+  // Set the global state to on
+  localStorage.setItem('challengeRunning', true);
+
   var features = [],
       useCases = [],
       audiences = [],
