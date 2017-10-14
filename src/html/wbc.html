@@ -81,13 +81,20 @@
   <div class="countdown container-fluid text-center">
     <div class="row">
       <div class="col-6 col-sm-3 ml-auto align-self-center">
-        <select name="timer-selection" id="timer-selection">
+        <!-- <select name="timer-selection" id="timer-selection">
           <option value="dev">DEV ONLY</option>
           <option value="5">5 min</option>
           <option value="10">10 min</option>
           <option value="15" selected="selected">15 min</option>
           <option value="20">20 min</option>
-        </select>
+        </select> -->
+        <div class="input-stepper">
+      		<button data-input-stepper-decrease="5">-5</button>
+      		<button data-input-stepper-decrease>-1</button>
+      		<input type="text" id="timer-selection" min="1" max="60" value="15">
+      		<button data-input-stepper-increase>+1</button>
+      		<button data-input-stepper-increase="5">+5</button>
+      	</div>
       </div>
       <div class="col-6 col-sm-3 mr-auto">
         <div class="countdown__timer mr-auto" id="timer">
@@ -101,7 +108,5 @@
     <a href="#" class="button" id="start-button"><span class="button__text">Start</span></a>
   </div>
 </section>
-
-DEV: <a href="#" class="btn btn-primary btn-block trigger-roll" data-difficulty="easy">EASY <i data-feather="play" class="icon--small"></i></a>
 
 {% endblock %}

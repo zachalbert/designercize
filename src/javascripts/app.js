@@ -1,5 +1,9 @@
-import './modules'
-import './data/prompts.js'
+import jquery from './vendor/jquery-3.2.1.min.js';
+window.$ = window.jQuery = jquery;
+import './vendor/popper.js';
+require('./vendor/jquery.input-stepper.js');
+import './modules';
+import './data/prompts.js';
 
 // Make prompts json accessible
 // TODO: also have separate files for growth + sales prompts, and a ui selector
@@ -22,7 +26,10 @@ $('a[href="#"]').click(function(e) {
 // All interactivity and click events
 $(document).ready(function() {
 
-  // Toggle the right difficulty selector on page load
+  // initialize the jquery plugin input-stepper
+	$('.input-stepper').inputStepper();
+
+  // Toggle the right difficulty selector on page load from local storage
   var difficulty = localStorage.getItem('difficulty');
   if (difficulty) {
     $('.js-difficulty').not('#' + difficulty).removeClass('selected');
