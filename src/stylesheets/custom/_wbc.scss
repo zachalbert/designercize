@@ -48,11 +48,22 @@ h2 {
 
 .countdown {
   &__timer {
-    font-size: 2rem;
+    font-size: 3rem;
     padding: 1rem 0;
     font-weight: 700;
-    color: #fde1a5;
+    color: #fff;
     margin: 1em 0;
+    text-shadow: 0 6px #441dbf;
+    -moz-text-fill-color: #32bbff;
+    -webkit-text-fill-color: #32bbff;
+    -moz-text-stroke-color: #000001;
+    -webkit-text-stroke-color: #000001;
+    -moz-text-stroke-width: 1px;
+    -webkit-text-stroke-width: 1px;
+
+    .minutes {
+      font-size: 1.5em;
+    }
   }
 }
 
@@ -112,19 +123,6 @@ label {
   .label-text {
     opacity: 0.25;
   }
-}
-
-.label-text,
-label {
-  color: #fde1a5;
-  text-transform: uppercase;
-  font-weight: 700;
-  font-size: .75rem;
-  line-height: 1rem;
-}
-
-input[type="checkbox"] {
-  font-size: 5rem;
 }
 
 .timesup {

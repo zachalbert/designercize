@@ -1,11 +1,37 @@
-body {
-  font-family: sans-serif;
-  // font-family: 'Vast Shadow', cursive;
-  // font-family: 'Ultra', serif;
-  // font-family: 'Syncopate', sans-serif;
-  // font-family: 'Goblin One', cursive;
-  // font-family: 'Asset', cursive;
-  // font-family: 'Diplomata SC', cursive;
-  font-family: 'Overpass Mono', mono;
-  font-weight: 300;
+@font-face {
+  font-family: 'DDCHardware';
+  src:  url('https://www.wellbuiltmedia.com/wp-content/themes/x-child/fonts/ddchardware-regular-webfont.woff2') format('woff2'),
+        url('https://www.wellbuiltmedia.com/wp-content/themes/x-child/fonts/ddchardware-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'DDCHardwareCompressed';
+  src:  url('https://www.wellbuiltmedia.com/wp-content/themes/x-child/fonts/ddchardware-compressed-webfont.woff2') format('woff2'),
+        url('https://www.wellbuiltmedia.com/wp-content/themes/x-child/fonts/ddchardware-compressed-webfont.woff') format('woff');
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'DDCHardware', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+body,
+input {
+  font-family: 'DDCHardwareCompressed', sans-serif;
+  font-weight: normal;
+}
+
+.label-text,
+label {
+  color: #fde1a5;
+  text-transform: uppercase;
+  font-size: 1rem;
+  line-height: 1;
+  transition: all 0.25s ease-in;
 }
