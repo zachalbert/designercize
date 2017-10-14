@@ -1,6 +1,17 @@
 import './modules'
 import './data/prompts.js'
 
+// If there are any session variables set on page load, set the appropriate state
+(function() {
+  var difficulty = localStorage.getItem('difficulty');
+  if( difficulty ) {
+    $('.js-difficulty').removeClass('selected');
+    $('#'+difficulty).addClass('selected');
+  } else {
+    $('#easy').addClass('selected');
+  }
+})();
+
 // Make prompts json accessible
 var prompts = window.prompts;
 
@@ -16,6 +27,7 @@ $(document).ready( function() {
   $('.js-difficulty').click( function() {
     $('.js-difficulty').removeClass('selected');
     $(this).addClass('selected');
+    localStorage.setItem('difficulty', $(this).data('difficulty') );
   });
 
   // Start button is clicked. Do stuff to start the whole thing.
@@ -27,7 +39,7 @@ $(document).ready( function() {
     localStorage.setItem('difficulty', difficulty);
 
     // START THE THING!
-    roll(difficulty);
+    rollNewPrompt(difficulty);
   });
 
   // Close the "Time's up!" overlay
@@ -38,10 +50,37 @@ $(document).ready( function() {
 
 });
 
+// A thing for selecting a random prompt from an array
+function getRandomPromptByDifficulty( category, difficulty ) {
+  var randomPrompt = prompts[category][difficulty][Math.floor(Math.random() * prompts[category][difficulty].length)];
+  return randomPrompt;
+}
+
+// Inject each prompt component into the DOM
+function injectPrompt( prompt ) {
+  for( var key in prompt ) {
+    if( prompt.hasOwnProperty( key )) {
+      console.log("Key: " + key + ", value: " + prompt[key]);
+    }
+  }
+}
+
 // Roll a new prompt
-function roll( difficulty ) {
+function rollNewPrompt( difficulty ) {
   // Set the global state to on
   localStorage.setItem('challengeRunning', true);
+
+  // Create an object with a single random string from each component of the total prompt
+  var promptComponents = {
+    "features": getRandomPromptByDifficulty( 'features', difficulty ),
+    "useCases": getRandomPromptByDifficulty( 'useCases', difficulty ),
+    "audiences": getRandomPromptByDifficulty( 'audiences', difficulty ),
+    "devices": getRandomPromptByDifficulty( 'devices', difficulty ),
+    "needs": getRandomPromptByDifficulty( 'needs', difficulty )
+  };
+
+  // Inject randomPrompt into the right DOM element
+  injectPrompt( promptComponents );
 
   var features = [],
       useCases = [],
