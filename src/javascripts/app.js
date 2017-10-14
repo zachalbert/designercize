@@ -51,6 +51,18 @@ $(document).ready(function() {
     rollNewPrompt(difficulty);
   });
 
+  // Literally hide inputs when hide is checked
+  $('input[data-hide-output]').change( function() {
+    var target = $('#' + $(this).data('hide-output'));
+    var parent = target.closest('.row');
+
+    if( this.checked ) {
+      parent.addClass('closed');
+    } else {
+      parent.removeClass('closed');
+    }
+  });
+
   // Close the "Time's up!" overlay
   $('.timesup .close').click(function(e) {
     e.preventDefault();

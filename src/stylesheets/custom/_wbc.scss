@@ -68,6 +68,50 @@ h2 {
   color: #fde1a5;
   border-radius: 5px;
   line-height: 1rem;
+  position: relative;
+  overflow: hidden;
+
+  &.cover {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -50%;
+      left: 0.5%;
+      width: 99%;
+      height: 48%;
+      background: #441dbf;
+      border: 3px solid #000001;
+      border-radius: 3px 3px 0 0;
+      transition: all 0.2s ease-in;
+    }
+
+    &:after {
+      top: 100%;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+}
+
+label {
+  cursor: pointer;
+}
+
+.closed {
+  .output.cover {
+    &:before {
+      top: 4%;
+    }
+
+    &:after {
+      top: 50%;
+    }
+  }
+
+  .label-text {
+    opacity: 0.25;
+  }
 }
 
 .label-text,
