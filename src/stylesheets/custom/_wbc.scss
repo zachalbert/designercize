@@ -33,31 +33,27 @@ h2 {
 }
 
 .nav {
-  background: #53c7a2;
-  color: #fff;
+  background: #441dbf;
+  color: #6839ff;
 
-  a {
-    color: #fff;
+  h1 {
+    padding: 0;
   }
 
-  h2 {
-    padding: 0;
+  a {
+    color: #6839ff;
+    line-height: 2;
   }
 }
 
 .countdown {
-  background: rgba(0,0,0,0.05);
-
   &__timer {
     font-size: 2rem;
     padding: 1rem 0;
     font-weight: 700;
-    color: rgba(0,0,0,0.25);
+    color: #fde1a5;
+    margin: 1em 0;
   }
-}
-
-section {
-  //padding: 1.5em 0;
 }
 
 .section {
