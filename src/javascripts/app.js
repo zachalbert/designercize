@@ -12,6 +12,12 @@ $('a[href="#"]').click( function(e) {
 // All interactivity and click events
 $(document).ready( function() {
 
+  // Change the selected state of the difficulty buttons
+  $('.js-difficulty').click( function() {
+    $('.js-difficulty').removeClass('selected');
+    $(this).addClass('selected');
+  });
+
   // Start button is clicked. Do stuff to start the whole thing.
   $('#start-button').click( function() {
     // Which difficulty level is selected?
