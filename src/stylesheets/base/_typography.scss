@@ -15,16 +15,16 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6 {
+h6, .h6,
+.button,
+.button__text {
   font-family: 'DDCHardware', sans-serif;
   font-style: normal;
   font-weight: normal;
 }
 
 body,
-input,
-.button,
-.button__text {
+input {
   font-family: 'DDCHardwareCompressed', sans-serif;
   font-weight: normal;
 }
