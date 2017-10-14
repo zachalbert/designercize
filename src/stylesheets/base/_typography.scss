@@ -1,13 +1,13 @@
 @font-face {
   font-family: 'DDCHardware';
-  src:  url('/fonts/ddchardware-regular-webfont.woff2') format('woff2'),
-        url('/fonts/ddchardware-regular-webfont.woff') format('woff');
+  src:  url('../fonts/ddchardware-regular-webfont.woff2') format('woff2'),
+        url('../fonts/ddchardware-regular-webfont.woff') format('woff');
 }
 
 @font-face {
   font-family: 'DDCHardwareCompressed';
-  src:  url('/fonts/ddchardware-compressed-webfont.woff2') format('woff2'),
-        url('/fonts/ddchardware-compressed-webfont.woff') format('woff');
+  src:  url('../fonts/ddchardware-compressed-webfont.woff2') format('woff2'),
+        url('../fonts/ddchardware-compressed-webfont.woff') format('woff');
 }
 
 h1, .h1,
