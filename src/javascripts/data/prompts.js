@@ -64,7 +64,7 @@ window.prompts = {
       "college students",
       "moms",
       "homeowners",
-      "teachers	",
+      "teachers",
       "athletes"
     ],
     "medium": [
