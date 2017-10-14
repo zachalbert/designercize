@@ -21,7 +21,7 @@ $(document).ready( function() {
   // Start button is clicked. Do stuff to start the whole thing.
   $('#start-button').click( function() {
     // Which difficulty level is selected?
-    var difficulty = $('input[name="difficulty"]:checked').data('difficulty');
+    var difficulty = $('.js-difficulty.selected').data('difficulty');
 
     // Set the difficulty to local storage
     localStorage.setItem('difficulty', difficulty);
@@ -30,6 +30,7 @@ $(document).ready( function() {
     roll(difficulty);
   });
 
+  // Close the "Time's up!" overlay
   $('.timesup .close').click( function(e) {
     e.preventDefault();
     $('.timesup').addClass('hide');
