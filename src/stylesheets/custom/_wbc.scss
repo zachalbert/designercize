@@ -71,37 +71,6 @@ section {
   border-bottom: 2px solid #ccc;
 }
 
-.btn {
-  padding: 1em 2em;
-  font-weight: bold;
-  color: #fff;
-  border-radius: 0;
-  border: 0;
-}
-
-[data-difficulty="hard"] {
-  background-color: #5c61ff;
-
-  &:hover {
-    background-color: darken(#5c61ff, 5%);
-  }
-}
-
-[data-difficulty="medium"] {
-  background-color: #5dadff;
-
-  &:hover {
-    background-color: darken(#5dadff, 5%);
-  }
-}
-
-[data-difficulty="easy"] {
-  background-color: #5de1ff;
-
-  &:hover {
-    background-color: darken(#5de1ff, 5%);
-  }
-}
 
 .timesup {
   position: fixed;
@@ -187,33 +156,6 @@ section {
   transition: .33s;
 }
 
-.button:active.button::after,.button:focus.button::after,.button:active .button__text,.button:focus .button__text {
-  bottom: -2px;
-  top: 4px;
-}
-
-.button:active.button::before, .button:focus.button::before {
-  top: 6px;
-  opacity: 0;
-}
-
-.button:active .button__text, .button:focus .button__text {
-  text-shadow: none!important;
-}
-
-.button:active.button::after, .button:focus.button::after {
-  box-shadow: inset 0 6px #aa0c00;
-}
-
-.button:active.button::after,.button:focus.button::after {
-  background-color: #fb3600;
-}
-
-.button:active, .button:focus {
-  background-color: #0000bf;
-  box-shadow: 0 0px rgba(0,0,0,0);
-}
-
 .button__text {
   z-index: 2;
   position: relative;
@@ -221,7 +163,41 @@ section {
   transition: .33s;
 }
 
-.button:active .button__text, .button:focus .button__text {
+.button:active.button::after,.button:focus.button::after,.button:active .button__text,.button:focus .button__text,
+.button.button--secondary.selected::after,.button.button--secondary.selected::after, .button.selected .button__text,.button.selected .button__text, {
+  bottom: -2px;
+  top: 4px;
+}
+
+.button:active.button::before, .button:focus.button::before,
+.button.selected.button--secondary::before {
+  top: 6px;
+  opacity: 0;
+}
+
+.button:active .button__text, .button:focus .button__text,
+.button.selected .button__text {
+  text-shadow: none!important;
+}
+
+.button:active.button::after, .button:focus.button::after,
+.button.selected.button::after {
+  box-shadow: inset 0 6px #aa0c00;
+}
+
+.button:active.button::after,.button:focus.button::after,
+.button.selected.button::after {
+  background-color: #fb3600;
+}
+
+.button:active, .button:focus,
+.button.selected {
+  background-color: #0000bf;
+  box-shadow: 0 0px rgba(0,0,0,0);
+}
+
+.button:active .button__text, .button:focus .button__text,
+.button.selected .button__text {
   color: #aa0c00;
 }
 
@@ -247,16 +223,19 @@ section {
   }
 }
 
-.button.button--secondary:active .button__text, .button.button--secondary:focus .button__text {
+.button.button--secondary:active .button__text, .button.button--secondary:focus .button__text,
+.button.button--secondary.selected .button__text {
   color: #0000bf;
 }
 
-.button--secondary:active.button::after, .button--secondary:focus.button::after {
+.button--secondary:active.button::after, .button--secondary:focus.button::after,
+.button--secondary.selected.button::after {
   box-shadow: inset 0 6px #0000bf;
   color: #0000bf;
 }
 
-.button.button--secondary:active.button::after,.button.button--secondary:focus.button::after {
+.button.button--secondary:active.button::after,.button.button--secondary:focus.button::after,
+.button.button--secondary.selected.button::after {
   background-color: #0051fc;
 }
 
