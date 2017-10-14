@@ -62,11 +62,26 @@ h2 {
 
 .output {
   margin: 0;
-  padding: 0.25em 0;
-  font-size: 1.5rem;
-  border-bottom: 2px solid #ccc;
+  padding: 1em;
+  font-size: 1rem;
+  background: #000001;
+  color: #fde1a5;
+  border-radius: 5px;
+  line-height: 1rem;
 }
 
+.label-text,
+label {
+  color: #fde1a5;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .75rem;
+  line-height: 1rem;
+}
+
+input[type="checkbox"] {
+  font-size: 5rem;
+}
 
 .timesup {
   position: fixed;
