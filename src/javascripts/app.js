@@ -33,6 +33,8 @@ $(document).ready(function() {
   var difficulty = localStorage.getItem('difficulty');
   if (difficulty) {
     $('.js-difficulty').not('#' + difficulty).removeClass('selected');
+  } else {
+    $('[data-difficulty="medium"], [data-difficulty="hard"]').removeClass('selected');
   }
 
   // Change the selected state of the difficulty buttons
