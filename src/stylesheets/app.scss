@@ -1,7 +1,12 @@
+@import "vendor/bootstrap.min.css";
+
 @import "base/typography";
 @import "icons/ionicons-variables";
 @import "icons/ionicons-font";
 @import "icons/ionicons-icons";
+
+@import "components/buttons";
+@import "components/forms";
 
 @import "custom/index";
 @import "custom/wbc";
