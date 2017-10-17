@@ -82,7 +82,7 @@ function getRandomPromptByDifficulty(category, difficulty) {
 
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
-  var container = $('#'+category);
+  var container = $('#'+category+' .output__text');
   container.text( prompt );
 }
 

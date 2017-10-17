@@ -1,5 +1,3 @@
-
-
 input[type="checkbox"] {
   line-height: 1;
   position: relative;
@@ -22,5 +20,74 @@ input[type="text"] {
   .button,
   input {
     display: inline-block;
+  }
+}
+
+.output {
+  margin: 0;
+  padding: 6px 0 0;
+  font-size: 1rem;
+  background: #0000B9;
+  color: #000001;
+  border: 2px solid #000001;
+  box-shadow: inset 0 4px 0 #411BB8, inset 0 6px 0 #000001;
+  border-radius: 5px;
+  line-height: 1rem;
+  position: relative;
+  overflow: hidden;
+  height: 4em;
+
+  .output__text {
+    @extend h2;
+    padding: 0;
+    width: 100%;
+
+    &-container {
+      margin: 0 15px;
+      background: #F5F6F6;
+      box-shadow: inset 0 6px #F5DA9F;
+      border-style: solid;
+      border-color: #000001;
+      border-width: 0 2px;
+      height: 100%;
+    }
+  }
+
+  &.cover {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -50%;
+      left: 0.5%;
+      width: 99%;
+      height: 48%;
+      background: #441dbf;
+      border: 3px solid #000001;
+      border-radius: 3px 3px 0 0;
+      transition: all 0.2s ease-in;
+    }
+
+    &:after {
+      top: 100%;
+      border-radius: 0 0 3px 3px;
+    }
+  }
+}
+
+.closed {
+  .output.cover {
+    &:before {
+      top: 4%;
+    }
+
+    &:after {
+      top: 50%;
+    }
+  }
+
+  .label-text {
+    opacity: 0.25;
   }
 }
