@@ -1,4 +1,4 @@
-$button-transition: all 0.12s ease-out;
+$button-transition: all 0.12s ease-in-out;
 
 .button {
   background: #fb3600;
@@ -18,6 +18,7 @@ $button-transition: all 0.12s ease-out;
   text-align: center;
   transition: $button-transition;
   box-shadow: 0 6px #441dbf;
+  outline: none!important;
 }
 
 .button:hover.button::after {
@@ -62,7 +63,7 @@ $button-transition: all 0.12s ease-out;
   z-index: 2;
   position: relative;
   top: -2px;
-  transition: .33s;
+  transition: $button-transition;
 }
 
 .button:active.button::after,.button:active .button__text,

@@ -32,6 +32,11 @@
     "dest": "fonts"
   },
 
+  "sounds": {
+    "src": "sounds",
+    "dest": "sounds"
+  },
+
   "icons": {
     "src": "icons",
     "dest": "images"
