@@ -1,3 +1,5 @@
+$button-transition: all 0.12s ease-out;
+
 .button {
   background: #fb3600;
   padding: 24px 30px;
@@ -14,7 +16,7 @@
   box-sizing: border-box;
   z-index: 1;
   text-align: center;
-  transition: .33s;
+  transition: $button-transition;
   box-shadow: 0 6px #441dbf;
 }
 
@@ -39,7 +41,7 @@
   border: 2px solid #000001;
   border-radius: 4px;
   z-index: 0;
-  transition: .33s;
+  transition: $button-transition;
 }
 
 .button::before {
@@ -53,7 +55,7 @@
   background: #fdc140;
   height: 2px;
   z-index: 2;
-  transition: .33s;
+  transition: $button-transition;
 }
 
 .button__text {
