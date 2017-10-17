@@ -25,12 +25,12 @@ input[type="text"] {
 
 .output {
   margin: 0;
-  padding: 6px 0 0;
+  padding: 7px 0 0;
   font-size: 1rem;
   background: #0000B9;
   color: #000001;
   border: 2px solid #000001;
-  box-shadow: inset 0 4px 0 #411BB8, inset 0 6px 0 #000001;
+  box-shadow: inset 0 5px 0 #411BB8, inset 0 7px 0 #000001;
   border-radius: 5px;
   line-height: 1rem;
   position: relative;
@@ -44,6 +44,7 @@ input[type="text"] {
 
     &-container {
       margin: 0 15px;
+      padding-top: 4px;
       background: #F5F6F6;
       box-shadow: inset 0 6px #F5DA9F;
       border-style: solid;
@@ -60,18 +61,26 @@ input[type="text"] {
       display: block;
       position: absolute;
       top: -50%;
-      left: 0.5%;
-      width: 99%;
-      height: 48%;
-      background: #441dbf;
-      border: 3px solid #000001;
+      width: 100%;
+      height: 50%;
+      background: #6437F6;
+      border-color: solid #000001;
+      border-style: solid;
+      border-width: 2px 0 2px 0;
       border-radius: 3px 3px 0 0;
-      transition: all 0.2s ease-in;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:before {
+      box-shadow: inset 0 -2px 0 #0001BC, inset 0 6px 0 #411BB8;
+      height: calc(50% - 3px);
     }
 
     &:after {
       top: 100%;
       border-radius: 0 0 3px 3px;
+      border-width: 2px 0 0 0;
+      box-shadow: inset 0 2px 0 #1576F4;
     }
   }
 }
@@ -79,7 +88,7 @@ input[type="text"] {
 .closed {
   .output.cover {
     &:before {
-      top: 4%;
+      top: 5px;
     }
 
     &:after {
