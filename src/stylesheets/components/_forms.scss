@@ -1,5 +1,3 @@
-
-
 input[type="checkbox"] {
   line-height: 1;
   position: relative;
@@ -7,12 +5,24 @@ input[type="checkbox"] {
   margin-right: 0.5rem;
 }
 
-input[type="text"] {
+.input-container {
+  padding-top: 4px;
   border: 2px solid #000001;
+  display: inline-block;
+  border-radius: 5px;
+  background: #0000B9;
+  margin: 0 0.5rem;
+}
+
+input[type="text"] {
+  border: 0 solid #000001;
+  color: #4CF190;
+  box-shadow: inset 0 8px 0 #000001;
+  background: #003D56;
   border-radius: 4px;
   text-align: center;
-  font-size: 18px;
-  padding: 12px 15px;
+  font-size: 30px;
+  padding: 24px 30px;
   z-index: 1;
 }
 
@@ -22,5 +32,83 @@ input[type="text"] {
   .button,
   input {
     display: inline-block;
+  }
+}
+
+.output {
+  margin: 0;
+  padding: 7px 0 0;
+  font-size: 1rem;
+  background: #0000B9;
+  color: #000001;
+  border: 2px solid #000001;
+  box-shadow: inset 0 5px 0 #411BB8, inset 0 7px 0 #000001;
+  border-radius: 5px;
+  line-height: 1rem;
+  position: relative;
+  overflow: hidden;
+  height: 4em;
+
+  .output__text {
+    @extend h2;
+    padding: 0 1em;
+    width: 100%;
+
+    &-container {
+      margin: 0 15px;
+      padding-top: 4px;
+      background: #F5F6F6;
+      box-shadow: inset 0 6px #F5DA9F;
+      border-style: solid;
+      border-color: #000001;
+      border-width: 0 2px;
+      height: 100%;
+    }
+  }
+
+  &.cover {
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -50%;
+      width: 100%;
+      height: 50%;
+      background: #6437F6;
+      border-color: solid #000001;
+      border-style: solid;
+      border-width: 2px 0 2px 0;
+      border-radius: 3px 3px 0 0;
+      transition: all 0.1s ease-in-out;
+    }
+
+    &:before {
+      box-shadow: inset 0 -2px 0 #0001BC, inset 0 6px 0 #411BB8;
+      height: calc(50% - 3px);
+    }
+
+    &:after {
+      top: 100%;
+      border-radius: 0 0 3px 3px;
+      border-width: 2px 0 0 0;
+      box-shadow: inset 0 2px 0 #1576F4;
+    }
+  }
+}
+
+.closed {
+  .output.cover {
+    &:before {
+      top: 5px;
+    }
+
+    &:after {
+      top: 50%;
+    }
+  }
+
+  .label-text {
+    opacity: 0.25;
   }
 }

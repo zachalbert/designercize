@@ -44,6 +44,10 @@ $(document).ready(function() {
     localStorage.setItem('difficulty', $(this).data('difficulty'));
   });
 
+  $('.selectable').click( function() {
+    $(this).toggleClass('selected');
+  });
+
   // Start button is clicked. Do stuff to start the whole thing.
   $('#start-button').click(function() {
     // Which difficulty level is selected?
@@ -54,15 +58,11 @@ $(document).ready(function() {
   });
 
   // Literally hide inputs when hide is checked
-  $('input[data-hide-output]').change( function() {
+  $('[data-hide-output]').click( function() {
     var target = $('#' + $(this).data('hide-output'));
     var parent = target.closest('.row');
 
-    if( this.checked ) {
-      parent.addClass('closed');
-    } else {
-      parent.removeClass('closed');
-    }
+    parent.toggleClass('closed');
   });
 
   // Close the "Time's up!" overlay
@@ -82,7 +82,7 @@ function getRandomPromptByDifficulty(category, difficulty) {
 
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
-  var container = $('#'+category);
+  var container = $('#'+category+' .output__text');
   container.text( prompt );
 }
 
