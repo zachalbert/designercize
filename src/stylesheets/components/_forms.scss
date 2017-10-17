@@ -39,7 +39,7 @@ input[type="text"] {
 
   .output__text {
     @extend h2;
-    padding: 0;
+    padding: 0 1em;
     width: 100%;
 
     &-container {
