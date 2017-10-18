@@ -18,26 +18,40 @@
     }
   </script>
 
-  <nav class="nav">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12 col-sm align-self-center"><h1><a href="/"><i class="icon ion-trophy"></i> WBC</a></h1></div>
-      </div>
-    </div>
-  </div>
-</nav>
-
 <section class="section section--prompt">
   <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-5 ml-auto">
+        <div class="input-stepper">
+          <button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">--</span></button>
+          <button data-input-stepper-decrease class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">-</span></button>
+          <div class="input-container">
+            <input type="text" id="timer-selection" class="d-inline-flex" min="1" max="60" value="15" size="5">
+          </div>
+          <button data-input-stepper-increase class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">+</span></button>
+          <button data-input-stepper-increase="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">++</span></button>
+        </div>
+      </div>
+      <div class="col-4 mr-auto">
+        <h2 class="countdown__timer mr-auto" id="timer">
+          <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
+        </h2>
+      </div>
+    </div>
     <div class="row justify-content-center pb-4">
-      <div class="button button--small button--secondary js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
-        <span class="button__text">Easy</span>
+      <div class="col-5 ml-auto align-self-center">
+        <div class="button button--small button--secondary js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
+          <span class="button__text">Easy</span>
+        </div>
+        <div class="button button--small button--secondary js-difficulty selected" id="medium" data-difficulty="medium" onclick="buttonDown()">
+          <span class="button__text">Medium</span>
+        </div>
+        <div class="button button--small button--secondary js-difficulty selected" id="hard" data-difficulty="hard" onclick="buttonDown()">
+          <span class="button__text">Hard</span>
+        </div>
       </div>
-      <div class="button button--small button--secondary js-difficulty selected" id="medium" data-difficulty="medium" onclick="buttonDown()">
-        <span class="button__text">Medium</span>
-      </div>
-      <div class="button button--small button--secondary js-difficulty selected" id="hard" data-difficulty="hard" onclick="buttonDown()">
-        <span class="button__text">Hard</span>
+      <div class="col-4 mr-auto">
+        <button class="button" id="start-button" onclick="buttonDown()"><span class="button__text">Start</span></button>
       </div>
     </div>
     <div class="row mb-2">
@@ -114,33 +128,6 @@
       </div>
     </div>
 
-  </div>
-</section>
-<section class="section section--footer">
-  <div class="countdown container-fluid text-center">
-    <div class="row">
-      <div class="col align-self-center">
-        <div class="input-stepper">
-      		<button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">--</span></button>
-      		<button data-input-stepper-decrease class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">-</span></button>
-          <div class="input-container">
-            <input type="text" id="timer-selection" class="d-inline-flex" min="1" max="60" value="15" size="5">
-          </div>
-      		<button data-input-stepper-increase class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">+</span></button>
-      		<button data-input-stepper-increase="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">++</span></button>
-      	</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col align-self-center">
-        <h2 class="countdown__timer mr-auto" id="timer">
-          <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
-        </h2>
-      </div>
-    </div>
-  </div>
-  <div class="text-center">
-    <button class="button" id="start-button" onclick="buttonDown()"><span class="button__text">Start</span></button>
   </div>
 </section>
 
