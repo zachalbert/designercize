@@ -33,10 +33,8 @@ $(document).ready(function() {
   var difficulty = localStorage.getItem('difficulty');
   if (difficulty) {
     $('.js-difficulty').not('#' + difficulty).removeClass('selected');
-    rollNewPrompt(difficulty);
   } else {
     $('[data-difficulty="medium"], [data-difficulty="hard"]').removeClass('selected');
-    rollNewPrompt('easy');
   }
 
   // Change the selected state of the difficulty buttons
