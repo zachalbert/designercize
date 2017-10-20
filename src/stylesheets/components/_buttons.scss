@@ -1,11 +1,12 @@
 $button-transition: all 0.12s ease-in-out;
+$button-radius: 4px;
 
 .button {
   background: #fb3600;
   padding: 24px 30px;
   display: inline-block;
   border: 2px solid #000001;
-  border-radius: 4px;
+  border-radius: $button-radius;
   color: #fde1a5;
   cursor: pointer;
   text-transform: uppercase;
@@ -40,7 +41,7 @@ $button-transition: all 0.12s ease-in-out;
   bottom: 4px;
   background-color: #fa7852;
   border: 2px solid #000001;
-  border-radius: 4px;
+  border-radius: $button-radius;
   z-index: 0;
   transition: $button-transition;
 }
@@ -64,6 +65,7 @@ $button-transition: all 0.12s ease-in-out;
   position: relative;
   top: -2px;
   transition: $button-transition;
+  display: block;
 }
 
 .button:active.button::after,.button:active .button__text,
@@ -140,4 +142,22 @@ $button-transition: all 0.12s ease-in-out;
 .button.button--secondary:active.button::after,
 .button.button--secondary.selected.button::after {
   background-color: #0051fc;
+}
+
+
+.button-group {
+  display: flex;
+  align-items: stretch;
+  .button {
+    width: 100%;
+  }
+  .button, .button::after {
+    border-radius: 0;
+  }
+  .button:first-child, .button:first-child::after {
+    border-radius: $button-radius 0 0 $button-radius;
+  }
+  .button:last-child, .button:last-child::after {
+    border-radius: 0 $button-radius $button-radius 0;
+  }
 }
