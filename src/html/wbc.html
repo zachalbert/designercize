@@ -40,19 +40,38 @@
         </div>
         <button class="button button--small button--pink width-full mt-1" id="reload-button" onclick="buttonDown()"><span class="button__text">Reload Challenge</span></button>
       </div>
-      <div class="col-6 text-center">
+      <div class="col-4 text-center">
+
         <div class="input-stepper">
-          <button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">--</span></button>
-          <button data-input-stepper-decrease class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">-</span></button>
+          <div class="input-stepper__increment--decrease">
+            <button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">--</span></button>
+            <button data-input-stepper-decrease class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">-</span></button>
+          </div>
+          <div class="input-stepper__display" id="timer">
+            <span class="hours">00</span>:
+            <input type="text" id="timer-selection--minutes" class="minutes d-inline-flex" min="1" max="60" value="15" size="2">
+            :<span class="seconds">00</span>
+          </div>
+          <div class="input-stepper__increment--increase">
+            <button data-input-stepper-increase class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">+</span></button>
+            <button data-input-stepper-increase="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">++</span></button>
+          </div>
+        </div>
+
+        <!-- <div class="input-stepper">
+          <button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">--</span></button>
+          <button data-input-stepper-decrease class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">-</span></button>
           <div class="input-container">
             <input type="text" id="timer-selection" class="d-inline-flex" min="1" max="60" value="15" size="5">
             <h2 class="countdown__timer mr-auto" id="timer">
               <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
             </h2>
           </div>
-          <button data-input-stepper-increase class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">+</span></button>
-          <button data-input-stepper-increase="5" class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">++</span></button>
-        </div>
+          <button data-input-stepper-increase class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">+</span></button>
+          <button data-input-stepper-increase="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">++</span></button>
+        </div> -->
+
+
       </div>
 
       <div class="col-3 text-center d-flex align-self-stretch">

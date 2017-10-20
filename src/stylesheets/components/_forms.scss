@@ -15,25 +15,24 @@ input[type="checkbox"] {
   position: relative;
 }
 
-input[type="text"] {
-  border: 0 solid #000001;
-  color: #4CF190;
-  box-shadow: inset 0 8px 0 #000001;
-  background: #003D56;
-  border-radius: 4px;
-  text-align: center;
-  font-size: 30px;
-  padding: 24px 30px;
-  z-index: 1;
-}
-
 .input-stepper {
   font-size: 0; // get rid of the space between stepper controls
 
-  .button,
-  input {
+  .button {
     display: inline-block;
   }
+
+  &__display {
+   border: 0 solid #000001;
+   color: #4CF190;
+   box-shadow: inset 0 8px 0 #000001;
+   background: #003D56;
+   border-radius: 4px;
+   text-align: center;
+   font-size: 30px;
+   padding: 24px 30px;
+   z-index: 1;
+ }
 }
 
 .output {

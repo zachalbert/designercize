@@ -102,44 +102,48 @@ function rollNewPrompt(difficulty) {
 
 // Start the challenge timer
 function startChallengeTimer() {
-  // Set the global state to on
+  // Set the global 'challengeRunning' variable state to on
   localStorage.setItem('challengeRunning', true);
 
-  // Get the selected time from the dropdown, turn it into a date object, start the clock
-  var challengeLengthMinutes = $('#timer-selection').val();
-  if (challengeLengthMinutes != "dev") {
-    var countdown = new Date(Date.parse(new Date()) + 1 * 1 * challengeLengthMinutes * 60 * 1000)
-  } else {
-    var countdown = new Date(Date.parse(new Date()) + 1 * 1 * 1 * 3 * 1000) // 3 second timer for dev purposes
-  }
-
+  // Get the selected time from the input
+  var challengeLengthMinutes = $('#timer-selection--minutes').val();
+  // Turn the time selected into a date object
+  var countdown = new Date(Date.parse(new Date()) + 1 * 1 * challengeLengthMinutes * 60 * 1000)
+  // Start the clock
   initializeClock('timer', countdown);
 
+  // Function to get remaining time
   function getTimeRemaining(endtime) {
     var t = Date.parse(endtime) - Date.parse(new Date());
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
     var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
 
-    return {'total': t, 'hours': hours, 'minutes': minutes, 'seconds': seconds};
+    return {
+      'total': t,
+      'hours': hours,
+      'minutes': minutes,
+      'seconds': seconds
+    };
   }
 
+  // Function to start the clock
   function initializeClock(id, endtime) {
-    // TODO: This is janky, but effectively clears all intervals running.
+    // TODO: This is janky, but effectively clears all intervals running when the clock is started
     for (var i = 1; i < 99999; i++) {
       window.clearInterval(i);
     }
 
     var clock = document.getElementById(id);
-    var hoursSpan = clock.querySelector('.hours');
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
+    var hoursEl = clock.querySelector('.hours');
+    var minutesEl = clock.querySelector('.minutes');
+    var secondsEl = clock.querySelector('.seconds');
 
     function updateClock() {
       var t = getTimeRemaining(endtime);
-      hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+      hoursEl.innerHTML = ('0' + t.hours).slice(-2);
+      minutesEl.value = ('0' + t.minutes).slice(-2);
+      secondsEl.innerHTML = ('0' + t.seconds).slice(-2);
 
       if (t.total <= 0) {
         clearInterval(timeInterval);
