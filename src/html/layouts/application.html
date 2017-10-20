@@ -20,6 +20,11 @@
 
     {% block javascript %}
     <script src="javascripts/app.js"></script>
+    <script>
+      $('#start-button').click(function(){
+        $('#prompt1, #prompt2').toggleClass('flipped')
+      });
+    </script>
     {% endblock %}
   </body>
 </html>

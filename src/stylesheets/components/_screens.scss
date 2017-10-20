@@ -121,9 +121,11 @@ $scan-opacity: .75;
     @include scan-crt($scan-crt);
   }
   img {
-    position: relative;
-    z-index: 2;
     max-width: 100%;
     animation: blurryScreen 3s linear infinite;
+  }
+  * {
+    position: relative;
+    z-index: 2;
   }
 }
