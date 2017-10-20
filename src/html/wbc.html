@@ -62,89 +62,97 @@
   </div>
 </div>
 <section class="panel panel--purple">
-  <div class="container text-center">
-    <div class="section--border-top panel panel--purple">
+  <div class="container-fluid text-center">
+    <div class="row justify-content-end">
+      <div class="col-8">
+        <div class="panel panel--purple">
+          <div class="row mb-2">
+            <div class="col-2 ml-auto text-right align-self-center label-text">Design</div>
+            <div class="col-6">
+              <div class="output cover" id="features">
+                <div class="output__text-container align-items-center d-flex">
+                  <div class="output__text">Any feature</div>
+                </div>
+              </div>
+            </div>
+            <div class="col-2 mr-auto text-left align-self-center">
+               <!-- <label for="features-hide"><input type="checkbox" name="features-hide" id="features-hide" data-hide-output="features"> Hide</label> -->
+               <div class="button button--small button--blue selectable" id="features-hide" data-hide-output="features" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+            </div>
+          </div>
+          <div class="row mb-2">
+            <div class="col-2 ml-auto text-right align-self-center label-text">for</div>
+            <div class="col-6">
+              <div class="output cover" id="useCases">
+                <div class="output__text-container align-items-center d-flex">
+                  <div class="output__text">Any use case</div>
+                </div>
+              </div>
+              </div>
+            <div class="col-2 mr-auto text-left align-self-center">
+               <!-- <label for="useCases-hide"><input type="checkbox" name="useCases-hide" id="useCases-hide" data-hide-output="useCases"> Hide</label> -->
+               <div class="button button--small button--blue selectable" id="useCases-hide" data-hide-output="useCases" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+            </div>
+          </div>
 
-      <div class="row mb-2">
-        <div class="col-2 ml-auto text-right align-self-center label-text">Design</div>
-        <div class="col-6">
-          <div class="output cover" id="features">
-            <div class="output__text-container align-items-center d-flex">
-              <div class="output__text">Any feature</div>
+          <div class="row mb-2">
+            <div class="col-2 ml-auto text-right align-self-center label-text">to help</div>
+            <div class="col-6">
+              <div class="output cover" id="audiences">
+                <div class="output__text-container align-items-center d-flex">
+                  <div class="output__text">Any audience</div>
+                </div>
+              </div>
+              </div>
+            <div class="col-2 mr-auto text-left align-self-center">
+               <!-- <label for="audiences-hide"><input type="checkbox" name="audiences-hide" id="audiences-hide" data-hide-output="audiences"> Hide</label> -->
+               <div class="button button--small button--blue selectable" id="audiences-hide" data-hide-output="audiences" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-2 ml-auto text-right align-self-center label-text">using</div>
+            <div class="col-6">
+              <div class="output cover" id="devices">
+                <div class="output__text-container align-items-center d-flex">
+                  <div class="output__text">Any device</div>
+                </div>
+              </div>
+              </div>
+            <div class="col-2 mr-auto text-left align-self-center">
+               <!-- <label for="devices-hide"><input type="checkbox" name="devices-hide" id="devices-hide" data-hide-output="devices"> Hide</label> -->
+               <div class="button button--small button--blue selectable" id="devices-hide" data-hide-output="devices" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+            </div>
+          </div>
+
+          <div class="row mb-2">
+            <div class="col-2 ml-auto text-right align-self-center label-text">who need</div>
+            <div class="col-6">
+              <div class="output cover" id="needs">
+                <div class="output__text-container align-items-center d-flex">
+                  <div class="output__text">Anything</div>
+                </div>
+              </div>
+              </div>
+            <div class="col-2 mr-auto text-left align-self-center">
+               <!-- <label for="needs-hide"><input type="checkbox" name="needs-hide" id="needs-hide" data-hide-output="needs"> Hide</label> -->
+               <div class="button button--small button--blue selectable" id="needs-hide" data-hide-output="needs" onclick="buttonDown()"><span class="button__text">Hide</span></div>
             </div>
           </div>
         </div>
-        <div class="col-2 mr-auto text-left align-self-center">
-           <!-- <label for="features-hide"><input type="checkbox" name="features-hide" id="features-hide" data-hide-output="features"> Hide</label> -->
-           <div class="button button--small button--blue selectable" id="features-hide" data-hide-output="features" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+      </div>
+      <div class="col-2">
+        <div class="panel panel--purple">
+          <div class="screen">
+            <img src="images/illo-workout-squat.gif">
+          </div>
         </div>
       </div>
-      <div class="row mb-2">
-        <div class="col-2 ml-auto text-right align-self-center label-text">for</div>
-        <div class="col-6">
-          <div class="output cover" id="useCases">
-            <div class="output__text-container align-items-center d-flex">
-              <div class="output__text">Any use case</div>
-            </div>
-          </div>
-          </div>
-        <div class="col-2 mr-auto text-left align-self-center">
-           <!-- <label for="useCases-hide"><input type="checkbox" name="useCases-hide" id="useCases-hide" data-hide-output="useCases"> Hide</label> -->
-           <div class="button button--small button--blue selectable" id="useCases-hide" data-hide-output="useCases" onclick="buttonDown()"><span class="button__text">Hide</span></div>
-        </div>
-      </div>
-
-      <div class="row mb-2">
-        <div class="col-2 ml-auto text-right align-self-center label-text">to help</div>
-        <div class="col-6">
-          <div class="output cover" id="audiences">
-            <div class="output__text-container align-items-center d-flex">
-              <div class="output__text">Any audience</div>
-            </div>
-          </div>
-          </div>
-        <div class="col-2 mr-auto text-left align-self-center">
-           <!-- <label for="audiences-hide"><input type="checkbox" name="audiences-hide" id="audiences-hide" data-hide-output="audiences"> Hide</label> -->
-           <div class="button button--small button--blue selectable" id="audiences-hide" data-hide-output="audiences" onclick="buttonDown()"><span class="button__text">Hide</span></div>
-        </div>
-      </div>
-
-      <div class="row mb-2">
-        <div class="col-2 ml-auto text-right align-self-center label-text">using</div>
-        <div class="col-6">
-          <div class="output cover" id="devices">
-            <div class="output__text-container align-items-center d-flex">
-              <div class="output__text">Any device</div>
-            </div>
-          </div>
-          </div>
-        <div class="col-2 mr-auto text-left align-self-center">
-           <!-- <label for="devices-hide"><input type="checkbox" name="devices-hide" id="devices-hide" data-hide-output="devices"> Hide</label> -->
-           <div class="button button--small button--blue selectable" id="devices-hide" data-hide-output="devices" onclick="buttonDown()"><span class="button__text">Hide</span></div>
-        </div>
-      </div>
-
-      <div class="row mb-2">
-        <div class="col-2 ml-auto text-right align-self-center label-text">who need</div>
-        <div class="col-6">
-          <div class="output cover" id="needs">
-            <div class="output__text-container align-items-center d-flex">
-              <div class="output__text">Anything</div>
-            </div>
-          </div>
-          </div>
-        <div class="col-2 mr-auto text-left align-self-center">
-           <!-- <label for="needs-hide"><input type="checkbox" name="needs-hide" id="needs-hide" data-hide-output="needs"> Hide</label> -->
-           <div class="button button--small button--blue selectable" id="needs-hide" data-hide-output="needs" onclick="buttonDown()"><span class="button__text">Hide</span></div>
-        </div>
-      </div>
-
     </div>
-
   </div>
 </section>
-<section class="panel panel--blue">
+<footer class="panel panel--blue">
 
-</section>
+</footer>
 
 {% endblock %}
