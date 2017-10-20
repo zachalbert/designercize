@@ -190,6 +190,7 @@ $button-radius: 4px;
 .button-group {
   display: flex;
   align-items: stretch;
+  flex-grow: 1;
   .button {
     flex-grow: 1;
   }
@@ -202,4 +203,8 @@ $button-radius: 4px;
   .button:last-child, .button:last-child::after {
     border-radius: 0 $button-radius $button-radius 0;
   }
+}
+
+.button.radius, .button.radius:after {
+  border-radius: $button-radius;
 }
