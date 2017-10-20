@@ -57,6 +57,21 @@ $scan-opacity: .75;
   }
 }
 
+@keyframes blurryScreen {
+  0% {
+    filter: blur(0px);
+  }
+  25% {
+    filter: blur(1px);
+  }
+  75% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(0px);
+  }
+}
+
 .screen {
   color: #4CF190;
   padding-top: 4px;
@@ -109,5 +124,6 @@ $scan-opacity: .75;
     position: relative;
     z-index: 2;
     max-width: 100%;
+    animation: blurryScreen 3s linear infinite;
   }
 }

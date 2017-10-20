@@ -136,6 +136,13 @@ label {
     border-radius: 4px;
     padding: 1rem;
   }
+  .panel.panel--raised {
+    &:before {
+      border-radius: 0 0 4px 4px;
+      left: -2px;
+      right: -2px;
+    }
+  }
   + .panel {
     margin-top: -2px;
   }
@@ -152,6 +159,7 @@ label {
   }
   &--raised {
     margin-bottom: 6px;
+    z-index:2;
     &:after {
       content: '';
       position: absolute;
@@ -168,9 +176,9 @@ label {
     &:before {
       content: '';
       position: absolute;
-      bottom: -16px;
-      left: 0;
-      right: 0;
+      bottom: -18px;
+      left: 0px;
+      right: 0px;
       height: 8px;
       background: #441DBF;
       z-index: 2;
