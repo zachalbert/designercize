@@ -44,12 +44,18 @@ $(document).ready(function() {
     localStorage.setItem('difficulty', $(this).data('difficulty'));
   });
 
+  // For any buttons that are toggleable
   $('.selectable').click( function() {
     $(this).toggleClass('selected');
   });
 
-  // Start button is clicked. Do stuff to start the whole thing.
+  // When the start button is clicked, start the timer
   $('#start-button').click(function() {
+    startChallengeTimer();
+  });
+
+  // When the reload button is clicked, load a new prompt
+  $('#reload-button').click(function() {
     // Which difficulty level is selected?
     var difficulty = localStorage.getItem('difficulty');
 
@@ -57,7 +63,7 @@ $(document).ready(function() {
     rollNewPrompt(difficulty);
   });
 
-  // Literally hide inputs when hide is checked
+  // Hide inputs when hide is checked
   $('[data-hide-output]').click( function() {
     var target = $('#' + $(this).data('hide-output'));
     var parent = target.closest('.row');
@@ -88,13 +94,16 @@ function injectPrompt( index, category, prompt ) {
 
 // Roll a new prompt
 function rollNewPrompt(difficulty) {
-  // Set the global state to on
-  localStorage.setItem('challengeRunning', true);
-
   // Iterate through the category string array
   for( var i = 0; i < categories.length; i++ ) {
     injectPrompt(i, categories[i], getRandomPromptByDifficulty(categories[i], difficulty));
   }
+}
+
+// Start the challenge timer
+function startChallengeTimer() {
+  // Set the global state to on
+  localStorage.setItem('challengeRunning', true);
 
   // Get the selected time from the dropdown, turn it into a date object, start the clock
   var challengeLengthMinutes = $('#timer-selection').val();
@@ -134,6 +143,7 @@ function rollNewPrompt(difficulty) {
 
       if (t.total <= 0) {
         clearInterval(timeInterval);
+        localStorage.setItem('challengeRunning', false);
         $('.timesup').removeClass('hide');
       }
     }
