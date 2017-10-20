@@ -21,36 +21,39 @@
 <section class="section section--blue section--condensed">
   <div class="container-fluid">
     <div class="row align-items-center justify-content-center">
-      <div class="col-4 text-center">
+      <div class="col-3 text-center">
         <div class="button-group">
-          <div class="button button--small button--secondary js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
+          <div class="button button--small button--blue shrink" id="easy" data-difficulty="easy" onclick="buttonDown()">
+            <img class="button__logo" src="images/logo-tent.svg">
+          </div>
+          <div class="button button--small button--blue js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
             <span class="button__text">Easy</span>
           </div>
-          <div class="button button--small button--secondary js-difficulty selected" id="medium" data-difficulty="medium" onclick="buttonDown()">
+          <div class="button button--small button--blue js-difficulty" id="medium" data-difficulty="medium" onclick="buttonDown()">
             <span class="button__text">Medium</span>
           </div>
-          <div class="button button--small button--secondary js-difficulty selected" id="hard" data-difficulty="hard" onclick="buttonDown()">
+          <div class="button button--small button--blue js-difficulty" id="hard" data-difficulty="hard" onclick="buttonDown()">
             <span class="button__text">Hard</span>
           </div>
         </div>
-        <button class="button button--small width-full " id="reload-button" onclick="buttonDown()"><span class="button__text">Reload</span></button>
+        <button class="button button--small button--pink width-full " id="reload-button" onclick="buttonDown()"><span class="button__text">Reload Challenge</span></button>
       </div>
-      <div class="col-4 text-center">
+      <div class="col-6 text-center">
         <div class="input-stepper">
-          <button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">--</span></button>
-          <button data-input-stepper-decrease class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">-</span></button>
+          <button data-input-stepper-decrease="5" class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">--</span></button>
+          <button data-input-stepper-decrease class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">-</span></button>
           <div class="input-container">
             <input type="text" id="timer-selection" class="d-inline-flex" min="1" max="60" value="15" size="5">
             <h2 class="countdown__timer mr-auto" id="timer">
               <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
             </h2>
           </div>
-          <button data-input-stepper-increase class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">+</span></button>
-          <button data-input-stepper-increase="5" class="d-inline-flex button button--small button--secondary" onclick="buttonDown()"><span class="button__text">++</span></button>
+          <button data-input-stepper-increase class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">+</span></button>
+          <button data-input-stepper-increase="5" class="d-inline-flex button button--small button--blue" onclick="buttonDown()"><span class="button__text">++</span></button>
         </div>
       </div>
-      <div class="col-4 text-center">
-        <button class="button" id="start-button" onclick="buttonDown()"><span class="button__text">Start</span></button>
+      <div class="col-3 text-center d-flex align-self-stretch">
+        <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text">Start</span></button>
       </div>
     </div>
   </div>
@@ -68,7 +71,7 @@
       </div>
       <div class="col-2 mr-auto text-left align-self-center">
          <!-- <label for="features-hide"><input type="checkbox" name="features-hide" id="features-hide" data-hide-output="features"> Hide</label> -->
-         <div class="button button--small button--secondary selectable" id="features-hide" data-hide-output="features" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+         <div class="button button--small button--blue selectable" id="features-hide" data-hide-output="features" onclick="buttonDown()"><span class="button__text">Hide</span></div>
       </div>
     </div>
     <div class="row mb-2">
@@ -82,7 +85,7 @@
         </div>
       <div class="col-2 mr-auto text-left align-self-center">
          <!-- <label for="useCases-hide"><input type="checkbox" name="useCases-hide" id="useCases-hide" data-hide-output="useCases"> Hide</label> -->
-         <div class="button button--small button--secondary selectable" id="useCases-hide" data-hide-output="useCases" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+         <div class="button button--small button--blue selectable" id="useCases-hide" data-hide-output="useCases" onclick="buttonDown()"><span class="button__text">Hide</span></div>
       </div>
     </div>
 
@@ -97,7 +100,7 @@
         </div>
       <div class="col-2 mr-auto text-left align-self-center">
          <!-- <label for="audiences-hide"><input type="checkbox" name="audiences-hide" id="audiences-hide" data-hide-output="audiences"> Hide</label> -->
-         <div class="button button--small button--secondary selectable" id="audiences-hide" data-hide-output="audiences" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+         <div class="button button--small button--blue selectable" id="audiences-hide" data-hide-output="audiences" onclick="buttonDown()"><span class="button__text">Hide</span></div>
       </div>
     </div>
 
@@ -112,7 +115,7 @@
         </div>
       <div class="col-2 mr-auto text-left align-self-center">
          <!-- <label for="devices-hide"><input type="checkbox" name="devices-hide" id="devices-hide" data-hide-output="devices"> Hide</label> -->
-         <div class="button button--small button--secondary selectable" id="devices-hide" data-hide-output="devices" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+         <div class="button button--small button--blue selectable" id="devices-hide" data-hide-output="devices" onclick="buttonDown()"><span class="button__text">Hide</span></div>
       </div>
     </div>
 
@@ -127,7 +130,7 @@
         </div>
       <div class="col-2 mr-auto text-left align-self-center">
          <!-- <label for="needs-hide"><input type="checkbox" name="needs-hide" id="needs-hide" data-hide-output="needs"> Hide</label> -->
-         <div class="button button--small button--secondary selectable" id="needs-hide" data-hide-output="needs" onclick="buttonDown()"><span class="button__text">Hide</span></div>
+         <div class="button button--small button--blue selectable" id="needs-hide" data-hide-output="needs" onclick="buttonDown()"><span class="button__text">Hide</span></div>
       </div>
     </div>
 

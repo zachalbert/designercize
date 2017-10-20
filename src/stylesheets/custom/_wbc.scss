@@ -117,3 +117,13 @@ label {
 .width-full {
   width: 100%;
 }
+
+.shrink {
+  flex-shrink: 1;
+  flex-grow: 0!important;
+}
+
+.grow {
+  flex-grow: 1;
+  flex-shrink: 0!important;
+}
