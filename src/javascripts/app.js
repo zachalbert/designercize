@@ -1,7 +1,6 @@
 import jquery from './vendor/jquery-3.2.1.min.js';
 window.$ = window.jQuery = jquery;
 import './vendor/popper.js';
-require('./vendor/jquery.input-stepper.js');
 import './modules';
 import './data/prompts.js';
 
@@ -25,13 +24,6 @@ $('a[href="#"]').click(function(e) {
 
 // All interactivity and click events
 $(document).ready(function() {
-
-
-
-
-  // initialize the jquery plugin input-stepper
-	$('.input-stepper').inputStepper();
-
 
 
 
