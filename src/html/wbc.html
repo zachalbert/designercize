@@ -26,19 +26,16 @@
           </div>
         </div>
 
-        <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
-          <img class="button__logo" src="images/logo-tent.svg">
-        </div> -->
-        <div class="button-group d-flex align-items-stretch mb-3">
+        <div class="button-group d-flex align-items-stretch mb-2">
           <div class="button button--small button--blue js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
             <span class="button__text d-none d-md-block">Easy</span>
             <span class="button__text d-md-none">E</span>
           </div>
-          <div class="button button--small button--blue js-difficulty" id="medium" data-difficulty="medium" onclick="buttonDown()">
+          <div class="button button--small button--blue js-difficulty selected" id="medium" data-difficulty="medium" onclick="buttonDown()">
             <span class="button__text d-none d-md-block">Medium</span>
             <span class="button__text d-md-none">M</span>
           </div>
-          <div class="button button--small button--blue js-difficulty" id="hard" data-difficulty="hard" onclick="buttonDown()">
+          <div class="button button--small button--blue js-difficulty selected" id="hard" data-difficulty="hard" onclick="buttonDown()">
             <span class="button__text d-none d-md-block">Hard</span>
             <span class="button__text d-md-none">H</span>
           </div>
@@ -59,7 +56,12 @@
             <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
           </div>
         </div>
+
         <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
+
+        <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
+          <img class="button__logo" src="images/logo-tent.svg">
+        </div> -->
       </div>
     </div>
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">

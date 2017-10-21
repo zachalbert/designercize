@@ -188,16 +188,15 @@ function startChallengeTimer() {
   var challengeLengthSeconds = $('#timer .seconds').text();
 
   // start the timer based on what's already on the clock
-  var challengeLength = Date.parse( new Date() )+( 1 * 1 * challengeLengthMinutes * 60 * 1000 )+( 1 * 1 * challengeLengthSeconds * 1000 );
-  var deadline = new Date( challengeLength );
+  var challengeLength = new Date( Date.parse( new Date() )+( 1 * 1 * challengeLengthMinutes * 60 * 1000 )+( 1 * 1 * challengeLengthSeconds * 1000 ) );
 
   // If the challenge is 60m or greater, subtract a second so that the minutes doesn't show '00' in the first second
   if( challengeLengthMinutes >= 60 ) {
-    deadline.setSeconds( deadline.getSeconds() - 1 );
+    challengeLength.setSeconds( challengeLength.getSeconds() - 1 );
   }
 
   // Call the start timer function
-  initializeClock('timer', deadline);
+  initializeClock('timer', challengeLength);
 
   // Get the time remaining
   function getTimeRemaining(endtime) {
@@ -225,7 +224,7 @@ function startChallengeTimer() {
 
     function updateClock() {
       var t = getTimeRemaining(endtime);
-      minutesEl.value = ('0' + t.minutes).slice(-2);
+      minutesEl.innerHTML = ('0' + t.minutes).slice(-2);
       secondsEl.innerHTML = ('0' + t.seconds).slice(-2);
 
       if (t.total <= 0) {

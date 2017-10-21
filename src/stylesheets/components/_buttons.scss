@@ -206,11 +206,39 @@ $button-radius: 4px;
   .button, .button::after {
     border-radius: 0;
   }
-  .button:first-child, .button:first-child::after {
-    border-radius: $button-radius 0 0 $button-radius;
+
+  .timer__button-container {
+    &:first-child {
+      .button,
+      .button:after {
+        border-radius: $button-radius $button-radius 0 0;
+      }
+    }
+
+    &:last-child {
+      .button,
+      .button:after {
+        border-radius: 0 0 $button-radius $button-radius;
+      }
+    }
   }
-  .button:last-child, .button:last-child::after {
-    border-radius: 0 $button-radius $button-radius 0;
+
+  @media (min-width: 768px) {
+    .timer__button-container {
+      &:first-child {
+        .button,
+        .button:after {
+          border-radius: $button-radius 0 0 $button-radius;
+        }
+      }
+
+      &:last-child {
+        .button,
+        .button:after {
+          border-radius: 0 $button-radius $button-radius 0;
+        }
+      }
+    }
   }
 }
 

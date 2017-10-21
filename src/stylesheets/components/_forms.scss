@@ -114,6 +114,10 @@ input[type="checkbox"] {
     text-align: center;
     padding: .5rem .25rem .25rem;
     font-size: 1.5rem;
+
+    &.screen {
+      border-radius: 0;
+    }
   }
 
   &__button {
