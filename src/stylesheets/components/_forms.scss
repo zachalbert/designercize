@@ -94,8 +94,8 @@ input[type="checkbox"] {
     text-align: center;
     padding: .5rem .25rem .25rem;
     font-size: 1.5rem;
-
-    &.screen {
+    z-index: 2;
+    &.screen, &.screen::before, &.screen::after {
       border-radius: 0;
     }
   }
@@ -103,5 +103,16 @@ input[type="checkbox"] {
   &__button {
     padding-left: 0.5em;
     padding-right: 0.5em;
+  }
+}
+
+.timer {
+  .timer__button-container:first-child .button, .timer__button-container:first-child .button::after {
+    border-radius: $button-radius 0 0 $button-radius;
+    border-right: 0;
+  }
+  .timer__button-container:last-child .button, .timer__button-container:last-child .button::after {
+    border-radius: 0 $button-radius $button-radius  0;
+    border-left: 0;
   }
 }

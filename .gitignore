@@ -5,6 +5,7 @@
 public
 Desktop.ini
 node_modules
+design
 **/generated/_icons.sass
 npm-debug.log
 docs
