@@ -20,6 +20,15 @@ $button-radius: 4px;
   transition: $button-transition;
   box-shadow: 0 6px #441dbf;
   outline: none!important;
+
+  &--disabled {
+    background: darken(#1578f8, 15%) !important;
+    pointer-events: none;
+
+    &:after {
+      background: darken(#1578f8, 15%) !important;
+    }
+  }
 }
 
 .button__logo {

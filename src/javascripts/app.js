@@ -87,6 +87,12 @@ $(document).ready(function() {
     // Do the mathing.
     var newMinutes = currentMinutes + step;
 
+    if( newMinutes <= minMinutes || newMinutes >= maxMinutes ) {
+      $(this).attr('disabled', true).addClass('button--disabled');
+    } else {
+      $('.timer__button').attr('disabled', false).removeClass('button--disabled');
+    }
+
     // If the new number is between the min + max, put it in a variable
     var newMinutesText;
     if( newMinutes >= minMinutes && newMinutes <= maxMinutes ) {
@@ -192,9 +198,9 @@ function startChallengeTimer() {
   var challengeLength = Date.parse( new Date() )+( 1 * 1 * challengeLengthMinutes * 60 * 1000 )+( 1 * 1 * challengeLengthSeconds * 1000 );
   var deadline = new Date( challengeLength );
 
+  // If the challenge is 60m or greater, subtract a second so that the minutes doesn't show '00' in the first second
   if( challengeLengthMinutes >= 60 ) {
     deadline.setSeconds( deadline.getSeconds() - 1 );
-    console.log(deadline);
   }
 
   // Call the start timer function
