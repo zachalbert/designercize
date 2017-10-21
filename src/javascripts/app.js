@@ -188,7 +188,7 @@ function rollNewPrompt(difficulty) {
 
 // Start the challenge timer
 function startChallengeTimer() {
-  // Set the global state to on
+  // Set the global 'challengeRunning' variable state to on
   localStorage.setItem('challengeRunning', true);
 
   // Get the selected time, turn it into a date object
@@ -213,24 +213,28 @@ function startChallengeTimer() {
     var seconds = Math.floor((t / 1000) % 60);
     var minutes = Math.floor((t / 1000 / 60) % 60);
 
-    return {'total': t, 'minutes': minutes, 'seconds': seconds};
+    return {
+      'total': t,
+      'minutes': minutes,
+      'seconds': seconds
+    };
   }
 
-  // Function to start the timer
+  // Function to start the clock
   function initializeClock(id, endtime) {
-    // TODO: This is janky, but effectively clears all intervals running. Maybe come up with something better?
+    // TODO: This is janky, but effectively clears all intervals running when the clock is started
     for (var i = 1; i < 99999; i++) {
       window.clearInterval(i);
     }
 
     var clock = document.getElementById(id);
-    var minutesSpan = clock.querySelector('.minutes');
-    var secondsSpan = clock.querySelector('.seconds');
+    var minutesEl = clock.querySelector('.minutes');
+    var secondsEl = clock.querySelector('.seconds');
 
     function updateClock() {
       var t = getTimeRemaining(endtime);
-      minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+      minutesEl.value = ('0' + t.minutes).slice(-2);
+      secondsEl.innerHTML = ('0' + t.seconds).slice(-2);
 
       if (t.total <= 0) {
         clearInterval(timeInterval);
