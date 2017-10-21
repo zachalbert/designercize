@@ -116,6 +116,7 @@ $(document).ready(function() {
   // When the start button is clicked, start the timer
   $('#start-button').click(function() {
     startChallengeTimer();
+    $('.timer__button').attr('disabled', true).addClass('button--disabled');
   });
 
 
