@@ -75,7 +75,12 @@
 
         <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
 
-        <button class="button button--small button--blue grow" id="how-to-play" onclick="buttonDown()"><span class="button__text"><i class="icon ion-help d-md-none"></i><span class="d-none d-md-inline">How to play</span></span></button>
+        <div class="button-group d-flex align-items-stretch">
+          <button class="button button--small button--blue selectable" id="pause-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span></button>
+          <button class="button button--small button--blue" id="stop-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span></button>
+        </div>
+
+        <button class="button button--small button--blue grow selectable" id="how-to-play" onclick="buttonDown()"><span class="button__text"><i class="icon ion-help-circled d-md-none"></i><span class="d-none d-md-inline">How to play</span></span></button>
 
         <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
           <img class="button__logo" src="images/logo-tent.svg">
