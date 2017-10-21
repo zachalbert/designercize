@@ -1,7 +1,7 @@
 import jquery from './vendor/jquery-3.2.1.min.js';
 window.$ = window.jQuery = jquery;
 import './vendor/popper.js';
-import Typed from './vendor/typed.min.js';
+import Typed from './vendor/typed.js';
 import './modules';
 import './data/prompts.js';
 
@@ -164,11 +164,31 @@ function getRandomPromptByDifficulty(category, difficulty) {
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
   var container = $('#'+category+'.output__text');
-  container.text( prompt );
-
-  // var typed = new Typed('.output', {
-  //   strings: ["First sentence.", "Second sentence."],
+  // // container.text( prompt );
+  //
+  // $('#'+category+'.output__text').typed({
+  //   strings: ["lorem ipsum dolor sit amet."],
   //   typeSpeed: 30
+  // });
+
+  var typed = new Typed('#'+category+'.output__text', {
+    strings: [prompt],
+    typeSpeed: 50
+  });
+
+  // $(function(){
+  //   var options = {
+  //     strings: [
+  //       "Hello",
+  //       "My Name Is Aditya Aundhekar",
+  //       "I'm a Computer Engineer..",
+  //       "blah",
+  //       "blooh"
+  //     ],
+  //     typeSpeed: 30
+  //   }
+  //
+  //   var typed = new Typed("$(#features .output__text)", options);
   // });
 }
 
