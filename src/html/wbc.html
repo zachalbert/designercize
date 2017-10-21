@@ -22,7 +22,24 @@
       <div class="container-fluid d-flex flex-column justify-content-center">
         <div class="panel panel--blue panel--raised mb-4">
           <div class="screen">
-            <img src="images/illo-workout-head.gif">
+
+            <!-- <img src="images/illo-workout-head.gif"> -->
+            <div class="row no-gutters align-items-center panel-heading">
+              <div class="col-4 text-right">
+                <img src="images/illo-workout-squat-still.gif" width="96" height="96" class="img-fluid illo illo--still">
+                <img src="images/illo-workout-squat.gif" width="96" height="96" class="img-fluid illo illo--animated" style="display: none;">
+              </div>
+              <div class="col-8 text-left">
+                <h5 class="panel-heading__title">Designercize</h5>
+              </div>
+            </div>
+
+            <div class="px-3">
+              <p>
+                Design practice for your lunch break. Get your brain fit.
+              </p>
+            </div>
+
           </div>
         </div>
 
@@ -58,6 +75,8 @@
         </div>
 
         <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
+
+        <button class="button button--small button--blue grow" id="how-to-play" onclick="buttonDown()"><span class="button__text"><i class="icon ion-help d-md-none"></i><span class="d-none d-md-inline">How to play</span></span></button>
 
         <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
           <img class="button__logo" src="images/logo-tent.svg">

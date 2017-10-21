@@ -218,6 +218,9 @@ function startChallengeTimer() {
       window.clearInterval(i);
     }
 
+    $('.illo--animated').show();
+    $('.illo--still').hide();
+
     var clock = document.getElementById(id);
     var minutesEl = clock.querySelector('.minutes');
     var secondsEl = clock.querySelector('.seconds');
@@ -231,6 +234,8 @@ function startChallengeTimer() {
         clearInterval(timeInterval);
         localStorage.setItem('challengeRunning', false);
         $('.timesup').removeClass('hide');
+        $('.illo--animated').hide();
+        $('.illo--still').show();
       }
     }
 
