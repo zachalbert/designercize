@@ -1,6 +1,7 @@
 import jquery from './vendor/jquery-3.2.1.min.js';
 window.$ = window.jQuery = jquery;
 import './vendor/popper.js';
+import Typed from './vendor/typed.min.js';
 import './modules';
 import './data/prompts.js';
 
@@ -31,8 +32,10 @@ $(document).ready(function() {
   var difficulty = localStorage.getItem('difficulty');
   if (difficulty) {
     $('.js-difficulty').not('#' + difficulty).removeClass('selected');
+    rollNewPrompt(difficulty);
   } else {
     $('[data-difficulty="medium"], [data-difficulty="hard"]').removeClass('selected');
+    rollNewPrompt('easy');
   }
 
 
@@ -162,6 +165,11 @@ function getRandomPromptByDifficulty(category, difficulty) {
 function injectPrompt( index, category, prompt ) {
   var container = $('#'+category+'.output__text');
   container.text( prompt );
+
+  // var typed = new Typed('.output', {
+  //   strings: ["First sentence.", "Second sentence."],
+  //   typeSpeed: 30
+  // });
 }
 
 
