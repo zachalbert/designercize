@@ -25,40 +25,28 @@
             <img src="images/illo-workout-head.gif">
           </div>
         </div>
-        <div class="d-flex align-items-stretch">
-          <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
-            <img class="button__logo" src="images/logo-tent.svg">
+
+        <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
+          <img class="button__logo" src="images/logo-tent.svg">
+        </div> -->
+        <div class="button-group d-flex align-items-stretch mb-3">
+          <div class="button button--small button--blue js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
+            <span class="button__text d-none d-lg-block">Easy</span>
+            <span class="button__text d-lg-none">E</span>
           </div>
-          <div class="button-group">
-            <div class="button button--small button--blue js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
-              <span class="button__text">Easy</span>
-            </div>
-            <div class="button button--small button--blue js-difficulty" id="medium" data-difficulty="medium" onclick="buttonDown()">
-              <span class="button__text">Medium</span>
-            </div>
-            <div class="button button--small button--blue js-difficulty" id="hard" data-difficulty="hard" onclick="buttonDown()">
-              <span class="button__text">Hard</span>
-            </div>
+          <div class="button button--small button--blue js-difficulty" id="medium" data-difficulty="medium" onclick="buttonDown()">
+            <span class="button__text d-none d-lg-block">Medium</span>
+            <span class="button__text d-lg-none">M</span>
+          </div>
+          <div class="button button--small button--blue js-difficulty" id="hard" data-difficulty="hard" onclick="buttonDown()">
+            <span class="button__text d-none d-lg-block">Hard</span>
+            <span class="button__text d-lg-none">H</span>
           </div>
         </div>
-        <button class="button button--small button--pink width-full mt-1 mb-3" id="reload-button" onclick="buttonDown()"><span class="button__text">Reload Challenge</span></button>
-        <!-- <div class="input-stepper text-center mb-3 d-flex align-items-stretch">
-          <div class="d-flex flex-column align-items-stretch">
-            <button data-input-stepper-decrease="5" class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">--</span></button>
-            <button data-input-stepper-decrease class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">-</span></button>
-          </div>
-          <div class="screen ml-1 mr-1 align-items-stretch">
-            <input type="text" id="timer-selection" class="d-inline-flex" min="1" max="60" value="15" size="5">
-            <h2 class="countdown__timer mr-auto" id="timer">
-              <span class="hours">00</span>:<span class="minutes">00</span>:<span class="seconds">00</span>
-            </h2>
-          </div>
-          <div class="d-flex flex-column align-items-stretch">
-            <button data-input-stepper-increase="5" class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">--</span></button>
-            <button data-input-stepper-increase class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">-</span></button>
-          </div>
-        </div> -->
-        <div class="timer button-group" id="timer">
+
+        <button class="button button--small button--pink width-full mt-1 mb-3" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload </span><i class="icon ion-refresh"></i></span></button>
+
+        <div class="timer button-group mb-3" id="timer">
           <div class="timer__button-container d-flex align-items-stretch">
             <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
           </div>
@@ -71,7 +59,7 @@
             <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
           </div>
         </div>
-        <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text">Start</span></button>
+        <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start </span><i class="icon ion-play"></i></span></button>
       </div>
     </div>
     <div class="col-9 panel panel--purple d-flex align-items-stretch p-3">
