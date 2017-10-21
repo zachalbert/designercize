@@ -163,33 +163,18 @@ function getRandomPromptByDifficulty(category, difficulty) {
 
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
-  var container = $('#'+category+'.output__text');
-  // // container.text( prompt );
-  //
-  // $('#'+category+'.output__text').typed({
-  //   strings: ["lorem ipsum dolor sit amet."],
-  //   typeSpeed: 30
-  // });
+  var selector = '#'+category+'.output__text';
+  var delay = 300 * index;
 
-  var typed = new Typed('#'+category+'.output__text', {
-    strings: [prompt],
-    typeSpeed: 50
+  // Clear it first
+  $(selector).text('');
+
+  var typed = new Typed(selector, {
+    strings: [ prompt ],
+    typeSpeed: 40,
+    startDelay: delay,
+    showCursor: false
   });
-
-  // $(function(){
-  //   var options = {
-  //     strings: [
-  //       "Hello",
-  //       "My Name Is Aditya Aundhekar",
-  //       "I'm a Computer Engineer..",
-  //       "blah",
-  //       "blooh"
-  //     ],
-  //     typeSpeed: 30
-  //   }
-  //
-  //   var typed = new Typed("$(#features .output__text)", options);
-  // });
 }
 
 

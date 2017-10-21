@@ -88,36 +88,48 @@
       </div>
     </div>
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">
-      <div class="screen d-flex align-items-center justify-content-center flex-column">
+      <div class="screen d-flex align-items-center">
 
-        <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4">
-        <div class="row p-3 output">
+        <div class="challenge-countdown d-none">
+          <h1 class="big">3</h1>
+        </div>
 
-          <div class="col-5 text-right">Feature: </div>
-          <div class="col-7 mb-3">
-            <div id="features" class="output__text d-inline-flex"></div>
+        <div class="challenge-running d-flex align-items-center justify-content-center flex-column">
+          <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4">
+          <div class="row p-3 output">
+
+            <div class="col-5 text-right">Feature: </div>
+            <div class="col-7 mb-3">
+              <div id="features" class="output__text d-inline-flex"></div>
+            </div>
+
+            <div class="col-5 text-right">Use case: </div>
+            <div class="col-7 mb-3">
+              <div id="useCases" class="output__text d-inline-flex"></div>
+            </div>
+
+            <div class="col-5 text-right">Audience: </div>
+            <div class="col-7 mb-3">
+              <div id="audiences" class="output__text d-inline-flex"></div>
+            </div>
+
+            <div class="col-5 text-right">Device: </div>
+            <div class="col-7 mb-3">
+              <div id="devices" class="output__text d-inline-flex"></div>
+            </div>
+
+            <div class="col-5 text-right">Need: </div>
+            <div class="col-7 mb-3">
+              <div id="needs" class="output__text d-inline-flex"></div>
+            </div>
+
           </div>
-
-          <div class="col-5 text-right">Use case: </div>
-          <div class="col-7 mb-3">
-            <div id="useCases" class="output__text d-inline-flex"></div>
-          </div>
-
-          <div class="col-5 text-right">Audience: </div>
-          <div class="col-7 mb-3">
-            <div id="audiences" class="output__text d-inline-flex"></div>
-          </div>
-
-          <div class="col-5 text-right">Device: </div>
-          <div class="col-7 mb-3">
-            <div id="devices" class="output__text d-inline-flex"></div>
-          </div>
-
-          <div class="col-5 text-right">Need: </div>
-          <div class="col-7 mb-3">
-            <div id="needs" class="output__text d-inline-flex"></div>
-          </div>
-
+        </div>
+        <div class="challenge-paused d-none">
+          <h1>Paused</h1>
+        </div>
+        <div class="challenge-out-of-time d-none">
+          <h1>Out of time!</h1>
         </div>
 
       </div>
