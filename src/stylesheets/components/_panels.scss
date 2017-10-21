@@ -1,11 +1,13 @@
 .panel {
   border: 2px solid #000001;
+  border-left: 0;
   padding: 1rem 0;
   position: relative;
   z-index: 2;
   .panel {
     border-radius: 4px;
     padding: 1rem;
+    border: 2px solid #000001;
   }
   .panel.panel--raised {
     &:before {
@@ -13,9 +15,6 @@
       left: -2px;
       right: -2px;
     }
-  }
-  + .panel {
-    margin-top: -2px;
   }
   &--blue {
     background: #0051fc;
