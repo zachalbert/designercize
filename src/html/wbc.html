@@ -42,7 +42,7 @@
           </div>
         </div>
         <button class="button button--small button--pink width-full mt-1 mb-3" id="reload-button" onclick="buttonDown()"><span class="button__text">Reload Challenge</span></button>
-        <div class="input-stepper text-center mb-3 d-flex align-items-stretch">
+        <!-- <div class="input-stepper text-center mb-3 d-flex align-items-stretch">
           <div class="d-flex flex-column align-items-stretch">
             <button data-input-stepper-decrease="5" class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">--</span></button>
             <button data-input-stepper-decrease class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">-</span></button>
@@ -56,6 +56,19 @@
           <div class="d-flex flex-column align-items-stretch">
             <button data-input-stepper-increase="5" class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">--</span></button>
             <button data-input-stepper-increase class="button button--small button--blue" onclick="buttonDown()"><span class="button__text">-</span></button>
+          </div>
+        </div> -->
+        <div class="timer button-group" id="timer">
+          <div class="timer__button-container d-flex align-items-stretch">
+            <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
+          </div>
+          <div class="timer__display screen">
+            <span class="minutes">15</span>
+            <span class="colon">:</span>
+            <span class="seconds">00</span>
+          </div>
+          <div class="timer__button-container d-flex align-items-stretch">
+            <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
           </div>
         </div>
         <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text">Start</span></button>

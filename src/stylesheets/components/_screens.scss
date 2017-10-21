@@ -7,7 +7,7 @@ $scan-width: 2px;
 $scan-crt: true;
 
 // frames-per-second (should be > 1), only applies if $scan-crt: true;
-$scan-fps: 60;
+$scan-fps: 30;
 
 // scanline-color (rgba)
 $scan-color: rgba(#000, .3);
@@ -74,13 +74,12 @@ $scan-opacity: .75;
 
 .screen {
   color: #4CF190;
-  padding-top: 4px;
   border: 2px solid #000001;
   display: block;
   border-radius: 5px;
   background: #0000B9;
   position: relative;
-  width: 100%;
+  // width: 100%;
   flex-grow: 1;
   &:before {
     content: '';

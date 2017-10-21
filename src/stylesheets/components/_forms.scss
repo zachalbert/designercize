@@ -108,3 +108,11 @@ input[type="text"] {
     opacity: 0.25;
   }
 }
+
+.timer {
+  &__display {
+    text-align: center;
+    padding: .5rem .25rem .25rem;
+    font-size: 1.5rem;
+  }
+}
