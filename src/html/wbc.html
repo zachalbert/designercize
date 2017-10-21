@@ -57,7 +57,7 @@
           </div>
         </div>
 
-        <button class="button button--small button--pink width-full mt-1 mb-3" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
+        <button class="screen__scene-change button button--small button--pink width-full mt-1 mb-3" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
 
         <div class="timer d-flex p mb-3 flex-column flex-md-row" id="timer">
           <div class="timer__button-container d-flex align-items-stretch">
@@ -73,14 +73,14 @@
           </div>
         </div>
 
-        <button class="button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
+        <button class="screen__scene-change button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
 
         <div class="button-group d-flex align-items-stretch">
-          <button class="button button--small button--blue selectable" id="pause-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span></button>
-          <button class="button button--small button--blue" id="stop-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span></button>
+          <button class="screen__scene-change button button--small button--blue selectable" id="pause-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span></button>
+          <button class="screen__scene-change button button--small button--blue" id="stop-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span></button>
         </div>
 
-        <button class="button button--small button--blue grow selectable" id="how-to-play" onclick="buttonDown()"><span class="button__text"><i class="icon ion-help-circled d-md-none"></i><span class="d-none d-md-inline">How to play</span></span></button>
+        <button class="screen__scene-change button button--small button--blue grow selectable" id="how-to-play" onclick="buttonDown()"><span class="button__text"><i class="icon ion-help-circled d-md-none"></i><span class="d-none d-md-inline">How to play</span></span></button>
 
         <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
           <img class="button__logo" src="images/logo-tent.svg">
@@ -90,46 +90,51 @@
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">
       <div class="screen d-flex align-items-center">
 
-        <div class="challenge-countdown d-none">
+        <div class="screen__scene challenge-countdown d-none">
           <h1 class="big">3</h1>
         </div>
 
-        <div class="challenge-running d-flex align-items-center justify-content-center flex-column">
-          <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4">
+        <div class="screen__scene challenge-running">
+          <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
           <div class="row p-3 output">
 
-            <div class="col-5 text-right">Feature: </div>
+            <div class="col-5 text-right">Design: </div>
             <div class="col-7 mb-3">
-              <div id="features" class="output__text d-inline-flex"></div>
+              <div id="features" class="output__text"></div>
             </div>
 
-            <div class="col-5 text-right">Use case: </div>
+            <div class="col-5 text-right">For: </div>
             <div class="col-7 mb-3">
-              <div id="useCases" class="output__text d-inline-flex"></div>
+              <div id="useCases" class="output__text"></div>
             </div>
 
-            <div class="col-5 text-right">Audience: </div>
+            <div class="col-5 text-right">To help: </div>
             <div class="col-7 mb-3">
-              <div id="audiences" class="output__text d-inline-flex"></div>
+              <div id="audiences" class="output__text"></div>
             </div>
 
-            <div class="col-5 text-right">Device: </div>
-            <div class="col-7 mb-3">
-              <div id="devices" class="output__text d-inline-flex"></div>
-            </div>
+            <div class="d-none">
+              <div class="col-5 text-right">Device: </div>
+              <div class="col-7 mb-3">
+                <div id="devices" class="output__text"></div>
+              </div>
 
-            <div class="col-5 text-right">Need: </div>
-            <div class="col-7 mb-3">
-              <div id="needs" class="output__text d-inline-flex"></div>
+              <div class="col-5 text-right">Need: </div>
+              <div class="col-7 mb-3">
+                <div id="needs" class="output__text"></div>
+              </div>
             </div>
 
           </div>
         </div>
-        <div class="challenge-paused d-none">
+        <div class="screen__scene challenge-paused d-none">
           <h1>Paused</h1>
         </div>
-        <div class="challenge-out-of-time d-none">
+        <div class="screen__scene challenge-out-of-time d-none">
           <h1>Out of time!</h1>
+        </div>
+        <div class="screen__scene challenge-rules d-none">
+          <h1>How to Play</h1>
         </div>
 
       </div>

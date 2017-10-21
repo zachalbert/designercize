@@ -18,14 +18,22 @@ var categories = [
   'needs'
 ];
 
-// Ignore default behavior for all href="#" links
-$('a[href="#"]').click(function(e) {
-  e.preventDefault();
-});
 
 // All interactivity and click events
 $(document).ready(function() {
 
+
+  $('.screen__scene-change').click( function() {
+    $('.screen__scene:not(.d-none)').each( function() {
+      $(this).css('display','none !important')
+    });
+  });
+
+
+  // Ignore default behavior for all href="#" links
+  $('a[href="#"]').click(function(e) {
+    e.preventDefault();
+  });
 
 
   // Toggle the right difficulty selector on page load from local storage
