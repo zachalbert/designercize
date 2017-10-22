@@ -22,6 +22,8 @@ var categories = [
 // All interactivity and click events
 $(document).ready(function() {
 
+  localStorage.setItem('paused', false);
+
 
   $('.screen__scene-change').click( function() {
     $('.screen__scene').each( function() {
@@ -123,6 +125,23 @@ $(document).ready(function() {
   $('#start-button').click(function() {
     startChallengeTimer();
     $('.timer__button').attr('disabled', true).addClass('button--disabled');
+  });
+
+  $('#how-to-play-button').click( function() {
+    if($(this).hasClass('selected')) {
+      console.log('selected');
+    }
+  });
+
+  $('#pause-button').click(function() {
+
+    // if( localStorage.getItem('paused') != true ) {
+    //   localStorage.setItem('paused', true );
+    //   console.log('yay')
+    // } else {
+    //   localStorage.setItem('paused', false );
+    // }
+    // console.log(localStorage.getItem('paused'))
   });
 
 
@@ -250,16 +269,18 @@ function startChallengeTimer() {
     var secondsEl = clock.querySelector('.seconds');
 
     function updateClock() {
-      var t = getTimeRemaining(endtime);
-      minutesEl.innerHTML = ('0' + t.minutes).slice(-2);
-      secondsEl.innerHTML = ('0' + t.seconds).slice(-2);
+      if( localStorage.getItem('paused') != true ) {
+        var t = getTimeRemaining(endtime);
+        minutesEl.innerHTML = ('0' + t.minutes).slice(-2);
+        secondsEl.innerHTML = ('0' + t.seconds).slice(-2);
 
-      if (t.total <= 0) {
-        clearInterval(timeInterval);
-        localStorage.setItem('challengeRunning', false);
-        $('.timesup').removeClass('hide');
-        $('.illo--animated').hide();
-        $('.illo--still').show();
+        if (t.total <= 0) {
+          clearInterval(timeInterval);
+          localStorage.setItem('challengeRunning', false);
+          $('.timesup').removeClass('hide');
+          $('.illo--animated').hide();
+          $('.illo--still').show();
+        }
       }
     }
 
