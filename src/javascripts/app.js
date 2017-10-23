@@ -35,8 +35,11 @@ $(document).ready(function() {
   });
 
 
-  // Toggle the right difficulty selector on page load from local storage
+  // Toggle the right difficulty selector on page load from local storage;
   let difficulty = localStorage.getItem('difficulty');
+  if (difficulty === "null") {
+    difficulty = "easy";
+  }
   if (difficulty) {
     $('.js-difficulty').not('#' + difficulty).removeClass('selected');
     rollNewPrompt(difficulty);
@@ -177,7 +180,7 @@ $(document).ready(function() {
 
 // A thing for selecting a random prompt from an array
 function getRandomPromptByDifficulty(category, difficulty) {
-  let prompt = prompts()[category][difficulty];
+  let prompt = prompts()[category][!difficulty ? "easy" : difficulty];
   let randomPrompt = prompt[Math.floor(Math.random() * prompt.length)];
   return randomPrompt;
 }
