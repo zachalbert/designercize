@@ -1,7 +1,7 @@
 import jquery from './vendor/jquery-3.2.1.min.js';
 window.$ = window.jQuery = jquery;
 import './vendor/popper.js';
-import Typed from './vendor/typed.min.js';
+import Typed from './vendor/typed.js';
 import './modules';
 import './data/prompts.js';
 
@@ -18,14 +18,22 @@ var categories = [
   'needs'
 ];
 
-// Ignore default behavior for all href="#" links
-$('a[href="#"]').click(function(e) {
-  e.preventDefault();
-});
 
 // All interactivity and click events
 $(document).ready(function() {
 
+
+  $('.screen__scene-change').click( function() {
+    $('.screen__scene:not(.d-none)').each( function() {
+      $(this).css('display','none !important')
+    });
+  });
+
+
+  // Ignore default behavior for all href="#" links
+  $('a[href="#"]').click(function(e) {
+    e.preventDefault();
+  });
 
 
   // Toggle the right difficulty selector on page load from local storage
@@ -163,13 +171,18 @@ function getRandomPromptByDifficulty(category, difficulty) {
 
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
-  var container = $('#'+category+'.output__text');
-  container.text( prompt );
+  var selector = '#'+category+'.output__text';
+  var delay = 300 * index;
 
-  // var typed = new Typed('.output', {
-  //   strings: ["First sentence.", "Second sentence."],
-  //   typeSpeed: 30
-  // });
+  // Clear it first
+  $(selector).text('');
+
+  var typed = new Typed(selector, {
+    strings: [ prompt ],
+    typeSpeed: 40,
+    startDelay: delay,
+    showCursor: false
+  });
 }
 
 

@@ -127,4 +127,14 @@ $scan-opacity: .75;
     position: relative;
     z-index: 2;
   }
+  &__scene {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    //
+    // .output * {
+    //   width: 100%;
+    // }
+  }
 }
