@@ -25,16 +25,6 @@ $(document).ready(function() {
   localStorage.setItem('paused', false);
 
 
-  $('.screen__scene-change').click( function() {
-    $('.screen__scene').each( function() {
-      $(this).css('display','none');
-    });
-
-    var id = $(this).attr('id'); //#how-to-play-button
-    $('[data-scene-trigger="'+id+'"]').show();
-  });
-
-
   // Ignore default behavior for all href="#" links
   $('a[href="#"]').click(function(e) {
     e.preventDefault();
