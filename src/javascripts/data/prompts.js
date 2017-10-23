@@ -1,4 +1,4 @@
-window.prompts = {
+export const prompts = {
   "features": {
     "easy": [
       "a user profile view",
@@ -165,4 +165,4 @@ window.prompts = {
     	"to commit crimes without being caught"
     ]
   }
-}
+};

@@ -3,14 +3,10 @@ window.$ = window.jQuery = jquery;
 import './vendor/popper.js';
 import Typed from './vendor/typed.js';
 import './modules';
-import './data/prompts.js';
-
-// Make prompts json accessible
-// TODO: also have separate files for growth + sales prompts, and a ui selector
-var prompts = window.prompts;
+import { prompts } from "./data/prompts";
 
 // Strings which we'll need for selecting elements and stuff
-var categories = [
+let categories = [
   'features',
   'useCases',
   'audiences',
@@ -29,7 +25,7 @@ $(document).ready(function() {
       $(this).css('display','none');
     });
 
-    var id = $(this).attr('id'); //#how-to-play-button
+    let id = $(this).attr('id'); //#how-to-play-button
     $('[data-scene-trigger="'+id+'"]').show();
   });
 
@@ -41,7 +37,7 @@ $(document).ready(function() {
 
 
   // Toggle the right difficulty selector on page load from local storage
-  var difficulty = localStorage.getItem('difficulty');
+  let difficulty = localStorage.getItem('difficulty');
   if (difficulty) {
     $('.js-difficulty').not('#' + difficulty).removeClass('selected');
     rollNewPrompt(difficulty);
@@ -73,11 +69,11 @@ $(document).ready(function() {
 
   // Increase / decrease the challenge length
   $('.timer__button').click( function() {
-    var stepAmount = 5,
+    let stepAmount = 5,
         minMinutes = 5,
         maxMinutes = 60,
         step;
-    var direction = $(this).data('stepper-direction');
+    let direction = $(this).data('stepper-direction');
 
     if( direction == "decrease") {
       step = -stepAmount;
@@ -86,13 +82,13 @@ $(document).ready(function() {
     }
 
     // Get the minutes element in the timer markup
-    var minutes = $('.timer .minutes');
+    const minutes = $('.timer .minutes');
 
     // Read the string from that element, and convert it to an int for mathing with.
-    var currentMinutes = parseInt( minutes.text(), 10);
+    const currentMinutes = parseInt( minutes.text(), 10);
 
     // Do the mathing.
-    var newMinutes = currentMinutes + step;
+    let newMinutes = currentMinutes + step;
 
     if( newMinutes <= minMinutes || newMinutes >= maxMinutes ) {
       $(this).attr('disabled', true).addClass('button--disabled');
@@ -101,7 +97,7 @@ $(document).ready(function() {
     }
 
     // If the new number is between the min + max, put it in a variable
-    var newMinutesText;
+    let newMinutesText;
     if( newMinutes >= minMinutes && newMinutes <= maxMinutes ) {
       newMinutesText = newMinutes.toString();
     } else {
@@ -156,32 +152,25 @@ $(document).ready(function() {
   // When the reload button is clicked, load a new prompt
   $('#reload-button').click(function() {
     // Which difficulty level is selected?
-    var difficulty = localStorage.getItem('difficulty');
+    let difficulty = localStorage.getItem('difficulty');
 
     // START THE THING!
     rollNewPrompt(difficulty);
   });
 
-
-
-
   // Hide inputs when hide is checked
   $('[data-hide-output]').click( function() {
-    var target = $('#' + $(this).data('hide-output'));
-    var parent = target.closest('.row');
+    let target = $('#' + $(this).data('hide-output'));
+    let parent = target.closest('.row');
 
     parent.toggleClass('closed');
   });
-
-
-
 
   // Close the "Time's up!" overlay
   $('.timesup .close').click(function(e) {
     e.preventDefault();
     $('.timesup').addClass('hide');
   });
-
 });
 
 
@@ -189,8 +178,8 @@ $(document).ready(function() {
 
 // A thing for selecting a random prompt from an array
 function getRandomPromptByDifficulty(category, difficulty) {
-  var prompt = prompts[category][difficulty];
-  var randomPrompt = prompt[Math.floor(Math.random() * prompt.length)];
+  let prompt = prompts[category][difficulty];
+  let randomPrompt = prompt[Math.floor(Math.random() * prompt.length)];
   return randomPrompt;
 }
 
@@ -199,13 +188,13 @@ function getRandomPromptByDifficulty(category, difficulty) {
 
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
-  var selector = '#'+category+'.output__text';
-  var delay = 300 * index;
+  let selector = '#'+category+'.output__text';
+  let delay = 300 * index;
 
   // Clear it first
   $(selector).text('');
 
-  var typed = new Typed(selector, {
+  let typed = new Typed(selector, {
     strings: [ prompt ],
     typeSpeed: 40,
     startDelay: delay,
@@ -213,13 +202,10 @@ function injectPrompt( index, category, prompt ) {
   });
 }
 
-
-
-
 // Roll a new prompt
 function rollNewPrompt(difficulty) {
   // Iterate through the category string array
-  for( var i = 0; i < categories.length; i++ ) {
+  for( let i = 0; i < categories.length; i++ ) {
     injectPrompt(i, categories[i], getRandomPromptByDifficulty(categories[i], difficulty));
   }
 }
@@ -246,11 +232,11 @@ function startChallengeTimer() {
   localStorage.setItem('challengeRunning', true);
 
   // Get the selected time, turn it into a date object
-  var challengeLengthMinutes = $('#timer .minutes').text();
-  var challengeLengthSeconds = $('#timer .seconds').text();
+  let challengeLengthMinutes = $('#timer .minutes').text();
+  let challengeLengthSeconds = $('#timer .seconds').text();
 
   // start the timer based on what's already on the clock
-  var challengeLength = new Date( Date.parse( new Date() )+( 1 * 1 * challengeLengthMinutes * 60 * 1000 )+( 1 * 1 * challengeLengthSeconds * 1000 ) );
+  let challengeLength = new Date( Date.parse( new Date() ) + ( 1 * 1 * challengeLengthMinutes * 60 * 1000 ) + ( 1 * 1 * challengeLengthSeconds * 1000 ) );
 
   // If the challenge is 60m or greater, subtract a second so that the minutes doesn't show '00' in the first second
   if( challengeLengthMinutes >= 60 ) {
@@ -262,34 +248,33 @@ function startChallengeTimer() {
 
   // Get the time remaining
   function getTimeRemaining(endtime) {
-    var t = Date.parse(endtime) - Date.parse(new Date());
-    var seconds = Math.floor((t / 1000) % 60);
-    var minutes = Math.floor((t / 1000 / 60) % 60);
-
+    let total = Date.parse(endtime) - Date.parse(new Date());
+    let seconds = Math.floor((total / 1000) % 60);
+    let minutes = Math.floor((total / 1000 / 60) % 60);
     return {
-      'total': t,
-      'minutes': minutes,
-      'seconds': seconds
+      total,
+      minutes,
+      seconds
     };
   }
 
   // Function to start the clock
   function initializeClock(id, endtime) {
     // TODO: This is janky, but effectively clears all intervals running when the clock is started
-    for (var i = 1; i < 99999; i++) {
+    for (let i = 1; i < 99999; i++) {
       window.clearInterval(i);
     }
 
     $('.illo--animated').show();
     $('.illo--still').hide();
 
-    var clock = document.getElementById(id);
-    var minutesEl = clock.querySelector('.minutes');
-    var secondsEl = clock.querySelector('.seconds');
+    let clock = document.getElementById(id);
+    let minutesEl = clock.querySelector('.minutes');
+    let secondsEl = clock.querySelector('.seconds');
 
     function updateClock() {
       if( localStorage.getItem('paused') != true ) {
-        var t = getTimeRemaining(endtime);
+        let t = getTimeRemaining(endtime);
         minutesEl.innerHTML = ('0' + t.minutes).slice(-2);
         secondsEl.innerHTML = ('0' + t.seconds).slice(-2);
 
@@ -304,6 +289,6 @@ function startChallengeTimer() {
     }
 
     updateClock();
-    var timeInterval = setInterval(updateClock, 1000);
+    let timeInterval = setInterval(updateClock, 1000);
   }
 }
