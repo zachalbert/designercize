@@ -18,10 +18,10 @@
     }
   </script>
   <div class="row no-gutters align-items-stretch" style="height: 100vh">
-    <div class="col-sm-4 panel panel--blue">
+    <div class="col-sm-4 panel panel--blue d-flex overflow-y-scroll">
       <div class="container-fluid d-flex flex-column justify-content-center">
-        <div class="panel panel--blue panel--raised mb-4">
-          <div class="screen">
+        <div class="panel panel--blue panel--raised mb-4 shrink">
+          <div class="screen shrink">
 
             <div class="row no-gutters align-items-center panel-heading">
               <div class="col-4 text-right">
@@ -34,6 +34,7 @@
             </div>
 
             <div class="px-3">
+              <small>
               <ol>
                 <li>
                   Choose a difficulty
@@ -51,36 +52,39 @@
                   Hit Start
                 </li>
               </ol>
+            </small>
             </div>
 
           </div>
         </div>
 
-        <div class="button-group d-flex align-items-stretch mb-2">
-          <div class="button button--small button--blue js-difficulty selected" id="easy" data-difficulty="easy" onclick="buttonDown()">
-            <span class="button__text d-none d-md-block">Easy</span>
+        <div class="button-group grow mb-2">
+          <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
+            <span class="button__text d-none d-md-inline-block">Easy</span>
             <span class="button__text d-md-none">E</span>
           </div>
-          <div class="button button--small button--blue js-difficulty selected" id="medium" data-difficulty="medium" onclick="buttonDown()">
+          <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
             <span class="button__text d-none d-md-block">Medium</span>
             <span class="button__text d-md-none">M</span>
           </div>
-          <div class="button button--small button--blue js-difficulty selected" id="hard" data-difficulty="hard" onclick="buttonDown()">
+          <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
             <span class="button__text d-none d-md-block">Hard</span>
             <span class="button__text d-md-none">H</span>
           </div>
         </div>
 
-        <button class="screen__scene-change button button--small button--pink width-full mt-1 mb-3" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
+        <button class="screen__scene-change button button--small button--pink width-full mt-1 mb-3 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
 
-        <div class="timer d-flex p mb-3 flex-column flex-md-row" id="timer">
+        <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
           <div class="timer__button-container d-flex align-items-stretch">
             <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
           </div>
-          <div class="timer__display screen">
-            <span class="minutes">15</span>
-            <span class="colon">:</span>
-            <span class="seconds">00</span>
+          <div class="timer__display screen d-flex justify-content-center">
+            <div class="align-self-center">
+              <span class="minutes">15</span>
+              <span class="colon">:</span>
+              <span class="seconds">00</span>
+            </div>
           </div>
           <div class="timer__button-container d-flex align-items-stretch">
             <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
@@ -97,7 +101,7 @@
       </div>
     </div>
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">
-      <div class="screen d-flex align-items-center">
+      <div class="screen d-flex align-items-center overflow-y-scroll">
 
         <div class="screen__scene challenge-countdown d-none">
           <h1 class="big">3</h1>
