@@ -10,6 +10,12 @@
         url('../fonts/ddchardware-compressed-webfont.woff') format('woff');
 }
 
+@font-face {
+  font-family: 'Pusher';
+  src:  url('../fonts/Pusher-Regular.woff2') format('woff2'),
+        url('../fonts/Pusher-Regular.woff') format('woff');
+}
+
 body,
 html {
   font-family: 'DDCHardware', sans-serif;
@@ -55,4 +61,8 @@ label {
   font-size: 1rem;
   line-height: 1;
   transition: all 0.25s ease-in;
+}
+
+.screen {
+  font-family: 'Pusher', 'DDCHardware', sans-serif;
 }
