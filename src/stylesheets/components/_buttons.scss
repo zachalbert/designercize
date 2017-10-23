@@ -213,13 +213,6 @@ $button-radius: 4px;
     border-radius: 0 $button-radius $button-radius  0;
     border-right-width: 2px;
   }
-  &:last-child {
-    .button,
-    .button:after {
-      border-radius: 0 0 $button-radius $button-radius;
-      border-right-width: 2px;
-    }
-  }
 
   .timer__button-container {
     &:first-child {

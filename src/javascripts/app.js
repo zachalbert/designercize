@@ -37,7 +37,7 @@ $(document).ready(function() {
 
   // Toggle the right difficulty selector on page load from local storage;
   let difficulty = localStorage.getItem('difficulty');
-  if (difficulty === "null") {
+  if (difficulty === "null" || difficulty === "undefined") {
     difficulty = "easy";
   }
   if (difficulty) {
