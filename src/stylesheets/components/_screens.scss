@@ -129,12 +129,12 @@ $scan-opacity: .75;
   }
   &__scene {
     width: 100%;
-    display: flex;
+    display: none;
     flex-direction: column;
+    text-align: center;
 
-    //
-    // .output * {
-    //   width: 100%;
-    // }
+    &.challenge-running {
+      display: flex;
+    }
   }
 }
