@@ -24,6 +24,15 @@ $(document).ready(function() {
 
   localStorage.setItem('paused', false);
 
+  $('.screen__scene-change').click( function() {
+    $('.screen__scene').each( function() {
+      $(this).css('display','none');
+    });
+
+    var id = $(this).attr('id'); //#how-to-play-button
+    $('[data-scene-trigger="'+id+'"]').show();
+  });
+
 
   // Ignore default behavior for all href="#" links
   $('a[href="#"]').click(function(e) {
@@ -113,8 +122,15 @@ $(document).ready(function() {
 
   // When the start button is clicked, start the timer
   $('#start-button').click(function() {
-    startChallengeTimer();
-    $('.timer__button').attr('disabled', true).addClass('button--disabled');
+    $($(this)[0])
+      .attr("disable", true)
+      .addClass('button--disabled');
+
+    initCountDown(() => {
+      $('.challenge-countdown').hide();
+      $('.challenge-running').show();
+      startChallengeTimer();
+    });
   });
 
   $('#how-to-play-button').click( function() {
@@ -208,8 +224,21 @@ function rollNewPrompt(difficulty) {
   }
 }
 
-
-
+function initCountDown(callback) {
+  let count = 2;
+  const id = window.setInterval(() => {
+    $('.challenge-countdown h1').text(count--);
+    if (count === 0) {
+      $('.challenge-countdown h1').text("fun!");
+    }
+    if (count === -1) {
+      window.clearInterval(id);
+      if (callback && typeof callback === 'function') {
+        callback();
+      }
+    }
+  }, 1000);
+}
 
 // Start the challenge timer
 function startChallengeTimer() {
