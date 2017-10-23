@@ -24,9 +24,12 @@ $(document).ready(function() {
 
 
   $('.screen__scene-change').click( function() {
-    $('.screen__scene:not(.d-none)').each( function() {
-      $(this).css('display','none !important')
+    $('.screen__scene').each( function() {
+      $(this).css('display','none');
     });
+
+    var id = $(this).attr('id'); //#how-to-play-button
+    $('[data-scene-trigger="'+id+'"]').show();
   });
 
 

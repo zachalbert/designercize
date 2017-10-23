@@ -99,50 +99,53 @@
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">
       <div class="screen d-flex align-items-center">
 
-        <div class="screen__scene challenge-countdown d-none">
+        <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
           <h1 class="big">3</h1>
         </div>
 
-        <div class="screen__scene challenge-running">
+        <div class="screen__scene challenge-running" data-scene-trigger="reload-button">
           <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
           <div class="row p-3 output">
 
             <div class="col-5 text-right">Design: </div>
-            <div class="col-7 mb-3">
+            <div class="col-7 mb-3 text-left">
               <div id="features" class="output__text"></div>
             </div>
 
             <div class="col-5 text-right">For: </div>
-            <div class="col-7 mb-3">
+            <div class="col-7 mb-3 text-left">
               <div id="useCases" class="output__text"></div>
             </div>
 
             <div class="col-5 text-right">To help: </div>
-            <div class="col-7 mb-3">
+            <div class="col-7 mb-3 text-left">
               <div id="audiences" class="output__text"></div>
             </div>
 
             <div class="d-none">
               <div class="col-5 text-right">Device: </div>
-              <div class="col-7 mb-3">
+              <div class="col-7 mb-3 text-left">
                 <div id="devices" class="output__text"></div>
               </div>
 
               <div class="col-5 text-right">Need: </div>
-              <div class="col-7 mb-3">
+              <div class="col-7 mb-3 text-left">
                 <div id="needs" class="output__text"></div>
               </div>
             </div>
 
           </div>
         </div>
-        <div class="screen__scene challenge-paused d-none">
+        <div class="screen__scene challenge-paused" data-scene-trigger="pause-button">
           <h1>Paused</h1>
         </div>
-        <div class="screen__scene challenge-out-of-time d-none">
+        <div class="screen__scene challenge-stopped" data-scene-trigger="stop-button">
+          <h1>Stopped</h1>
+        </div>
+        <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
           <h1>Out of time!</h1>
         </div>
-        <div class="screen__scene challenge-rules d-none">
+        <div class="screen__scene challenge-rules" data-scene-trigger="how-to-play-button">
           <h1>How to Play</h1>
         </div>
 
