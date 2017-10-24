@@ -1,0 +1,23 @@
+$button-blue-default: #1578f8;
+$button-blue-dark: #0000BF;
+$button-blue-highlight: #32bbff;
+$button-blue-selected: #0051fc;
+$button-blue-text: #fff;
+
+$button-pink-default: #FA5598;
+$button-pink-dark: #E70056;
+$button-pink-highlight: #FAA3C0;
+$button-pink-selected: darken($button-pink-default, 5%);
+$button-pink-text: #fff;
+
+$button-yellow-default: #F1B300;
+$button-yellow-dark: #4E2F02;
+$button-yellow-highlight: #F1D26C;
+$button-yellow-selected: darken($button-yellow-default, 5%);
+$button-yellow-text: #fff;
+
+$button-red-default: #F23300;
+$button-red-dark: #851201;
+$button-red-highlight: #F97953;
+$button-red-selected: darken($button-red-default, 5%);
+$button-red-text: #fff;
