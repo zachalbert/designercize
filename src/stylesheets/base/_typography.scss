@@ -15,6 +15,11 @@
   src:  url('../fonts/Pusher-Regular.woff2') format('woff2'),
         url('../fonts/Pusher-Regular.woff') format('woff');
 }
+@font-face {
+  font-family: 'PusherFat';
+  src:  url('../fonts/PusherFat-Regular.woff2') format('woff2'),
+        url('../fonts/PusherFat-Regular.woff') format('woff');
+}
 
 body,
 html {
@@ -65,4 +70,8 @@ label {
 
 .screen {
   font-family: 'Pusher', 'DDCHardware', sans-serif;
+}
+
+.font-weight-fat {
+  font-family: "PusherFat";
 }
