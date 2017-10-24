@@ -15,7 +15,8 @@
   function buttonDown() {
       var buttonDown = new Audio('button-down.mp3');
       buttonDown.play();
-    }
+  }
+
   </script>
   <div class="row no-gutters align-items-stretch" style="height: 100vh">
     <div class="col-sm-4 panel panel--blue d-flex overflow-y-scroll">
@@ -94,10 +95,10 @@
         <button class="screen__scene-change button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
 
         <div class="button-group grow mb-2">
-          <div class="button button--small button--blue d-flex justify-content-center align-items-center" onclick="buttonDown()">
+          <div class="button js-pause-button button--small button--blue d-flex justify-content-center align-items-center" onclick="buttonDown()">
             <span class="button__text"><span class="d-none d-md-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span>
           </div>
-          <div class="button button--small button--blue d-flex justify-content-center align-items-center" onclick="buttonDown()">
+          <div class="button js-stop-button button--small button--blue d-flex justify-content-center align-items-center" onclick="buttonDown()">
             <span class="button__text"><span class="d-none d-md-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span>
           </div>
         </div>
