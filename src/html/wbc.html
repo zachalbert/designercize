@@ -15,7 +15,8 @@
   function buttonDown() {
       var buttonDown = new Audio('button-down.mp3');
       buttonDown.play();
-    }
+  }
+
   </script>
   <div class="row no-gutters align-items-stretch" style="height: 100vh">
     <div class="col-sm-4 panel panel--blue d-flex overflow-y-scroll">
@@ -91,20 +92,24 @@
           </div>
         </div>
 
-        <button class="screen__scene-change button grow" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
-
-        <div class="button-group grow mb-2">
-          <div class="button button--small button--blue d-flex justify-content-center align-items-center" onclick="buttonDown()">
-            <span class="button__text"><span class="d-none d-md-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span>
+        <div class="panel panel--blue timer-controls">
+          <div class="timer-controls__panel front">
+            <div class="d-flex">
+              <button class="screen__scene-change button grow justify-content-center" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
+            </div>
           </div>
-          <div class="button button--small button--blue d-flex justify-content-center align-items-center" onclick="buttonDown()">
-            <span class="button__text"><span class="d-none d-md-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span>
+          <div class="timer-controls__panel back" style="display: none;">
+            <div class="button-group grow mb-2">
+              <div class="button js-pause-button grow button--small button--yellow d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                <span class="button__text"><span class="d-none d-lg-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span>
+              </div>
+              <div class="button js-stop-button grow button--small button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                <span class="button__text"><span class="d-none d-lg-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- <div class="button button--small button--blue shrink mr-1" id="easy" data-difficulty="easy" onclick="buttonDown()">
-          <img class="button__logo" src="images/logo-tent.svg">
-        </div> -->
       </div>
     </div>
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">
