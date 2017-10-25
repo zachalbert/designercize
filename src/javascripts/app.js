@@ -80,6 +80,7 @@ $(document).ready(function() {
   $('.js-stop-button').click(() => {
     stopTimer();
     timerState = TIMER_STATES.STOPPED;
+    swapPlayPause();
   });
 
   // For any buttons that are toggleable
@@ -144,6 +145,7 @@ $(document).ready(function() {
       });
     }
     disableStartButton();
+    swapPlayPause();
   });
 
   $('#how-to-play-button').click( function() {
@@ -243,6 +245,16 @@ function disableStartButton() {
       .addClass('button--disabled');
 }
 
+function swapPlayPause() {
+  $('.timer-controls__panel').each( function() {
+    if( $(this).is(':visible') ) {
+      $(this).hide();
+    } else {
+      $(this).show();
+    }
+  });
+}
+
 function enableStartButton() {
   $('#start-button')
     .attr("disable", false)
@@ -282,6 +294,10 @@ function startChallengeTimer() {
   // Get the selected time, turn it into a date object
   let challengeLengthMinutes = $('#timer .minutes').text();
   let challengeLengthSeconds = $('#timer .seconds').text();
+
+  // Fast timer for dev purposes
+  // let challengeLengthMinutes = 0;
+  // let challengeLengthSeconds = 3;
 
   // start the timer based on what's already on the clock
   let challengeLength = new Date( Date.parse( new Date() ) + ( 1 * 1 * challengeLengthMinutes * 60 * 1000 ) + ( 1 * 1 * challengeLengthSeconds * 1000 ) );
@@ -323,9 +339,10 @@ function startChallengeTimer() {
 
       if (t.total <= 0) {
         window.clearInterval(timeInterval);
-        $('.timesup').removeClass('hide');
-        $('.illo--animated').hide();
-        $('.illo--still').show();
+        // $('.timesup').removeClass('hide');
+        // $('.illo--animated').hide();
+        // $('.illo--still').show();
+        showOutOfTime();
       }
     }
     updateClock();
@@ -333,4 +350,3 @@ function startChallengeTimer() {
     activeIntervals.push(timeInterval)
   }
 }
-
