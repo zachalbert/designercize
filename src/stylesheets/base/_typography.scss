@@ -20,6 +20,11 @@
   src:  url('../fonts/PusherFat-Regular.woff2') format('woff2'),
         url('../fonts/PusherFat-Regular.woff') format('woff');
 }
+@font-face {
+  font-family: 'PusherNorm';
+  src:  url('../fonts/PusherNorm-Regular.woff2') format('woff2'),
+        url('../fonts/PusherNorm-Regular.woff') format('woff');
+}
 
 body,
 html {
@@ -43,11 +48,18 @@ h2, .h2,
 h3, .h3,
 h4, .h4,
 h5, .h5,
-h6, .h6,
-.button,
-.button__text {
+h6, .h6 {
   font-family: 'DDCHardware', sans-serif;
   font-weight: 700;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  margin: 0;
+  padding: 0;
+}
+.button,
+.button__text {
+  font-family: 'PusherNorm', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
