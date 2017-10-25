@@ -11,24 +11,24 @@
 }
 
 @font-face {
-  font-family: 'Pusher';
-  src:  url('../fonts/Pusher-Regular.woff2') format('woff2'),
-        url('../fonts/Pusher-Regular.woff') format('woff');
+  font-family: '80085';
+  src:  url('../fonts/80085-Regular.woff2') format('woff2'),
+        url('../fonts/80085-Regular.woff') format('woff');
 }
 @font-face {
-  font-family: 'PusherFat';
-  src:  url('../fonts/PusherFat-Regular.woff2') format('woff2'),
-        url('../fonts/PusherFat-Regular.woff') format('woff');
+  font-family: '8008135';
+  src:  url('../fonts/8008135-Regular.woff2') format('woff2'),
+        url('../fonts/8008135-Regular.woff') format('woff');
 }
 @font-face {
-  font-family: 'PusherNorm';
-  src:  url('../fonts/PusherNorm-Regular.woff2') format('woff2'),
-        url('../fonts/PusherNorm-Regular.woff') format('woff');
+  font-family: '8008';
+  src:  url('../fonts/8008-Regular.woff2') format('woff2'),
+        url('../fonts/8008-Regular.woff') format('woff');
 }
 
 body,
 html {
-  font-family: 'DDCHardware', sans-serif;
+  font-family: '8008', sans-serif;
   font-weight: normal;
   font-size: 20px;
   line-height: 1.5;
@@ -49,7 +49,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-  font-family: 'DDCHardware', sans-serif;
+  font-family: '8008','DDCHardware', sans-serif;
   font-weight: 700;
   font-style: normal;
   font-weight: normal;
@@ -59,7 +59,7 @@ h6, .h6 {
 }
 .button,
 .button__text {
-  font-family: 'PusherNorm', sans-serif;
+  font-family: '8008', sans-serif;
   font-style: normal;
   font-weight: normal;
   line-height: 1;
@@ -81,9 +81,9 @@ label {
 }
 
 .screen {
-  font-family: 'Pusher', 'DDCHardware', sans-serif;
+  font-family: '80085', 'DDCHardware', sans-serif;
 }
 
 .font-weight-fat {
-  font-family: "PusherFat";
+  font-family: "8008135";
 }
