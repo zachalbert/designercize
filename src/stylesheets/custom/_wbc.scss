@@ -131,3 +131,17 @@ label {
 .overflow-y-scroll{
   overflow-y: scroll;
 }
+
+.flat-bottom {
+  border-bottom-left-radius: 0!important;
+  border-bottom-right-radius: 0!important;
+}
+
+.flat-top {
+  border-top-left-radius: 0!important;
+  border-top-right-radius: 0!important;
+}
+
+.flat-bottom + .flat-top {
+  margin-top: -2px;
+}

@@ -19,9 +19,9 @@
 
   </script>
   <div class="row no-gutters align-items-stretch" style="height: 100vh">
-    <div class="col-sm-4 panel panel--blue d-flex overflow-y-scroll">
-      <div class="container-fluid d-flex flex-column justify-content-top">
-        <div class="panel panel--blue panel--raised mb-4 shrink">
+    <div class="col-sm-4 panel panel--blue d-flex overflow-y-scroll p-2">
+      <div class="container-fluid d-flex flex-column justify-content-top p-0">
+        <div class="panel panel--blue panel--raised mb-3 shrink">
           <div class="screen shrink">
 
             <div class="row no-gutters align-items-center panel-heading">
@@ -58,61 +58,62 @@
 
           </div>
         </div>
-
-        <div class="button-group grow mb-2">
-          <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
-            <span class="button__text d-none d-md-inline-block">Easy</span>
-            <span class="button__text d-md-none">E</span>
-          </div>
-          <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
-            <span class="button__text d-none d-md-block">Medium</span>
-            <span class="button__text d-md-none">M</span>
-          </div>
-          <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
-            <span class="button__text d-none d-md-block">Hard</span>
-            <span class="button__text d-md-none">H</span>
-          </div>
-        </div>
-
-        <button class="screen__scene-change button button--small button--pink width-full mt-1 mb-3 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
-
-        <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
-          <div class="timer__button-container d-flex align-items-stretch">
-            <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
-          </div>
-          <div class="timer__display screen d-flex justify-content-center">
-            <div class="align-self-center font-weight-fat">
-              <span class="minutes">15</span>
-              <span class="colon">:</span>
-              <span class="seconds">00</span>
+        <div class="panel panel--blue grow d-flex flex-column align-items-stretch flat-bottom">
+          <div class="button-group grow mb-2">
+            <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
+              <span class="button__text d-none d-md-inline-block">Easy</span>
+              <span class="button__text d-md-none">E</span>
+            </div>
+            <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
+              <span class="button__text d-none d-md-block">Medium</span>
+              <span class="button__text d-md-none">M</span>
+            </div>
+            <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
+              <span class="button__text d-none d-md-block">Hard</span>
+              <span class="button__text d-md-none">H</span>
             </div>
           </div>
-          <div class="timer__button-container d-flex align-items-stretch">
-            <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
-          </div>
+
+          <button class="screen__scene-change button button--small button--pink width-full mt-1 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
         </div>
 
-        <div class="panel panel--blue timer-controls">
+
+        <div class="panel panel--blue timer-controls flat-top">
+          <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
+            <div class="timer__button-container d-flex align-items-stretch">
+              <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
+            </div>
+            <div class="timer__display screen d-flex justify-content-center">
+              <div class="align-self-center font-weight-fat">
+                <span class="minutes">15</span>
+                <span class="colon">:</span>
+                <span class="seconds">00</span>
+              </div>
+            </div>
+            <div class="timer__button-container d-flex align-items-stretch">
+              <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
+            </div>
+          </div>
           <div class="timer-controls__panel front">
             <div class="d-flex">
               <button class="screen__scene-change button grow justify-content-center" id="start-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Start&nbsp;&nbsp;</span><i class="icon ion-play"></i></span></button>
             </div>
           </div>
           <div class="timer-controls__panel back" style="display: none;">
-            <div class="button-group grow mb-2">
-              <div class="button js-pause-button grow button--small button--yellow d-flex justify-content-center align-items-center" onclick="buttonDown()">
-                <span class="button__text"><span class="d-none d-lg-inline">Pause&nbsp;&nbsp;</span><i class="icon ion-pause"></i></span>
+            <div class="button-group grow d-flex align-items-stretch">
+              <div class="button js-pause-button grow button--yellow d-flex justify-content-center align-items-center selectable" onclick="buttonDown()">
+                <span class="button__text"><i class="icon ion-pause"></i></span>
               </div>
-              <div class="button js-stop-button grow button--small button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
-                <span class="button__text"><span class="d-none d-lg-inline">Stop&nbsp;&nbsp;</span><i class="icon ion-stop"></i></span>
+              <div class="button js-stop-button grow button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                <span class="button__text"><i class="icon ion-stop"></i></span>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
-    <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-3">
+    <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-2">
+      <div class="panel panel--purple panel--raised d-flex align-items-stretch p-3">
       <div class="screen d-flex align-items-center overflow-y-scroll">
 
         <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
