@@ -5,6 +5,9 @@ import Typed from './vendor/typed.js';
 import './modules';
 import { prompts } from "./data/prompts";
 
+/* TODO:
+ - Need an easier way to deal with selecting / unselecting buttons. Make a function that just handles that based on TIMER_STATES
+**/
 
 // Strings which we'll need for selecting elements and stuff
 let categories = [
@@ -31,6 +34,12 @@ function clearAllIntervals() {
     window.clearInterval(intervalId);
   });
   activeIntervals = [];
+}
+
+function resetTimer() {
+  // Get the original time that the start button started with
+
+  // Change the clock to be that time
 }
 
 
@@ -73,14 +82,17 @@ $(document).ready(function() {
 
   $('.js-pause-button').click(() => {
     pauseTimer();
-    timerState = TIMER_STATES.PAUSED;
+    if( timerState == TIMER_STATES.PAUSED ) {
+      timerState = TIMER_STATES.ACTIVE;
+    } else {
+      timerState = TIMER_STATES.PAUSED;
+    }
   });
 
 
   $('.js-stop-button').click(() => {
     stopTimer();
     timerState = TIMER_STATES.STOPPED;
-    swapPlayPause();
   });
 
   // For any buttons that are toggleable
@@ -136,7 +148,7 @@ $(document).ready(function() {
   });
 
   // When the start button is clicked, start the timer
-  $('#start-button').click(function() {
+  $('.js-start-button').click(function() {
     if (timerState === TIMER_STATES.PAUSED) {
       startChallengeTimer();
     } else {
@@ -145,40 +157,19 @@ $(document).ready(function() {
       });
     }
     disableStartButton();
-    swapPlayPause();
   });
 
-  $('#how-to-play-button').click( function() {
-    if($(this).hasClass('selected')) {
-      console.log('selected');
-    }
-  });
 
   // When the reload button is clicked, load a new prompt
   $('#reload-button').click(function() {
     // Which difficulty level is selected?
     let difficulty = localStorage.getItem('difficulty');
 
-    // START THE THING!
+    // Give us a new prompt
     rollNewPrompt(difficulty);
   });
 
-  // Hide inputs when hide is checked
-  $('[data-hide-output]').click( function() {
-    let target = $('#' + $(this).data('hide-output'));
-    let parent = target.closest('.row');
-
-    parent.toggleClass('closed');
-  });
-
-  // Close the "Time's up!" overlay
-  $('.timesup .close').click(function(e) {
-    e.preventDefault();
-    $('.timesup').addClass('hide');
-  });
 });
-
-
 
 
 // A thing for selecting a random prompt from an array
@@ -187,6 +178,7 @@ function getRandomPromptByDifficulty(category, difficulty) {
   let randomPrompt = prompt[Math.floor(Math.random() * prompt.length)];
   return randomPrompt;
 }
+
 
 // Inject each prompt component into the DOM
 function injectPrompt( index, category, prompt ) {
@@ -210,6 +202,11 @@ function rollNewPrompt(difficulty) {
   for( let i = 0; i < categories.length; i++ ) {
     injectPrompt(i, categories[i], getRandomPromptByDifficulty(categories[i], difficulty));
   }
+
+  // Give us some inspiration
+  for( let i = 0; i < prompts.inspiration.length; i++ ) {
+    // Iterate through the quotes and give us a rando
+  }
 }
 
 function initCountDown(callback) {
@@ -231,32 +228,23 @@ function initCountDown(callback) {
 
 function pauseTimer() {
   clearAllIntervals();
-  enableStartButton();
+  // enableStartButton();
 }
 
 function stopTimer() {
   clearAllIntervals();
+  resetTimer();
   enableStartButton();
 }
 
 function disableStartButton() {
-  $('#start-button')
+  $('.js-start-button')
       .attr("disable", true)
       .addClass('button--disabled');
 }
 
-function swapPlayPause() {
-  $('.timer-controls__panel').each( function() {
-    if( $(this).is(':visible') ) {
-      $(this).hide();
-    } else {
-      $(this).show();
-    }
-  });
-}
-
 function enableStartButton() {
-  $('#start-button')
+  $('.js-start-button')
     .attr("disable", false)
     .removeClass('button--disabled');
 }

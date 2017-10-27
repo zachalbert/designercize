@@ -1,4 +1,14 @@
 export const prompts = {
+  "inspiration": [
+    "If you design it, they will come!",
+    "Design is how it works!",
+    "Make it pop!",
+    "Make it the right kind of wrong!",
+    "It's done when there's nothing left to remove",
+    "Make it complex, yet simple!",
+    "Stay hungry, stay foolish!",
+    "Make it as simple as possible, but not simpler!"
+  ],
   "features": {
     "easy": [
       "a user profile view",
