@@ -13,8 +13,8 @@
   <script>
 
   function buttonDown() {
-      var buttonDown = new Audio('button-down.mp3');
-      buttonDown.play();
+    var buttonDown = new Audio('button-down.mp3');
+    buttonDown.play();
   }
 
   </script>
@@ -36,24 +36,24 @@
 
             <div class="px-3">
               <small>
-              <ol>
-                <li>
-                  Choose a difficulty
-                </li>
-                <li>
-                  Reload until you're happy
-                </li>
-                <li>
-                  If you're happy and you know it, clap your hands
-                </li>
-                <li>
-                  Choose duration
-                </li>
-                <li>
-                  Hit Start
-                </li>
-              </ol>
-            </small>
+                <ol>
+                  <li>
+                    Choose a difficulty
+                  </li>
+                  <li>
+                    Reload until you're happy
+                  </li>
+                  <li>
+                    If you're happy and you know it, clap your hands
+                  </li>
+                  <li>
+                    Choose duration
+                  </li>
+                  <li>
+                    Hit Start
+                  </li>
+                </ol>
+              </small>
             </div>
 
           </div>
@@ -114,44 +114,50 @@
     </div>
     <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-2">
       <div class="panel panel--purple panel--raised d-flex align-items-stretch p-3 width-full">
-      <div class="screen d-flex align-items-center overflow-y-scroll">
+        <div class="screen d-flex align-items-center flex-column justify-content-center">
+          <div class="scrolling-content d-flex flex-column justify-content-top pt-4">
+            <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
+              <h1 class="big">3</h1>
+            </div>
 
-        <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
-          <h1 class="big">3</h1>
-        </div>
+            <div class="screen__scene challenge-running" data-scene-trigger="reload-button">
+              <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
+              <div class="talk-bubble">
+                <div class="talk-bubble__arrow"></div>
+                <div class="container-fluid">
+                  <div class="quote-box mb-3">"Make it pop!"</div>
+                  <div class="row p-3 output">
 
-        <div class="screen__scene challenge-running" data-scene-trigger="reload-button">
-          <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
-          <div class="container-fluid">
-            <div class="row p-3 output">
+                    <div class="col-4 text-right font-weight-fat">Design: </div>
+                    <div class="col-8 mb-3 text-left">
+                      <div id="features" class="output__text"></div>
+                    </div>
 
-              <div class="col-5 text-right font-weight-fat">Design: </div>
-              <div class="col-7 mb-3 text-left">
-                <div id="features" class="output__text"></div>
-              </div>
+                    <div class="col-4 text-right font-weight-fat">For: </div>
+                    <div class="col-8 mb-3 text-left">
+                      <div id="useCases" class="output__text"></div>
+                    </div>
 
-              <div class="col-5 text-right font-weight-fat">For: </div>
-              <div class="col-7 mb-3 text-left">
-                <div id="useCases" class="output__text"></div>
-              </div>
+                    <div class="col-4 text-right font-weight-fat">To help: </div>
+                    <div class="col-8 mb-3 text-left">
+                      <div id="audiences" class="output__text"></div>
+                    </div>
 
-              <div class="col-5 text-right font-weight-fat">To help: </div>
-              <div class="col-7 mb-3 text-left">
-                <div id="audiences" class="output__text"></div>
-              </div>
+                    <div class="d-none">
+                      <div class="col-4 text-right font-weight-fat">Device: </div>
+                      <div class="col-8 mb-3 text-left">
+                        <div id="devices" class="output__text"></div>
+                      </div>
 
-              <div class="d-none">
-                <div class="col-5 text-right font-weight-fat">Device: </div>
-                <div class="col-7 mb-3 text-left">
-                  <div id="devices" class="output__text"></div>
+                      <div class="col-4 text-right font-weight-fat">Need: </div>
+                      <div class="col-8 text-left">
+                        <div id="needs" class="output__text"></div>
+                      </div>
+                    </div>
+
+                  </div>
                 </div>
-
-                <div class="col-5 text-right font-weight-fat">Need: </div>
-                <div class="col-7 mb-3 text-left">
-                  <div id="needs" class="output__text"></div>
-                </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -180,4 +186,4 @@
     </div>
   </div>
 
-{% endblock %}
+  {% endblock %}

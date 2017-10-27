@@ -145,3 +145,8 @@ label {
 .flat-bottom + .flat-top {
   margin-top: -2px;
 }
+
+.scrolling-content {
+  overflow-y: scroll;
+  height: 95%;
+}
