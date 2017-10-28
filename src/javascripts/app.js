@@ -194,6 +194,27 @@ function injectPrompt( index, category, prompt ) {
     startDelay: delay,
     showCursor: false
   });
+
+
+  /* TODO: Typing noise
+   - This thing should play a noise for typeNoiseLimit x typeSpeed, but at fast
+   - speeds, it queues the sounds rather than playing new ones on top of each
+   - other. Commenting out for now.
+  let typeNoise = new Audio('button-down.mp3');
+  let typeNoiseLimit = 10;
+  let typeSpeed = 200; // ms
+  let typeCount = 0;
+  function playTypeSound() {
+    typeNoise.play();
+
+    if( typeCount >= typeNoiseLimit ) {
+      window.clearInterval(timeInterval);
+    }
+    typeCount++;
+  }
+  playTypeSound();
+  let timeInterval = setInterval(playTypeSound, typeSpeed);
+  **/
 }
 
 // Roll a new prompt
