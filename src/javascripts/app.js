@@ -225,9 +225,11 @@ function rollNewPrompt(difficulty) {
   }
 
   // Give us some inspiration
-  for( let i = 0; i < prompts.inspiration.length; i++ ) {
-    // Iterate through the quotes and give us a rando
-  }
+  let inspiration = prompts.inspiration;
+  let randomNum = Math.floor( Math.random() * inspiration.length );
+  let randomInspo = inspiration[randomNum];
+
+  $('.quote-box').text(randomInspo);
 }
 
 function initCountDown(callback) {

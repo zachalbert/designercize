@@ -4,10 +4,21 @@ export const prompts = {
     "Design is how it works!",
     "Make it pop!",
     "Make it the right kind of wrong!",
-    "It's done when there's nothing left to remove",
+    "It's done when there's nothing left to take away!",
     "Make it complex, yet simple!",
     "Stay hungry, stay foolish!",
-    "Make it as simple as possible, but not simpler!"
+    "Make it as simple as possible, but not simpler!",
+    "Experience the power of design!",
+    "Make it shiny!",
+    "Give me more!",
+    "If it looks right, it is right!",
+    "Test on production!",
+    "Aim for WOW!",
+    "Never fall in love with an idea!",
+    "Design in the absence of content is just decoration!",
+    "Any product that needs a manual to work is broken!",
+    "Good design is obvious, great design is transparent!",
+    "Everything is design!"
   ],
   "features": {
     "easy": [
