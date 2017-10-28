@@ -15,171 +15,172 @@
   }
 
   </script>
-  <div class="row no-gutters align-items-stretch" style="height: 100vh">
-    <div class="col-sm-4 panel panel--blue d-flex overflow-y-scroll p-2">
-      <div class="container-fluid d-flex flex-column justify-content-top p-0">
-        <div class="panel panel--blue panel--raised mb-3 shrink">
-          <div class="screen shrink">
+  <div class="panel panel--purple">
+    <div class="row no-gutters align-items-stretch" style="height: 100vh">
+      <div class="col-sm-4 overflow-y-scroll d-flex p-2">
+        <div class="container-fluid d-flex flex-column justify-content-top p-0">
+          <div class="panel panel--purple panel--raised mb-3 shrink">
+            <div class="screen shrink">
 
-            <div class="row no-gutters align-items-center panel-heading">
-              <div class="col-4 text-right">
-                <img src="images/illo-workout-squat-still.gif" width="96" height="96" class="img-fluid illo illo--still">
-                <img src="images/illo-workout-squat.gif" width="96" height="96" class="img-fluid illo illo--animated" style="display: none;">
+              <div class="row no-gutters align-items-center panel-heading">
+                <div class="col-4 text-right">
+                  <img src="images/illo-workout-squat-still.gif" width="96" height="96" class="img-fluid illo illo--still">
+                  <img src="images/illo-workout-squat.gif" width="96" height="96" class="img-fluid illo illo--animated" style="display: none;">
+                </div>
+                <div class="col-8 text-left">
+                  <h5 class="panel-heading__title font-weight-fat">Designercize</h5>
+                </div>
               </div>
-              <div class="col-8 text-left">
-                <h5 class="panel-heading__title font-weight-fat">Designercize</h5>
+
+              <div class="px-3">
+                <small>
+                  <ol>
+                    <li>
+                      Choose a difficulty
+                    </li>
+                    <li>
+                      Reload until you're happy
+                    </li>
+                    <li>
+                      If you're happy and you know it, clap your hands
+                    </li>
+                    <li>
+                      Choose duration
+                    </li>
+                    <li>
+                      Hit Start
+                    </li>
+                  </ol>
+                </small>
               </div>
-            </div>
 
-            <div class="px-3">
-              <small>
-                <ol>
-                  <li>
-                    Choose a difficulty
-                  </li>
-                  <li>
-                    Reload until you're happy
-                  </li>
-                  <li>
-                    If you're happy and you know it, clap your hands
-                  </li>
-                  <li>
-                    Choose duration
-                  </li>
-                  <li>
-                    Hit Start
-                  </li>
-                </ol>
-              </small>
-            </div>
-
-          </div>
-        </div>
-        <div class="panel panel--blue grow d-flex flex-column align-items-stretch flat-bottom">
-          <div class="button-group grow mb-2">
-            <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
-              <span class="button__text d-none d-md-inline-block">Easy</span>
-              <span class="button__text d-md-none">E</span>
-            </div>
-            <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
-              <span class="button__text d-none d-md-block">Medium</span>
-              <span class="button__text d-md-none">M</span>
-            </div>
-            <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
-              <span class="button__text d-none d-md-block">Hard</span>
-              <span class="button__text d-md-none">H</span>
             </div>
           </div>
-
-          <button class="screen__scene-change button button--small button--pink width-full mt-1 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
-        </div>
-
-
-        <div class="panel panel--blue timer-controls flat-top">
-          <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
-            <div class="timer__button-container d-flex align-items-stretch">
-              <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
-            </div>
-            <div class="timer__display screen d-flex justify-content-center">
-              <div class="align-self-center font-weight-fat">
-                <span class="minutes">15</span>
-                <span class="colon">:</span>
-                <span class="seconds">00</span>
+          <div class="panel panel--purple grow d-flex flex-column align-items-stretch flat-bottom">
+            <div class="button-group grow mb-2">
+              <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
+                <span class="button__text d-none d-md-inline-block">Easy</span>
+                <span class="button__text d-md-none">E</span>
+              </div>
+              <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
+                <span class="button__text d-none d-md-block">Medium</span>
+                <span class="button__text d-md-none">M</span>
+              </div>
+              <div class="button button--small button--blue js-difficulty selected d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
+                <span class="button__text d-none d-md-block">Hard</span>
+                <span class="button__text d-md-none">H</span>
               </div>
             </div>
-            <div class="timer__button-container d-flex align-items-stretch">
-              <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
-            </div>
+
+            <button class="screen__scene-change button button--small button--pink width-full mt-1 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
           </div>
 
-          <div class="timer-controls__panel back">
-            <div class="button-group grow d-flex align-items-stretch">
-              <div class="button js-start-button grow button--green d-flex justify-content-center align-items-center" onclick="buttonDown()">
-                <span class="button__text"><i class="icon ion-play"></i></span>
+
+          <div class="panel panel--purple timer-controls flat-top">
+            <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
+              <div class="timer__button-container d-flex align-items-stretch">
+                <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
               </div>
-              <div class="button js-pause-button grow button--yellow d-flex justify-content-center align-items-center selectable" onclick="buttonDown()">
-                <span class="button__text"><i class="icon ion-pause"></i></span>
+              <div class="timer__display screen d-flex justify-content-center">
+                <div class="align-self-center font-weight-fat">
+                  <span class="minutes">15</span>
+                  <span class="colon">:</span>
+                  <span class="seconds">00</span>
+                </div>
               </div>
-              <div class="button js-stop-button grow button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
-                <span class="button__text"><i class="icon ion-stop"></i></span>
+              <div class="timer__button-container d-flex align-items-stretch">
+                <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-8 panel panel--purple d-flex align-items-stretch p-2">
-      <div class="panel panel--purple panel--raised d-flex align-items-stretch p-3 width-full">
-        <div class="screen d-flex align-items-center flex-column justify-content-center">
-          <div class="scrolling-content d-flex flex-column justify-content-top pt-4">
-            <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
-              <h1 class="big">3</h1>
-            </div>
 
-            <div class="screen__scene challenge-running" data-scene-trigger="reload-button">
-              <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
-              <div class="talk-bubble">
-                <div class="talk-bubble__arrow"></div>
-                <div class="container-fluid">
-                  <div class="row p-3 output">
-
-                    <div class="col-4 text-right font-weight-fat">Design: </div>
-                    <div class="col-8 mb-3 text-left">
-                      <div id="features" class="output__text"></div>
-                    </div>
-
-                    <div class="col-4 text-right font-weight-fat">For: </div>
-                    <div class="col-8 mb-3 text-left">
-                      <div id="useCases" class="output__text"></div>
-                    </div>
-
-                    <div class="col-4 text-right font-weight-fat">To help: </div>
-                    <div class="col-8 mb-3 text-left">
-                      <div id="audiences" class="output__text"></div>
-                    </div>
-
-                    <div class="d-none">
-                      <div class="col-4 text-right font-weight-fat">Device: </div>
-                      <div class="col-8 mb-3 text-left">
-                        <div id="devices" class="output__text"></div>
-                      </div>
-
-                      <div class="col-4 text-right font-weight-fat">Need: </div>
-                      <div class="col-8 text-left">
-                        <div id="needs" class="output__text"></div>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <div class="quote-box">"Experience the power of design!"</div>
-
+            <div class="timer-controls__panel back">
+              <div class="button-group grow d-flex align-items-stretch">
+                <div class="button js-start-button grow button--green d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                  <span class="button__text"><i class="icon ion-play"></i></span>
+                </div>
+                <div class="button js-pause-button grow button--yellow d-flex justify-content-center align-items-center selectable" onclick="buttonDown()">
+                  <span class="button__text"><i class="icon ion-pause"></i></span>
+                </div>
+                <div class="button js-stop-button grow button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                  <span class="button__text"><i class="icon ion-stop"></i></span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
-          <h1 class="big font-weight-fat">Out of time!</h1>
-        </div>
-        <div class="screen__scene challenge-about" data-scene-trigger="about">
-          <h2>A thing by:</h2>
-          <div class="col-5">
-            <img src="http://www.fillmurray.com/200/200" alt=""><br><a href="">Zac</a>
-          </div>
-          <div class="col-2">&amp;</div>
-          <div class="col-5">
-            <img src="http://www.fillmurray.com/200/200" alt=""><br><a href="">Jake</a>
-          </div>
-          <img src="images/logo-mezzo.svg" alt="">
-          <p>
-            We made designercize to help designers get more fit. It's based on an exercise we do at <a href="">Tradecraft</a>, where designers pair up and complete an exercise on a whiteboard in front of at least one other person who plays the role of the client / boss / stakeholder. Though it can be done solo, the client's job is to add dimension to the prompt, provide real world constraints, and sometimes add crazy requests to really stretch the designer's thinking. We have found it to be one of the most insanely useful ways to spend an hour. It will teach you to think better, faster, and to do so out loud. It can be done on a whiteboard, or in a design app (but a whiteboard is preferred).
-          </p>
-          <p>
-            Designercize is an app designed, coded, and conceived of by <a href="">Zac</a> &amp; <a href="">Jake</a> (though Jake is responsible for the visual design). We had the engineering support of <a href="">Patrick</a>, and prompt contributions by <a href="">Megan</a>. The concept is originally based on an analog exercise created by <a href="">Laura Klein</a> and <a href="">Kate Rutter</a>, written about in depth by <a href="">Molly</a>, and honed over thousands of practice sessions by Tradecraft Designers. The inspiration for the digital version of the app came from <a href="">Typecooker</a>, which does a similar job for type designers.
-          </p>
-        </div>
+      </div>
+      <div class="col-sm-8  d-flex align-items-stretch p-2">
+        <div class="panel panel--purple panel--raised d-flex align-items-stretch p-3 width-full">
+          <div class="screen d-flex align-items-center flex-column justify-content-center">
+            <div class="scrolling-content d-flex flex-column justify-content-top pt-4">
+              <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
+                <h1 class="big">3</h1>
+              </div>
 
+              <div class="screen__scene challenge-running" data-scene-trigger="reload-button">
+                <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
+                <div class="talk-bubble">
+                  <div class="talk-bubble__arrow"></div>
+                  <div class="container-fluid">
+                    <div class="row p-3 output">
+
+                      <div class="col-4 text-right font-weight-fat">Design: </div>
+                      <div class="col-8 mb-3 text-left">
+                        <div id="features" class="output__text"></div>
+                      </div>
+
+                      <div class="col-4 text-right font-weight-fat">For: </div>
+                      <div class="col-8 mb-3 text-left">
+                        <div id="useCases" class="output__text"></div>
+                      </div>
+
+                      <div class="col-4 text-right font-weight-fat">To help: </div>
+                      <div class="col-8 mb-3 text-left">
+                        <div id="audiences" class="output__text"></div>
+                      </div>
+
+                      <div class="d-none">
+                        <div class="col-4 text-right font-weight-fat">Device: </div>
+                        <div class="col-8 mb-3 text-left">
+                          <div id="devices" class="output__text"></div>
+                        </div>
+
+                        <div class="col-4 text-right font-weight-fat">Need: </div>
+                        <div class="col-8 text-left">
+                          <div id="needs" class="output__text"></div>
+                        </div>
+                      </div>
+
+
+                    </div>
+                    <div class="quote-box">"Experience the power of design!"</div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
+            <h1 class="big font-weight-fat">Out of time!</h1>
+          </div>
+          <div class="screen__scene challenge-about" data-scene-trigger="about">
+            <h2>A thing by:</h2>
+            <div class="col-5">
+              <img src="http://www.fillmurray.com/200/200" alt=""><br><a href="">Zac</a>
+            </div>
+            <div class="col-2">&amp;</div>
+            <div class="col-5">
+              <img src="http://www.fillmurray.com/200/200" alt=""><br><a href="">Jake</a>
+            </div>
+            <img src="images/logo-mezzo.svg" alt="">
+            <p>
+              We made designercize to help designers get more fit. It's based on an exercise we do at <a href="">Tradecraft</a>, where designers pair up and complete an exercise on a whiteboard in front of at least one other person who plays the role of the client / boss / stakeholder. Though it can be done solo, the client's job is to add dimension to the prompt, provide real world constraints, and sometimes add crazy requests to really stretch the designer's thinking. We have found it to be one of the most insanely useful ways to spend an hour. It will teach you to think better, faster, and to do so out loud. It can be done on a whiteboard, or in a design app (but a whiteboard is preferred).
+            </p>
+            <p>
+              Designercize is an app designed, coded, and conceived of by <a href="">Zac</a> &amp; <a href="">Jake</a> (though Jake is responsible for the visual design). We had the engineering support of <a href="">Patrick</a>, and prompt contributions by <a href="">Megan</a>. The concept is originally based on an analog exercise created by <a href="">Laura Klein</a> and <a href="">Kate Rutter</a>, written about in depth by <a href="">Molly</a>, and honed over thousands of practice sessions by Tradecraft Designers. The inspiration for the digital version of the app came from <a href="">Typecooker</a>, which does a similar job for type designers.
+            </p>
+          </div>
+        </div>
       </div>
 
     </div>
