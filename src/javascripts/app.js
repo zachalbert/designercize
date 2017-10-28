@@ -95,6 +95,15 @@ $(document).ready(function() {
     timerState = TIMER_STATES.STOPPED;
   });
 
+  $('.js-info-button').click(() => {
+    showInfo();
+
+    if( $('.js-info-button').hasClass('selected') ) {
+      console.log('true')
+      showPrompt();
+    }
+  });
+
   // For any buttons that are toggleable
   $('.selectable').click( function() {
     $(this).toggleClass('selected');
@@ -288,6 +297,11 @@ function showOutOfTime() {
   hideAll();
   $('.challenge-out-of-time').show();
 
+}
+
+function showInfo() {
+  hideAll();
+  $('.challenge-info').show();
 }
 
 function hideAll() {
