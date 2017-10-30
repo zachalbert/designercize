@@ -384,17 +384,17 @@ $button-radius: 4px;
 
 .button--info {
   position: absolute;
-  right: 32px;
-  top: 32px;
-  height: 52px;
-  width: 52px;
+  right: 10px;
+  bottom: 10px;
+  height: 64px;
+  width: 54px;
   padding: 0;
   z-index: 10;
   box-shadow: none;
-  font-size: 1.25rem;
+  font-size: 1rem;
 
   .button__text {
-    line-height: 46px;
+    line-height: 60px;
   }
 }
 

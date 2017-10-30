@@ -121,7 +121,6 @@ export const prompts = {
       "war reporters",
       "disaster relief coordinators",
       "teachers in inner-city schools",
-      "Zac & Jake",
       "the supreme court",
       "famous 1980s rock bands",
       "podcast creators",
