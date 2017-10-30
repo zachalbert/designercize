@@ -1,41 +1,111 @@
-$button-blue-default: #1578f8;
-$button-blue-dark: #0000BF;
-$button-blue-highlight: #32bbff;
-$button-blue-selected: #0051fc;
-$button-blue-text: #fff;
+// COLORS
+$palettes: (
+    gray: (
+      a:                 #FCFCFC,
+      b:                 #F8F8F8,
+      c:                 #BCBCBC,
+      d:                 #7C7C7C
+    ),
 
-$button-disabled-default: rgba(#eee, 0.3);
-$button-disabled-dark: rgba(#eee, 0.3);
-$button-disabled-highlight: rgba(#eee, 0.3);
-$button-disabled-selected: rgba(#eee, 0.3);
-$button-disabled-text: rgba(#fff, 0.4);
+    blue: (
+      a:                 #A2E4FD,
+      b:                 #32BBFF,
+      c:                 #0074FC,
+      d:                 #0000FF
+    ),
 
-$button-pink-default: #FA5598;
-$button-pink-dark: #E70056;
-$button-pink-highlight: #FAA3C0;
-$button-pink-selected: darken($button-pink-default, 5%);
-$button-pink-text: #851201;
+    blue-purple: (
+      a:                 #B8B7FA,
+      b:                 #6685FF,
+      c:                 #0051FC,
+      d:                 #0000BF
+    ),
 
-$button-yellow-default: #F1B300;
-$button-yellow-dark: #4E2F02;
-$button-yellow-highlight: #F1D26C;
-$button-yellow-selected: darken($button-yellow-default, 2%);
-$button-yellow-text: #fff;
+    purple: (
+      a:                 #D9B6FA,
+      b:                 #9874FB,
+      c:                 #6839FF,
+      d:                 #441DBF
+    ),
 
-$button-red-default: #F23300;
-$button-red-dark: #851201;
-$button-red-highlight: #F97953;
-$button-red-selected: darken($button-red-default, 5%);
-$button-red-text: #fff;
+    pink: (
+      a:                 #F9B6FA,
+      b:                 #FA73FB,
+      c:                 #DA00CE,
+      d:                 #960086
+    ),
 
-$button-green-default: #00A33B;
-$button-green-dark: #005600;
-$button-green-highlight: #51D34A;
-$button-green-selected: darken($button-green-default, 5%);
-$button-green-text: #fff;
+    pink-red: (
+      a:                 #FAA3C0,
+      b:                 #FA5598,
+      c:                 #E70056,
+      d:                 #AA001A
+    ),
 
-$button-purple-default: #6839FF;
-$button-purple-dark: #441EBF;
-$button-purple-highlight: #1677F8;
-$button-purple-selected: darken($button-purple-default, 5%);
-$button-purple-text: #fff;
+    red: (
+      a:                 #F1D0AE,
+      b:                 #FA7852,
+      c:                 #FB3600,
+      d:                 #AA0C00
+    ),
+
+    orange: (
+      a:                 #FDE1A5,
+      b:                 #FEA137,
+      c:                 #E65C00,
+      d:                 #8A1200
+    ),
+
+    yellow: (
+      a:                 #F9D971,
+      b:                 #FAB900,
+      c:                 #AD7D00,
+      d:                 #513000
+    )
+);
+
+@function palette($palette, $tone: 'blue') {
+    @return map-get(map-get($palettes, $palette), $tone);
+}
+
+$button-blue-default:           palette(blue, b);
+$button-blue-dark:              #0000BF;
+$button-blue-highlight:         #32bbff;
+$button-blue-selected:          #0051fc;
+$button-blue-text:              #fff;
+
+$button-disabled-default:       rgba(#eee, 0.3);
+$button-disabled-dark:          rgba(#eee, 0.3);
+$button-disabled-highlight:     rgba(#eee, 0.3);
+$button-disabled-selected:      rgba(#eee, 0.3);
+$button-disabled-text:          rgba(#fff, 0.4);
+
+$button-pink-default:           #FA5598;
+$button-pink-dark:              #E70056;
+$button-pink-highlight:         #FAA3C0;
+$button-pink-selected:          darken($button-pink-default, 5%);
+$button-pink-text:              #851201;
+
+$button-yellow-default:         #F1B300;
+$button-yellow-dark:            #4E2F02;
+$button-yellow-highlight:       #F1D26C;
+$button-yellow-selected:        darken($button-yellow-default, 2%);
+$button-yellow-text:            #fff;
+
+$button-red-default:            #F23300;
+$button-red-dark:               #851201;
+$button-red-highlight:          #F97953;
+$button-red-selected:           darken($button-red-default, 5%);
+$button-red-text:               #fff;
+
+$button-green-default:          #00A33B;
+$button-green-dark:             #005600;
+$button-green-highlight:        #51D34A;
+$button-green-selected:         darken($button-green-default, 5%);
+$button-green-text:             #fff;
+
+$button-purple-default:         #6839FF;
+$button-purple-dark:            #441EBF;
+$button-purple-highlight:       #1677F8;
+$button-purple-selected:        darken($button-purple-default, 5%);
+$button-purple-text:            #fff;
