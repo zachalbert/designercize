@@ -1,74 +1,81 @@
 // COLORS
 $palettes: (
     gray: (
-      a:                 #FCFCFC,
-      b:                 #F8F8F8,
-      c:                 #BCBCBC,
-      d:                 #7C7C7C
+      00:                 #FCFCFC,
+      01:                 #F8F8F8,
+      02:                 #BCBCBC,
+      03:                 #7C7C7C
     ),
 
     blue: (
-      a:                 #A2E4FD,
-      b:                 #32BBFF,
-      c:                 #0074FC,
-      d:                 #0000FF
+      00:                 #A2E4FD,
+      01:                 #32BBFF,
+      02:                 #0074FC,
+      03:                 #0000FF
     ),
 
     blue-purple: (
-      a:                 #B8B7FA,
-      b:                 #6685FF,
-      c:                 #0051FC,
-      d:                 #0000BF
+      00:                 #B8B7FA,
+      01:                 #6685FF,
+      02:                 #0051FC,
+      03:                 #0000BF
     ),
 
     purple: (
-      a:                 #D9B6FA,
-      b:                 #9874FB,
-      c:                 #6839FF,
-      d:                 #441DBF
+      00:                 #D9B6FA,
+      01:                 #9874FB,
+      02:                 #6839FF,
+      03:                 #441DBF
     ),
 
     pink: (
-      a:                 #F9B6FA,
-      b:                 #FA73FB,
-      c:                 #DA00CE,
-      d:                 #960086
+      00:                 #F9B6FA,
+      01:                 #FA73FB,
+      02:                 #DA00CE,
+      03:                 #960086
     ),
 
     pink-red: (
-      a:                 #FAA3C0,
-      b:                 #FA5598,
-      c:                 #E70056,
-      d:                 #AA001A
+      00:                 #FAA3C0,
+      01:                 #FA5598,
+      02:                 #E70056,
+      03:                 #AA001A
     ),
 
     red: (
-      a:                 #F1D0AE,
-      b:                 #FA7852,
-      c:                 #FB3600,
-      d:                 #AA0C00
+      00:                 #F1D0AE,
+      01:                 #FA7852,
+      02:                 #FB3600,
+      03:                 #AA0C00
     ),
 
     orange: (
-      a:                 #FDE1A5,
-      b:                 #FEA137,
-      c:                 #E65C00,
-      d:                 #8A1200
+      00:                 #FDE1A5,
+      01:                 #FEA137,
+      02:                 #E65C00,
+      03:                 #8A1200
     ),
 
     yellow: (
-      a:                 #F9D971,
-      b:                 #FAB900,
-      c:                 #AD7D00,
-      d:                 #513000
+      00:                 #FDE1A5,
+      01:                 #F9D971,
+      02:                 #FAB900,
+      03:                 #AD7D00
+    ),
+
+    green: (
+      00:                 #B6F9D7,
+      01:                 #52DA4B,
+      02:                 #00A93E,
+      03:                 #005900
     )
 );
 
-@function palette($palette, $tone: 'blue') {
+@function palette($palette, $tone: 'base') {
     @return map-get(map-get($palettes, $palette), $tone);
 }
 
-$button-blue-default:           palette(blue, b);
+$button-blue-default:           palette(blue, 01);
 $button-blue-dark:              #0000BF;
 $button-blue-highlight:         #32bbff;
 $button-blue-selected:          #0051fc;

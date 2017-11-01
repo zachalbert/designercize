@@ -25,33 +25,93 @@ $button-radius: 4px;
 
 @mixin button-color($palette: blue){
   &.button {
-    background: palette($palette, c);
-    color: palette($palette, d);
+    // shadowed 3D part of button
+    background: palette($palette, 03);
+    color: palette($palette, 03);
     :hover.button::after {
-      background-color: palette($palette, c);
+      background-color: palette($palette, 02);
     }
+    // actual button color
     &::after {
-      background-color: palette($palette, b);
-    }
-    &::before {
+      background-color: palette($palette, 02);
       display: block;
       position: absolute;
       content: "";
-      background: palette($palette, a);
+      top: -2px;
+      left:-2px;
+      right:-2px;
+      bottom: 4px;
+      border: 2px solid #000001;
+      border-radius: $button-radius;
+      z-index: 0;
+      transition: $button-transition;
     }
+
+    // highlight
+    &::before {
+      display: block;
+      position: absolute;
+      background: palette($palette, 01);
+      content: "";
+      top: 0px;
+      left:2px;
+      right: 2px;
+      border-radius: 2px;
+      height: 2px;
+      z-index: 2;
+      transition: $button-transition;
+    }
+
+    //
+    &:hover .button__text, &:active .button__text, &.selected .button__text {
+      color: white;
+      text-shadow: 0 0 20px white;
+    }
+
+    &:active::after,&:active .button__text,
+    &.selected .button__text,&.selected::after, &.selected .button__text, {
+      bottom: -2px;
+      top: 6px;
+    }
+
+    &:active::before, &.selected::before {
+      top: 6px;
+      opacity: 0;
+    }
+
+    //
     &:active::after,
     &.selected::after {
-      box-shadow: inset 0 6px palette($palette, d);
+      box-shadow: inset 0 6px palette($palette, 03);
     }
 
     &:active::after,
-    &selected::after {
-      //background-color: darken(palette($palette, d), .1);
+    &.selected::after {
+      background-color: darken(palette($palette, 03), .1);
+    }
+
+    .button__text {
+      z-index: 2;
+      position: relative;
+      top: -2px;
+      transition: $button-transition;
+      display: block;
+    }
+
+    &:active,
+    &.selected {
+      background-color: #0000bf;
+      box-shadow: 0 0px rgba(0,0,0,0);
+    }
+
+    &:active .button__text,
+    &.selected .button__text {
+      color: white;
     }
   }
   &:active,
   &.selected {
-    background-color: palette(blue-purple, d);
+    background-color: palette(blue-purple, 03);
     box-shadow: 0 0px rgba(0,0,0,0);
   }
   &--disabled {
@@ -67,25 +127,23 @@ $button-radius: 4px;
   @include button-color(blue);
 }
 
-.button--blue-purple {
-  @include button-color('blue-purple');
-}
-
-.button--green {
-  @include button-color('green');
-}
-
-.button--pink {
-  @include button-color('pink');
-}
-
 .button--red {
-  @include button-color('red');
+  @include button-color(red);
 }
 
 .button--yellow {
-  @include button-color('yellow');
+  @include button-color(yellow);
 }
+
+.button--green {
+  @include button-color(green);
+}
+
+.button--pink {
+  @include button-color(pink);
+}
+
+
 
 .button__logo {
   position: relative;
@@ -95,77 +153,10 @@ $button-radius: 4px;
 }
 
 .button__logo {
+  @include button-color(pink);
   width: 24px;
   height: 24px;
   margin: -13px -6px -8px -6px;
-}
-
-.button:hover .button__text, .button:active .button__text, .button.selected .button__text {
-  color: white;
-  text-shadow: 0 0 20px white;
-}
-
-.button::after {
-  display: block;
-  position: absolute;
-  content: "";
-  top: -2px;
-  left:-2px;
-  right:-2px;
-  bottom: 4px;
-  background-color: #fa7852;
-  border: 2px solid #000001;
-  border-radius: $button-radius;
-  z-index: 0;
-  transition: $button-transition;
-}
-
-.button::before {
-  display: block;
-  position: absolute;
-  content: "";
-  top: 0px;
-  left:2px;
-  right: 2px;
-  border-radius: 2px;
-  background: #fdc140;
-  height: 2px;
-  z-index: 2;
-  transition: $button-transition;
-}
-
-.button__text {
-  z-index: 2;
-  position: relative;
-  top: -2px;
-  transition: $button-transition;
-  display: block;
-}
-
-.button:active.button::after,.button:active .button__text,.button:active .button__logo,
-.button.button--blue.selected::after,.button.button--pink.selected::after,.button.button--blue.selected::after, .button.selected .button__text,.button.selected .button__text, {
-  bottom: -2px;
-  top: 6px;
-}
-
-.button:active.button::before,
-.button.selected.button--blue::before,
-.button.selected.button--pink::before {
-  top: 6px;
-  opacity: 0;
-}
-
-
-
-.button:active,
-.button.selected {
-  background-color: #0000bf;
-  box-shadow: 0 0px rgba(0,0,0,0);
-}
-
-.button:active .button__text,
-.button.selected .button__text {
-  color: white;
 }
 
 .button--small {
@@ -177,6 +168,7 @@ $button-radius: 4px;
 /* Button */
 
 .button--info {
+  @include button-color(pink);
   //position: absolute;
   //right: 10px;
   //bottom: 10px;
