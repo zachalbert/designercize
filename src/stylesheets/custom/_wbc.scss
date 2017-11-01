@@ -154,6 +154,18 @@ ol {
   margin-top: -2px;
 }
 
+.b-0 {
+  border: none;
+}
+
+.bt-0 {
+  border-top: none;
+}
+
+.bb-0 {
+  border-bottom: none;
+}
+
 .scrolling-content {
   overflow-y: scroll;
   height: 95%;
@@ -161,8 +173,4 @@ ol {
 
 a {
   color: palette(green, 00);
-}
-
-* {
-  box-sizing: border-box;
 }

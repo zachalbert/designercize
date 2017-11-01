@@ -74,6 +74,7 @@ $button-radius: 4px;
       top: 6px;
     }
 
+
     &:active::before, &.selected::before {
       top: 6px;
       opacity: 0;
@@ -124,11 +125,20 @@ $button-radius: 4px;
     background-color: palette(blue-purple, 03);
     box-shadow: 0 0px rgba(0,0,0,0);
   }
-  &--disabled {
-    //background: desaturate(palette($palette, d), 50%);
-    &::after,
+  &.button--disabled {
+    background: palette($palette, 03);
+    box-shadow: none;
+    color: #000001;
+    &:after {
+      background: palette($palette, 03);
+    }
+    &::after, .button__text  {
+      bottom: -2px;
+      top: 2px;
+    }
     &::before {
-      opacity: 0.4;
+      top: 4px;
+      opacity: 0;
     }
   }
 }
