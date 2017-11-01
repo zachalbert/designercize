@@ -20,6 +20,8 @@ let categories = [
 
 let activeIntervals = [];
 
+let difficulty = 'easy';
+
 const TIMER_STATES  = {
   "ACTIVE": "ACTIVE",
   "PAUSED": "PAUSED",
@@ -36,16 +38,18 @@ function clearAllIntervals() {
   activeIntervals = [];
 }
 
+// Set timer to default
 function resetTimer() {
-  // Get the original time that the start button started with
-
-  // Change the clock to be that time
+  $('#timer .minutes').text('15');
+  $('#timer .seconds').text('00')
 }
 
 
 // All interactivity and click events
 $(document).ready(function() {
 
+  rollNewPrompt(difficulty);
+  $('#easy').addClass('selected');
   /**
    * Events
    */
@@ -55,41 +59,27 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-
-  // Toggle the right difficulty selector on page load from local storage;
-  // TODO: improve this
-  let difficulty = localStorage.getItem('difficulty');
-  if (difficulty === "null" || difficulty === "undefined") {
-    difficulty = "easy";
-  }
-
-  if (difficulty) {
-    $('.js-difficulty').not('#' + difficulty).removeClass('selected');
-    rollNewPrompt(difficulty);
-  } else {
-    $('[data-difficulty="medium"], [data-difficulty="hard"]').removeClass('selected');
-    rollNewPrompt('easy');
-  }
-
-
   // Change the selected state of the difficulty buttons
   $('.js-difficulty').click(function() {
     $('.js-difficulty').removeClass('selected');
     $(this).addClass('selected');
-    localStorage.setItem('difficulty', $(this).data('difficulty'));
+    difficulty = $(this).data('difficulty');
+    rollNewPrompt(difficulty);
   });
 
 
+  // Listen for pause timer event.timerState = TIMER_STATES.ACTIVE;
   $('.js-pause-button').click(() => {
     pauseTimer();
-    if( timerState == TIMER_STATES.PAUSED ) {
-      timerState = TIMER_STATES.ACTIVE;
+    if (timerState === TIMER_STATES.PAUSED) {
+      startChallenge();
     } else {
       timerState = TIMER_STATES.PAUSED;
+      pauseTimer();
     }
   });
 
-
+  // Listen for stop timer event.
   $('.js-stop-button').click(() => {
     stopTimer();
     timerState = TIMER_STATES.STOPPED;
@@ -97,9 +87,7 @@ $(document).ready(function() {
 
   $('.js-info-button').click(() => {
     showInfo();
-
     if( $('.js-info-button').hasClass('selected') ) {
-      console.log('true')
       showPrompt();
     }
   });
@@ -158,14 +146,7 @@ $(document).ready(function() {
 
   // When the start button is clicked, start the timer
   $('.js-start-button').click(function() {
-    if (timerState === TIMER_STATES.PAUSED) {
-      startChallengeTimer();
-    } else {
-      initCountDown(() => {
-        startChallengeTimer();
-      });
-    }
-    disableStartButton();
+    startChallenge();
   });
 
 
@@ -180,6 +161,16 @@ $(document).ready(function() {
 
 });
 
+function startChallenge() {
+  if (timerState === TIMER_STATES.PAUSED) {
+    startChallengeTimer();
+  } else {
+    initCountDown(() => {
+      startChallengeTimer();
+    });
+  }
+  disableStartButton();
+}
 
 // A thing for selecting a random prompt from an array
 function getRandomPromptByDifficulty(category, difficulty) {
@@ -221,7 +212,7 @@ function injectPrompt( index, category, prompt ) {
     }
     typeCount++;
   }
-  playTypeSound();
+  playTypesfSound();
   let timeInterval = setInterval(playTypeSound, typeSpeed);
   **/
 }
@@ -252,6 +243,7 @@ function initCountDown(callback) {
     if (count === -1) {
       window.clearInterval(id);
       if (callback && typeof callback === 'function') {
+        $('.challenge-countdown h1').text(3);
         callback();
       }
     }
@@ -260,7 +252,7 @@ function initCountDown(callback) {
 
 function pauseTimer() {
   clearAllIntervals();
-  // enableStartButton();
+  enableStartButton();
 }
 
 function stopTimer() {
@@ -279,6 +271,11 @@ function enableStartButton() {
   $('.js-start-button')
     .attr("disable", false)
     .removeClass('button--disabled');
+}
+
+function unSelectAllTimerButtons() {
+  $('.timer-controls__panel .button')
+    .removeClass('selected');
 }
 
 function showCountDown() {
@@ -314,7 +311,12 @@ function hideAll() {
 function startChallengeTimer() {
   // Set the global 'challengeRunning' variable state to on
   showPrompt();
+  if (timerState === TIMER_STATES.PAUSED) {
+    disableStartButton();
+  }
+
   timerState = TIMER_STATES.ACTIVE;
+  unSelectAllTimerButtons();
 
   // Get the selected time, turn it into a date object
   let challengeLengthMinutes = $('#timer .minutes').text();
