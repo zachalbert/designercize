@@ -292,6 +292,7 @@ function showPrompt() {
 
 function showOutOfTime() {
   hideAll();
+  $('.js-user').append($('#audiences').html());
   $('.challenge-out-of-time').show();
 
 }

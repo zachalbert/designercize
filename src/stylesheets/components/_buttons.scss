@@ -108,6 +108,16 @@ $button-radius: 4px;
     &.selected .button__text {
       color: white;
     }
+
+    &:hover svg, &:active svg, &.selected svg  {
+      fill: white;
+      transition: $button-transition;
+      filter: drop-shadow(0 0 10px white);
+    }
+    svg {
+      fill: palette($palette, 03);
+      transition: $button-transition;
+    }
   }
   &:active,
   &.selected {

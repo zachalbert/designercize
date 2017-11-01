@@ -16,7 +16,7 @@
 
   </script>
   <div class="panel panel--purple">
-    <div class="row no-gutters align-items-stretch" style="height: 100vh">
+    <div class="row no-gutters align-items-stretch" style="min-height: 100vh">
       <div class="col-sm-4 overflow-y-scroll d-flex p-2">
         <div class="container-fluid d-flex flex-column justify-content-top p-0">
           <div class="panel panel--purple panel--raised mb-3 shrink">
@@ -171,43 +171,77 @@
 
 
               <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
-                <h1 class="big font-weight-fat">Out of time!</h1>
-              </div>
-              <div class="screen__scene challenge-info" data-scene-trigger="about">
-                <h2 class="font-weight-fat text-center mb-5 h4">A thing by:</h2>
-                <div class="row align-items-center justify-content-center">
-                  <div class="col-sm-3">
-                    <img src="images/illo-zac.gif" alt="">
-                  </div>
-                  <div class="col-sm-7">
-                    <h3 class="font-weight-fat"><a href="">Zac Halbert</a></h3>
-                    <p>"All that to say, this is bad."</p>
-                  </div>
-                </div>
-                <div class="row align-items-center justify-content-center">
-                  <div class="col-sm-3">
-                    <img src="images/illo-jake.gif" alt="">
-                  </div>
-                  <div class="col-sm-7">
-                    <h3 class="font-weight-fat"><a href="">Jake Fleming</a></h3>
-                    <p>"Uh, no. Bad. Bad design."</p>
-                  </div>
-                </div>
-                <p class="text-center">
-                  <a href="/"><img src="images/logo-mezzo.svg" alt="" width="128px"></a>
-                </p>
-              </div>
+                <h1 class="big font-weight-fat text-center mb-3">Out of time!</h1>
+                <div class="row justify-content-center">
+                  <div class="col-sm-6">
+                    <img class="mb-4" src="images/illo-zacjake.gif">
 
+                    <div class="talk-bubble p-3">
+                      <div class="talk-bubble__arrow"></div>
+                      <p class="mb-0">Do you really think <span class="js-user font-weight-fat"></span> would use this crappy thing?</p>
+                    </div>
+                    <p class="text-center">
+                      <img src="images/illo-star.gif" width="64">
+                      <img src="images/illo-star.gif" width="64">
+                      <img src="images/illo-star.gif" width="64">
+                    </p>
+                  </div>
+                </div>
+              </div>
 
             </div>
+            <!-- <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
+            <h1 class="big font-weight-fat">Out of time!</h1>
+          </div> -->
+          <div class="screen__scene challenge-info" data-scene-trigger="about">
+            <h2 class="font-weight-fat text-center mb-5 h4">A thing by:</h2>
+            <div class="row align-items-center justify-content-center">
+              <div class="col-sm-3">
+                <img src="images/illo-zac.gif" alt="">
+              </div>
+              <div class="col-sm-7">
+                <h3 class="font-weight-fat"><a href="">Zac Halbert</a></h3>
+                <p>"All that to say, this is bad."</p>
+              </div>
+            </div>
+            <div class="row align-items-center justify-content-center">
+              <div class="col-sm-3">
+                <img src="images/illo-jake.gif" alt="">
+              </div>
+              <div class="col-sm-7">
+                <h3 class="font-weight-fat"><a href="">Jake Fleming</a></h3>
+                <p>"Uh, no. Bad. Bad design."</p>
+              </div>
+            </div>
+            <p class="text-center">
+              <a href="/"><img src="images/logo-mezzo.svg" alt="" width="128px"></a>
+            </p>
           </div>
-          <div class="button js-info-button button--purple selectable button--info"><span class="button__text"><img src="images/logo-tent.svg" alt=""></span></div>
 
 
         </div>
+        <div class="text-center d-flex align-items-center justify-content-center mt-2">
+          <span class="mr-2 mt-1">Made by</span>
+          <div class="button js-info-button button--blue button--small selectable px-3"><span class="button__text">
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+            	 width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+
+            <g>
+            	<path class="st0" d="M18.9,10.7l-3.6-0.8l4.3,4.3l4.2-0.8c0.2,2.8,0.2,5.6,0,8.4c-4.6,0.3-8.2,0.3-10.1,0l-1.8-6.8l-1.5,6.8
+            		C8.4,22,4.8,22,0.2,21.6c-0.2-2.8-0.2-5.6,0-8.4l4.2,0.8l4.2-4.2L5,10.7C4.8,7.9,4.8,5.2,5,2.4C9.6,2,14.3,2,18.9,2.4
+            		C19.1,5.2,19.1,7.9,18.9,10.7z"/>
+            </g>
+            </svg>
+          </span></div>
+          <span class="ml-2 mt-1">Mezzotent</span>
+        </div>
       </div>
+
 
     </div>
   </div>
 
-  {% endblock %}
+</div>
+</div>
+
+{% endblock %}
