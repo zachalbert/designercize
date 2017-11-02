@@ -18,19 +18,34 @@ export const prompts = {
     "Design in the absence of content is just decoration!",
     "Any product that needs a manual to work is broken!",
     "Good design is obvious, great design is transparent!",
-    "Everything is design!"
+    "Everything is design!",
+    "Have you ever looked at the bottom of your feet? They're great!",
+    "Failure IS an option and you should take it.",
+    "Nobody knows you like I do, and I know you're going to fail.",
+    "Good luck! You'll need it!",
+    "The best part of waking up, is knowing you're going to fail.",
+    "I love you.",
+    "I just love plugging funnels.",
+    "Designers are like puppies. Everyone thinks they're great, until they puke on your computer."
   ],
   "features": {
     "easy": [
       "a user profile view",
       "a modal confirmation dialog",
       "a login and create account view",
-      "settings page"
+      "a settings page",
+      "a search results page",
+      "a contact form",
+      "a product detail page",
+      "a shopping cart page",
+      "a detail page",
+      "a list view"
     ],
     "medium": [
       "a dashboard",
       "a discovery feed",
-      "a full login process"
+      "a full login process",
+      "a full checkout process"
     ],
     "hard": [
       "a multi-user dashboard",
@@ -42,6 +57,8 @@ export const prompts = {
   },
   "useCases": {
     "easy": [
+      "a recipe app",
+      "a financial goal tracking app",
       "a todo app",
       "a professional networking site",
       "a book discovery app",
@@ -107,7 +124,8 @@ export const prompts = {
       "chefs",
       "restaurant patrons",
       "swimmers",
-      "foodies"
+      "foodies",
+      "high school students"
     ],
     "hard": [
       "astronauts on the ISS",
@@ -124,7 +142,10 @@ export const prompts = {
       "the supreme court",
       "famous 1980s rock bands",
       "podcast creators",
-      "concrete driveway specialists"
+      "concrete driveway specialists",
+      "touring musicians",
+      "astrophysicists",
+      "incognito government officials"
     ]
   },
   "devices": {
