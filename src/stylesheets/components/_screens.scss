@@ -185,6 +185,15 @@ $scan-opacity: .75;
   padding: 2.5rem 0;
   position: relative;
   animation: blurryScreen 3s linear infinite;
+  font-size: 0.85rem;
+
+  @media (min-width: 576px) {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.25rem;
+  }
 }
 
 .talk-bubble__arrow {

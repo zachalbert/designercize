@@ -31,48 +31,6 @@ input[type="checkbox"] {
  }
 }
 
-.output {
-  font-size: 0.75rem;
-
-  @media (min-width: 576px) {
-    font-size: 1rem;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 1.25rem;
-  }
-
-  &.cover {
-    &:before,
-    &:after {
-      content: '';
-      display: block;
-      position: absolute;
-      top: -50%;
-      width: 100%;
-      height: 50%;
-      background: #6437F6;
-      border-color: solid #000001;
-      border-style: solid;
-      border-width: 2px 0 2px 0;
-      border-radius: 3px 3px 0 0;
-      transition: all 0.1s ease-in-out;
-    }
-
-    &:before {
-      box-shadow: inset 0 -2px 0 #0001BC, inset 0 6px 0 #411BB8;
-      height: calc(50% - 3px);
-    }
-
-    &:after {
-      top: 100%;
-      border-radius: 0 0 3px 3px;
-      border-width: 2px 0 0 0;
-      box-shadow: inset 0 2px 0 #1576F4;
-    }
-  }
-}
-
 .closed {
   .output.cover {
     &:before {
