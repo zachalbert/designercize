@@ -134,11 +134,46 @@ $scan-opacity: .75;
     width: 100%;
     display: none;
     flex-direction: column;
+    max-height: 78vh;
+    overflow-y: scroll;
 
     &.challenge-running {
       display: flex;
     }
+
+    &::-webkit-scrollbar {
+      width: 18px;
+      height: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(#4CF190, 0.65);
+      border-right: 10px solid #003D56;
+      max-height: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+    }
+
+    &::-webkit-scrollbar-corner {
+      background-color: transparent;
+    }
   }
+}
+
+.scrollbar {
+    background-color: #F5F5F5;
+    float: left;
+    height: 300px;
+    margin-bottom: 25px;
+    margin-left: 22px;
+    margin-top: 40px;
+    width: 65px;
+       overflow-y: scroll;
+}
+
+.force-overflow {
+    min-height: 450px;
 }
 
 .talk-bubble {
