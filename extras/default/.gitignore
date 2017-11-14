@@ -1,7 +1,0 @@
-.DS_Store
-.sass-cache
-public
-Desktop.ini
-node_modules
-**/generated/_icons.sass
-npm-debug.log
