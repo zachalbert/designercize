@@ -111,125 +111,26 @@ function buttonDown() {
               </div>
             </div>
           </div>
+
+
         </div>
       </div>
     </div>
     <div class="col-sm-7 col-md-8 d-flex align-items-stretch p-2">
 
-
-
       <div class="panel panel--purple panel--raised d-flex flex-column align-items-stretch p-3 width-full">
         <div class="screen d-flex align-items-center flex-column justify-content-center">
           <div class="scrolling-content d-flex flex-column justify-content-top pt-4">
 
+            {% include 'includes/challenge-countdown.html' %}
 
+            {% include 'includes/challenge.html' %}
 
-            <div class="screen__scene challenge-countdown" data-scene-trigger="start-button">
-              <h1 class="big font-weight-fat">3</h1>
-            </div>
+            {% include 'includes/out-of-time.html' %}
 
-
-
-
-            <div class="screen__scene challenge-running" data-scene-trigger="reload-button">
-              <img src="images/illo-workout-head.gif" width="96" height="96" class="mb-4 align-self-center">
-              <div class="talk-bubble text-center">
-                <div class="talk-bubble__arrow"></div>
-                <div class="container-fluid">
-                  <div class="row py-3 output">
-
-                    <div class="col-4 text-right font-weight-fat">Design: </div>
-                    <div class="col-8 mb-3 text-left">
-                      <div id="features" class="output__text"></div>
-                    </div>
-
-                    <div class="col-4 text-right font-weight-fat">For: </div>
-                    <div class="col-8 mb-3 text-left">
-                      <div id="useCases" class="output__text"></div>
-                    </div>
-
-                    <div class="col-4 text-right font-weight-fat">To help: </div>
-                    <div class="col-8 mb-3 text-left">
-                      <div id="audiences" class="output__text"></div>
-                    </div>
-
-                    <div class="d-none">
-                      <div class="col-4 text-right font-weight-fat">Device: </div>
-                      <div class="col-8 mb-3 text-left">
-                        <div id="devices" class="output__text"></div>
-                      </div>
-
-                      <div class="col-4 text-right font-weight-fat">Need: </div>
-                      <div class="col-8 text-left">
-                        <div id="needs" class="output__text"></div>
-                      </div>
-                    </div>
-
-
-                  </div>
-                  <!-- 88 = morse code <3 -->
-                  <div class="py-2">- - - • •&nbsp;&nbsp;- - - • •</div>
-                  <div class="quote-box"></div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
-              <h1 class="big font-weight-fat text-center mb-3">Out of time!</h1>
-              <div class="row justify-content-center">
-                <div class="col-sm-6">
-                  <img class="mb-4" src="images/illo-zacjake.gif">
-
-                  <div class="talk-bubble p-3">
-                    <div class="talk-bubble__arrow"></div>
-                    <p class="mb-0">Do you really think <span class="js-user font-weight-fat"></span> would use this crappy thing?</p>
-                  </div>
-                  <p class="text-center">
-                    <img src="images/illo-star.gif" width="64">
-                    <img src="images/illo-star.gif" width="64">
-                    <img src="images/illo-star.gif" width="64">
-                  </p>
-                </div>
-              </div>
-            </div>
+            {% include 'includes/about.html' %}
 
           </div>
-
-        <!-- <div class="screen__scene challenge-out-of-time" data-scene-trigger="out-of-time">
-          <h1 class="big font-weight-fat">Out of time!</h1>
-        </div> -->
-
-        <div class="screen__scene challenge-info px-4" data-scene-trigger="about">
-
-          <h2 class="font-weight-fat text-center mb-5 h4">A thing by:</h2>
-          <p class="text-center">
-            <a href="/"><img src="images/logo-mezzo.svg" alt="" width="128px"></a>
-          </p>
-          <p>
-            Lorems and ipsums.
-          </p>
-
-          <div class="row align-items-center justify-content-center">
-            <div class="col-sm-3">
-              <img src="images/illo-zac.gif" alt="">
-            </div>
-            <div class="col-sm-7">
-              <h3 class="font-weight-fat"><a href="">Zac Halbert</a></h3>
-              <p>"All that to say, this is bad."</p>
-            </div>
-          </div>
-          <div class="row align-items-center justify-content-center">
-            <div class="col-sm-3">
-              <img src="images/illo-jake.gif" alt="">
-            </div>
-            <div class="col-sm-7">
-              <h3 class="font-weight-fat"><a href="">Jake Fleming</a></h3>
-              <p>"Uh, no. Bad. Bad design."</p>
-            </div>
-          </div>
-
-        </div>
 
 
       </div>

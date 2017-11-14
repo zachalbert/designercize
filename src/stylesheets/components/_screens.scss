@@ -136,6 +136,7 @@ $scan-opacity: .75;
     flex-direction: column;
     max-height: 78vh;
     overflow-y: scroll;
+    overflow-x: hidden;
 
     &.challenge-running {
       display: flex;

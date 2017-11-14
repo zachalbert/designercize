@@ -173,4 +173,8 @@ ol {
 
 a {
   color: palette(green, 00);
+
+  &:hover {
+    color: lighten(palette(green, 00), 10%);
+  }
 }
