@@ -20,10 +20,14 @@
 
     {% block javascript %}
     <script src="javascripts/app.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109705254-1"></script>
     <script>
-      $('#start-button').click(function(){
-        $('#prompt1, #prompt2').toggleClass('flipped')
-      });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-109705254-1');
     </script>
     {% endblock %}
   </body>
