@@ -3,20 +3,22 @@
 {% block head %}
 <style type="text/css">
 body {
-  background: black;
+  background: black !important;
+  color: white !important;
   position: relative;
-  height: 100vh;
+  padding: 4rem 0;
 }
 
 .logo {
-  width:100%;
-  max-width: 512px*1;
-  margin: 0 auto;
   display: block;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 100%;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.logo img {
+  width:100%;
+  max-width: 512px;
 }
 
 a,
@@ -26,5 +28,29 @@ a:active {
 </style>
 {% endblock %}
 {% block content %}
-  <a href="wbc.html"><img src="images/mezzotent-logo.png" alt="Mezzotent" class="logo"/></a>
+  <a href="wbc.html" class="logo"><img src="images/mezzotent-logo.png" alt="Mezzotent"/></a>
+
+  <h4 class="text-center mb-5">Side projects by Zac &amp; Jake</h4>
+
+  <div class="project text-center mb-4">
+    <a href="#">
+      <img src="http://www.fillmurray.com/800/200" alt="" class="responsive-img"><br>
+      Designercize [branding, illustration, code]
+    </a>
+  </div>
+
+  <div class="project text-center mb-4">
+    <a href="#">
+      <img src="http://www.fillmurray.com/800/200" alt="" class="responsive-img"><br>
+      TypeJam [branding, illustration, code]
+    </a>
+  </div>
+
+  <div class="project text-center mb-4">
+    <a href="#">
+      <img src="http://www.fillmurray.com/800/200" alt="" class="responsive-img"><br>
+      Learn Code the Hard Way [branding, illustration, code]
+    </a>
+  </div>
+
 {% endblock %}

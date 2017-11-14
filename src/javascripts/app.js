@@ -188,12 +188,14 @@ function injectPrompt( index, category, prompt ) {
   // Clear it first
   $(selector).text('');
 
-  let typed = new Typed(selector, {
-    strings: [ prompt ],
-    typeSpeed: 40,
-    startDelay: delay,
-    showCursor: false
-  });
+  if( selector !== null ) {
+    let typed = new Typed(selector, {
+      strings: [ prompt ],
+      typeSpeed: 40,
+      startDelay: delay,
+      showCursor: false
+    });
+  }
 
 
   /* TODO: Typing noise
