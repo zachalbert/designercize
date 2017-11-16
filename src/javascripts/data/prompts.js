@@ -12,7 +12,6 @@ export const prompts = {
     "You can love what you do not master, but you can't master what you do not love",
     "Make it as simple as possible, but not simpler!",
     "How hard could it be?",
-    "I used to have it way harder",
     "The path to mastery is paved with progress",
     "Get after it!",
     "Waste not, want not!",
