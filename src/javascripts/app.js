@@ -193,7 +193,11 @@ function injectPrompt( index, category, prompt ) {
       strings: [ prompt ],
       typeSpeed: 40,
       startDelay: delay,
-      showCursor: false
+      showCursor: false,
+      onComplete: (arrayPos, self) => {
+        $('.drillinstructor--still').show();
+        $('.drillinstructor--animated').hide();
+      }
     });
   }
 
@@ -221,6 +225,9 @@ function injectPrompt( index, category, prompt ) {
 
 // Roll a new prompt
 function rollNewPrompt(difficulty) {
+  $('.drillinstructor--animated').show();
+  $('.drillinstructor--still').hide();
+
   // Iterate through the category string array
   for( let i = 0; i < categories.length; i++ ) {
     injectPrompt(i, categories[i], getRandomPromptByDifficulty(categories[i], difficulty));
@@ -355,8 +362,8 @@ function startChallengeTimer() {
   // Function to start the clock
   function initializeClock(id, endtime) {
     clearAllIntervals();
-    $('.illo--animated').show();
-    $('.illo--still').hide();
+    $('.workoutman--animated').show();
+    $('.workoutman--still').hide();
 
     let clock = document.getElementById(id);
     let minutesEl = clock.querySelector('.minutes');
