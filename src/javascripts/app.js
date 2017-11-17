@@ -271,13 +271,13 @@ function stopTimer() {
 }
 
 function disableStartButton() {
-  $('.js-start-button')
+  $('.js-start-button, .timer__button')
       .attr("disable", true)
       .addClass('button--disabled');
 }
 
 function enableStartButton() {
-  $('.js-start-button')
+  $('.js-start-button, .timer__button')
     .attr("disable", false)
     .removeClass('button--disabled');
 }
