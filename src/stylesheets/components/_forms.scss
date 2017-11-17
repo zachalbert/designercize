@@ -1,52 +1,3 @@
-input[type="checkbox"] {
-  line-height: 1;
-  position: relative;
-  top: -2px;
-  margin-right: 0.5rem;
-}
-
-.input-container {
-  padding-top: 4px;
-  border: 2px solid #000001;
-  display: inline-block;
-  border-radius: 5px;
-  background: #0000B9;
-  margin: 0 0.5rem;
-  position: relative;
-}
-
-.input-stepper {
-  font-size: 0; // get rid of the space between stepper controls
-
-  &__display {
-   border: 0 solid #000001;
-   color: #4CF190;
-   box-shadow: inset 0 8px 0 #000001;
-   background: #003D56;
-   border-radius: 4px;
-   text-align: center;
-   font-size: 30px;
-   padding: 24px 30px;
-   z-index: 1;
- }
-}
-
-.closed {
-  .output.cover {
-    &:before {
-      top: 5px;
-    }
-
-    &:after {
-      top: 50%;
-    }
-  }
-
-  .label-text {
-    opacity: 0.25;
-  }
-}
-
 .timer {
   &__display {
     text-align: center;
@@ -72,5 +23,16 @@ input[type="checkbox"] {
   .timer__button-container:last-child .button, .timer__button-container:last-child .button::after {
     border-radius: 0 $button-radius $button-radius  0;
     border-left: 0;
+  }
+}
+
+.input {
+  background: transparent;
+  border: 0;
+  border-bottom: 3px solid #4CF190;
+  color: #4CF190;
+
+  &::placeholder {
+    color: #4CF190;
   }
 }
