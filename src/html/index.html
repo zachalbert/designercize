@@ -1,15 +1,5 @@
 {% extends 'layouts/application.html' %}
 
-{% block head %}
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3eK6gw4y3A">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3eK6gw4y3A">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3eK6gw4y3A">
-<link rel="manifest" href="/manifest.json?v=3eK6gw4y3A">
-<link rel="mask-icon" href="/safari-pinned-tab.svg?v=3eK6gw4y3A" color="#6839ff">
-<link rel="shortcut icon" href="/favicon.ico?v=3eK6gw4y3A">
-<meta name="theme-color" content="#6839ff">
-{% endblock %}
-
 {% block content %}
 <script>
 
@@ -19,7 +9,7 @@ function buttonDown() {
 }
 
 </script>
-<div class="panel panel--purple b-0">
+<div class="panel panel--purple b-0" style="box-shadow: none;">
   <div class="row no-gutters align-items-stretch" style="min-height: 100vh">
 
     <div class="col-sm-5 col-md-4 overflow-y-scroll d-flex p-2">
@@ -81,7 +71,7 @@ function buttonDown() {
         </div>
 
 
-        <div class="panel panel--purple timer-controls flat-top">
+        <div class="panel panel--purple panel--raised timer-controls flat-top">
           <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
             <div class="timer__button-container d-flex align-items-stretch">
               <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
