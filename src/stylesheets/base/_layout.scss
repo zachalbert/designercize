@@ -1,0 +1,14 @@
+html, body {
+  min-width: 320px;
+}
+
+.layout {
+  &__control-panel {
+    &__display,
+    &__controls {
+      @media (min-width:768px) {
+        height: 50vh;
+      }
+    }
+  }
+}

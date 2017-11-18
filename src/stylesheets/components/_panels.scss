@@ -1,21 +1,23 @@
 .panel {
   border: 2px solid #000001;
-  border-left: 0;
-  //padding: 1rem 0;
   position: relative;
   z-index: 2;
-  .panel {
-    border-radius: 4px;
-    padding: 1rem;
-    border: 2px solid #000001;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.75rem 0.75rem 1rem;
+
+  &__divider {
+    width: 100%;
+    height: 4px;
+    background: #000001;
+    border-bottom: 2px solid #1578F8;
+    margin: 1rem 0 0.75rem;
   }
-  .panel.panel--raised {
-    &:before {
-      border-radius: 0 0 4px 4px;
-      left: -2px;
-      right: -2px;
-    }
+
+  &__container {
+    padding-bottom: 0.5rem;
   }
+
   &--blue {
     background: #0051fc;
     box-shadow: inset 0 2px 0 0 #1578F8;
@@ -28,7 +30,6 @@
     border-radius: 4px;
   }
   &--raised {
-    margin-bottom: 6px;
     z-index:3;
     &:after {
       content: '';
@@ -37,19 +38,22 @@
       bottom: -10px;
       left: -2px;
       right: -2px;
+      border-radius: 0 0 4px 4px;
       border-bottom: 2px solid #000001;
       border-left: 2px solid #000001;
       border-right: 2px solid #000001;
       box-shadow: inset 0 -6px 0 #441DBF;
       pointer-events: none;
+      z-index: 3;
     }
     &:before {
       content: '';
       position: absolute;
-      bottom: -18px;
-      left: 0px;
-      right: 0px;
-      height: 8px;
+      bottom: -20px;
+      border-radius: 0 0 4px 4px;
+      left: -2px;
+      right: -2px;
+      height: 14px;
       background: #441DBF;
       z-index: 2;
       pointer-events: none;

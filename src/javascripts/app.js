@@ -201,26 +201,6 @@ function injectPrompt( index, category, prompt ) {
     });
   }
 
-
-  /* TODO: Typing noise
-   - This thing should play a noise for typeNoiseLimit x typeSpeed, but at fast
-   - speeds, it queues the sounds rather than playing new ones on top of each
-   - other. Commenting out for now.
-  let typeNoise = new Audio('button-down.mp3');
-  let typeNoiseLimit = 10;
-  let typeSpeed = 200; // ms
-  let typeCount = 0;
-  function playTypeSound() {
-    typeNoise.play();
-
-    if( typeCount >= typeNoiseLimit ) {
-      window.clearInterval(timeInterval);
-    }
-    typeCount++;
-  }
-  playTypesfSound();
-  let timeInterval = setInterval(playTypeSound, typeSpeed);
-  **/
 }
 
 // Roll a new prompt
@@ -233,8 +213,16 @@ function rollNewPrompt(difficulty) {
     injectPrompt(i, categories[i], getRandomPromptByDifficulty(categories[i], difficulty));
   }
 
-  // Give us some inspiration
+  // Inspire us
+
   let inspiration = prompts.inspiration;
+
+  // let currentInspo = $('.quote-box').text();
+  // let lastKey = $.grep( inspiration, function(n) {
+  //   return n == id;
+  // });
+  // console.log(currentInspo);
+
   let randomNum = Math.floor( Math.random() * inspiration.length );
   let randomInspo = inspiration[randomNum];
 
@@ -329,12 +317,12 @@ function startChallengeTimer() {
   unSelectAllTimerButtons();
 
   // Get the selected time, turn it into a date object
-  let challengeLengthMinutes = $('#timer .minutes').text();
-  let challengeLengthSeconds = $('#timer .seconds').text();
+  // let challengeLengthMinutes = $('#timer .minutes').text();
+  // let challengeLengthSeconds = $('#timer .seconds').text();
 
   // Fast timer for dev purposes
-  // let challengeLengthMinutes = 0;
-  // let challengeLengthSeconds = 3;
+  let challengeLengthMinutes = 0;
+  let challengeLengthSeconds = 3;
 
   // start the timer based on what's already on the clock
   let challengeLength = new Date( Date.parse( new Date() ) + ( 1 * 1 * challengeLengthMinutes * 60 * 1000 ) + ( 1 * 1 * challengeLengthSeconds * 1000 ) );

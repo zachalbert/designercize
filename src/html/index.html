@@ -1,3 +1,4 @@
+{% set title = "DESIGNERCIZE" %}
 {% extends 'layouts/application.html' %}
 
 {% block content %}
@@ -9,108 +10,150 @@ function buttonDown() {
 }
 
 </script>
-<div class="panel panel--purple b-0" style="box-shadow: none;">
-  <div class="row no-gutters align-items-stretch" style="min-height: 100vh">
 
-    <div class="col-sm-5 col-md-4 overflow-y-scroll d-flex p-2">
-      <div class="container-fluid d-flex flex-column justify-content-top p-0">
-        <div class="panel panel--purple panel--raised mb-3 shrink">
-          <div class="screen shrink">
-
-            <div class="row no-gutters align-items-center panel-heading">
-              <div class="col-4 text-right">
-                <img src="images/illo-workout-squat-still.gif" width="96" height="96" class="img-fluid illo workoutman--still">
-                <img src="images/illo-workout-squat.gif" width="96" height="96" class="img-fluid illo workoutman--animated" style="display: none;">
-              </div>
-              <div class="col-8 text-left">
-                <h5 class="panel-heading__title font-weight-fat">Designercize</h5>
-              </div>
-            </div>
-
-            <div class="px-3">
-              <small>
-                <ol>
-                  <li>
-                    Choose a difficulty
-                  </li>
-                  <li>
-                    Reload until you're happy
-                  </li>
-                  <li>
-                    If you're happy and you know it, clap your hands
-                  </li>
-                  <li>
-                    Choose duration
-                  </li>
-                  <li>
-                    Hit Play <i class="icon ion-play"></i>
-                  </li>
-                </ol>
-              </small>
-            </div>
-
-          </div>
+<div class="row no-gutters layout__container">
+  <div class="col-12 order-2 col-md-5 order-md-1 col-lg-4 layout__control-panel">
+    <div class="row no-gutters">
+      <div class="col-12 order-2 order-md-1 p-2 pb-4 layout__control-panel__display">
+        <div class="panel panel--purple panel--raised h-100">
+          {% include 'includes/control-panel-display.html' %}
         </div>
-        <div class="panel panel--purple grow d-flex flex-column align-items-stretch flat-bottom">
-          <div class="button-group grow mb-2">
-            <div class="button button--small button--blue js-difficulty d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
-              <span class="button__text d-none d-md-inline-block">Easy</span>
-              <span class="button__text d-md-none">E</span>
-            </div>
-            <div class="button button--small button--blue js-difficulty d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
-              <span class="button__text d-none d-md-block">Medium</span>
-              <span class="button__text d-md-none">M</span>
-            </div>
-            <div class="button button--small button--blue js-difficulty d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
-              <span class="button__text d-none d-md-block">Hard</span>
-              <span class="button__text d-md-none">H</span>
-            </div>
-          </div>
-
-          <button class="screen__scene-change button button--small button--pink width-full mt-1 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
-        </div>
-
-
-        <div class="panel panel--purple panel--raised timer-controls flat-top">
-          <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
-            <div class="timer__button-container d-flex align-items-stretch">
-              <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
-            </div>
-            <div class="timer__display screen d-flex justify-content-center">
-              <div class="align-self-center font-weight-fat">
-                <span class="minutes">15</span>
-                <span class="colon">:</span>
-                <span class="seconds">00</span>
-              </div>
-            </div>
-            <div class="timer__button-container d-flex align-items-stretch">
-              <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
-            </div>
-          </div>
-
-          <div class="timer-controls__panel back">
-            <div class="button-group grow d-flex align-items-stretch">
-              <div class="button js-start-button grow button--green d-flex justify-content-center align-items-center" onclick="buttonDown()">
-                <span class="button__text"><i class="icon ion-play"></i></span>
-              </div>
-              <div class="button js-pause-button grow button--yellow d-flex justify-content-center align-items-center selectable" onclick="buttonDown()">
-                <span class="button__text"><i class="icon ion-pause"></i></span>
-              </div>
-              <div class="button js-stop-button grow button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
-                <span class="button__text"><i class="icon ion-stop"></i></span>
-              </div>
-            </div>
-          </div>
-
-
+      </div>
+      <div class="col-12 order-1 order-md-2 p-2 pb-4 layout__control-panel__controls">
+        <div class="panel panel--purple panel--raised h-100">
+          {% include 'includes/control-panel-controls.html' %}
         </div>
       </div>
     </div>
-    <div class="col-sm-7 col-md-8 d-flex align-items-stretch p-2">
+  </div>
+  <div class="col-12 order-1 col-md-7 order-md-2 col-lg-8 p-2 pb-4 layout__main-display">
+    <div class="panel panel--purple panel--raised h-100">
+      {% include 'includes/main-display.html' %}
+    </div>
+  </div>
+</div>
+
+
+{#
+<div class="panel panel--purple b-0" style="box-shadow: none;">
+  <div class="row no-gutters align-items-stretch">
+
+    <div class="col-md-4 d-flex panel__container order-2 order-md-1">
+      <div class="d-flex flex-column justify-content-top p-0">
+
+        <div class="panel__container">
+
+          <div class="panel panel--purple panel--raised shrink order-2 order-md-1" style="max-height: 50vh;">
+            <div class="screen d-flex align-items-center flex-column justify-content-center">
+
+              <div class="scrolling-content d-flex flex-column justify-content-top pt-4">
+
+                <div class="row no-gutters align-items-center panel-heading">
+                  <div class="col-4 text-right">
+                    <img src="images/illo-workout-squat-still.gif" width="96" height="96" class="img-fluid illo workoutman--still">
+                    <img src="images/illo-workout-squat.gif" width="96" height="96" class="img-fluid illo workoutman--animated" style="display: none;">
+                  </div>
+                  <div class="col-8 text-left">
+                    <h5 class="panel-heading__title font-weight-fat">Designercize</h5>
+                  </div>
+                </div>
+
+                <div class="px-3">
+                  <small>
+                    <ol>
+                      <li>
+                        Choose a difficulty
+                      </li>
+                      <li>
+                        Reload until you're happy
+                      </li>
+                      <li>
+                        If you're happy and you know it, clap your hands
+                      </li>
+                      <li>
+                        Choose duration
+                      </li>
+                      <li>
+                        Hit Play <i class="icon ion-play"></i>
+                      </li>
+                    </ol>
+                  </small>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <div class="panel__container">
+
+          <div class="panel panel--purple panel--raised shrink d-flex flex-column order-1 order-md-2">
+            <div class="order-3 order-md-1">
+              <div class="button-group grow mb-2">
+                <div class="button button--small button--blue js-difficulty d-flex justify-content-center align-items-center" id="easy" data-difficulty="easy" onclick="buttonDown()">
+                  <span class="button__text d-none d-md-inline-block">Easy</span>
+                  <span class="button__text d-md-none">E</span>
+                </div>
+                <div class="button button--small button--blue js-difficulty d-flex justify-content-center align-items-center" id="medium" data-difficulty="medium" onclick="buttonDown()">
+                  <span class="button__text d-none d-md-block">Medium</span>
+                  <span class="button__text d-md-none">M</span>
+                </div>
+                <div class="button button--small button--blue js-difficulty d-flex justify-content-center align-items-center" id="hard" data-difficulty="hard" onclick="buttonDown()">
+                  <span class="button__text d-none d-md-block">Hard</span>
+                  <span class="button__text d-md-none">H</span>
+                </div>
+              </div>
+              <button class="screen__scene-change button button--small button--pink width-full mt-1 grow" id="reload-button" onclick="buttonDown()"><span class="button__text"><span class="d-none d-md-inline">Reload Challenge&nbsp;&nbsp;</span><i class="icon ion-refresh"></i></span></button>
+            </div>
+
+            <div class="panel__divider order-2"></div>
+
+            <div class="order-1 order-md-3">
+
+              <div class="timer d-flex p mb-3 flex-md-row grow align-items-stretch" id="timer">
+                <div class="timer__button-container d-flex align-items-stretch">
+                  <button data-stepper-direction="decrease" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-down"></i></span></button>
+                </div>
+                <div class="timer__display screen d-flex justify-content-center">
+                  <div class="align-self-center font-weight-fat">
+                    <span class="minutes">15</span>
+                    <span class="colon">:</span>
+                    <span class="seconds">00</span>
+                  </div>
+                </div>
+                <div class="timer__button-container d-flex align-items-stretch">
+                  <button data-stepper-direction="increase" class="timer__button button button--small button--blue" onclick="buttonDown()"><span class="button__text"><i class="icon ion-chevron-up"></i></span></button>
+                </div>
+              </div>
+
+              <div class="timer-controls__panel back">
+                <div class="button-group grow d-flex align-items-stretch">
+                  <div class="button js-start-button grow button--green d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                    <span class="button__text"><i class="icon ion-play"></i></span>
+                  </div>
+                  <div class="button js-pause-button grow button--yellow d-flex justify-content-center align-items-center selectable" onclick="buttonDown()">
+                    <span class="button__text"><i class="icon ion-pause"></i></span>
+                  </div>
+                  <div class="button js-stop-button grow button--red d-flex justify-content-center align-items-center" onclick="buttonDown()">
+                    <span class="button__text"><i class="icon ion-stop"></i></span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-8 d-flex align-items-stretch panel__container order-1 order-md-2">
 
       <div class="panel panel--purple panel--raised d-flex flex-column align-items-stretch p-3 width-full">
         <div class="screen d-flex align-items-center flex-column justify-content-center">
-          <div class="scrolling-content d-flex flex-column justify-content-top pt-4">
+          <div class="scrolling-content d-flex flex-column justify-content-top pt-4 pl-2">
 
             {% include 'includes/challenge-countdown.html' %}
 
@@ -144,8 +187,6 @@ function buttonDown() {
 
   </div>
 </div>
-
-</div>
-</div>
+#}
 
 {% endblock %}

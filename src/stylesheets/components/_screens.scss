@@ -124,7 +124,6 @@ $scan-opacity: .75;
   }
   img {
     max-width: 100%;
-    animation: blurryScreen 3s linear infinite;
   }
   * {
     position: relative;
@@ -185,7 +184,6 @@ $scan-opacity: .75;
   margin: 0 auto 1rem;
   padding: 2.5rem 0;
   position: relative;
-  animation: blurryScreen 3s linear infinite;
   font-size: 0.85rem;
 
   @media (min-width: 576px) {

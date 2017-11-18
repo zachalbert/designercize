@@ -34,8 +34,8 @@ export const prompts = {
     "Nobody knows you like I do, and I know you're going to fail.",
     "Good luck! You'll need it!",
     "The best part of waking up, is knowing you're going to fail.",
-    "I love you.",
-    "Designers are like puppies. Everyone thinks they're great, until they puke on your computer."
+    "I <3 you.",
+    "Designers are like puppies. Everyone thinks they're great, until they pee on the carpet."
   ],
   "features": {
     "easy": [
