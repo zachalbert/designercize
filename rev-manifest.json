@@ -30,9 +30,12 @@
   "fonts/ionicons.woff": "fonts/ionicons-05acfdb568.woff",
   "images/7466E5121D735D01.png": "images/7466E5121D735D01-6a71424380.png",
   "images/cursor-hand.png": "images/cursor-hand-a4b1834fd6.png",
+  "images/designercize-medium.gif": "images/designercize-medium-13704f32b7.gif",
+  "images/designercize.gif": "images/designercize-e439837170.gif",
   "images/illo-jake.gif": "images/illo-jake-243566f8d3.gif",
   "images/illo-jake.png": "images/illo-jake-b4d1ccf619.png",
   "images/illo-star.gif": "images/illo-star-bf7ab53af8.gif",
+  "images/illo-workout-head-still.gif": "images/illo-workout-head-still-b0d4e284d9.gif",
   "images/illo-workout-head.gif": "images/illo-workout-head-e633541049.gif",
   "images/illo-workout-head.svg": "images/illo-workout-head-dd42ff5412.svg",
   "images/illo-workout-squat-still.gif": "images/illo-workout-squat-still-1b4e9512e5.gif",
@@ -43,7 +46,7 @@
   "images/logo-mezzo.svg": "images/logo-mezzo-fc23eb8b8a.svg",
   "images/logo-tent.svg": "images/logo-tent-985faad654.svg",
   "images/mezzotent-logo.png": "images/mezzotent-logo-711b127c9b.png",
-  "javascripts/app.js": "javascripts/app-3a72f672e363923030f7.js",
-  "stylesheets/app.css": "stylesheets/app-22bd1bc814.css",
+  "javascripts/app.js": "javascripts/app-d61a1afe369351096114.js",
+  "stylesheets/app.css": "stylesheets/app-620054ee69.css",
   "stylesheets/vendor/bootstrap.min.css": "stylesheets/vendor/bootstrap-64f951649b.min.css"
 }
