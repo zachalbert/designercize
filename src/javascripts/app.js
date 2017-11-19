@@ -250,12 +250,16 @@ function pauseTimer() {
   clearAllIntervals();
   disablePauseButton();
   enableStartButton();
+  $('.workoutman--animated').hide();
+  $('.workoutman--still').show();
 }
 
 function stopTimer() {
   clearAllIntervals();
   resetTimer();
   enableStartButton();
+  $('.workoutman--animated').hide();
+  $('.workoutman--still').show();
 }
 
 function disableStartButton() {
