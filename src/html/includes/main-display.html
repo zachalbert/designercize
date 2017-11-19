@@ -1,1 +1,30 @@
-Main display
+
+  <div class="screen">
+    <div class="scrolling-content d-flex flex-column justify-content-top py-3 pl-2 w-100">
+
+      {% include 'includes/challenge-countdown.html' %}
+
+      {% include 'includes/challenge.html' %}
+
+      {% include 'includes/out-of-time.html' %}
+
+      {% include 'includes/about.html' %}
+
+    </div>
+  </div>
+
+  <div class="text-center py-2">
+    <span class="mr-2 mt-1">Made by</span>
+    <div class="button js-info-button button--blue button--small selectable px-3"><span class="button__text">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         width="24px" height="24px" viewBox="0 0 24 24" style="enable-background:new 0 0 24 24;" xml:space="preserve">
+
+      <g>
+        <path class="st0" d="M18.9,10.7l-3.6-0.8l4.3,4.3l4.2-0.8c0.2,2.8,0.2,5.6,0,8.4c-4.6,0.3-8.2,0.3-10.1,0l-1.8-6.8l-1.5,6.8
+          C8.4,22,4.8,22,0.2,21.6c-0.2-2.8-0.2-5.6,0-8.4l4.2,0.8l4.2-4.2L5,10.7C4.8,7.9,4.8,5.2,5,2.4C9.6,2,14.3,2,18.9,2.4
+          C19.1,5.2,19.1,7.9,18.9,10.7z"/>
+      </g>
+      </svg>
+    </span></div>
+    <span class="ml-2 mt-1">Mezzotent</span>
+  </div>

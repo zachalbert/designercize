@@ -81,7 +81,8 @@ $scan-opacity: .75;
   position: relative;
   width: 100%;
   flex-grow: 1;
-  //cursor: url(../images/cursor-hand.png), auto;
+  height: 80%;
+
   &:before {
     content: '';
     position: absolute;
@@ -136,6 +137,7 @@ $scan-opacity: .75;
     max-height: 78vh;
     overflow-y: scroll;
     overflow-x: hidden;
+    padding: 1rem 0;
 
     &.challenge-running {
       display: flex;
