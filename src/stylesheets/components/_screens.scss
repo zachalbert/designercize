@@ -81,7 +81,8 @@ $scan-opacity: .75;
   position: relative;
   width: 100%;
   flex-grow: 1;
-  height: 80%;
+  overflow: hidden;
+  height: 100%;
 
   &:before {
     content: '';

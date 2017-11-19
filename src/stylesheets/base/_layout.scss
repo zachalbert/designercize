@@ -2,13 +2,40 @@ html, body {
   min-width: 320px;
 }
 
-.layout {
-  &__control-panel {
-    &__display,
-    &__controls {
-      @media (min-width:768px) {
+@media (min-width:768px) {
+
+  .layout {
+    &__control-panel {
+      &__display,
+      &__controls {
         height: 50vh;
       }
     }
   }
+
+  .main-display {
+
+    &__made-by {
+      height: 10%;
+    }
+
+    &__screen {
+      height: 88%;
+    }
+  }
+
+}
+
+@media (max-width:768px) {
+
+  .main-display {
+    &__made-by {
+      padding-bottom: 0.5rem;
+    }
+  }
+
+}
+
+.main-display__spacer {
+  height: 2%;
 }
