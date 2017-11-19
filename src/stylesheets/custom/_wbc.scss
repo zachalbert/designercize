@@ -209,6 +209,12 @@ a {
  }
 }
 
+.text-center-on-md {
+ @media (max-width: 992px)  {
+   text-align: center!important;
+ }
+}
+
 .mb-sm-2 {
  @media (max-width: 768px)  {
    margin-bottom: 20px;

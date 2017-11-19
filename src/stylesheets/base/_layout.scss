@@ -44,6 +44,10 @@ html, body {
 
 @media (max-width:768px) {
 
+  .text-small-on-sm {
+    font-size: 0.85em !important;
+  }
+  
   .main-display {
     &__made-by {
       padding-bottom: 0.5rem;
