@@ -13,9 +13,7 @@ import { prompts } from "./data/prompts";
 let categories = [
   'features',
   'useCases',
-  'audiences',
-  'devices',
-  'needs'
+  'audiences'
 ];
 
 let activeIntervals = [];
