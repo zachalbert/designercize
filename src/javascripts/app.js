@@ -167,6 +167,7 @@ function startChallenge() {
       startChallengeTimer();
     });
   }
+  enablePauseButton();
   disableStartButton();
 }
 
@@ -247,6 +248,7 @@ function initCountDown(callback) {
 
 function pauseTimer() {
   clearAllIntervals();
+  disablePauseButton();
   enableStartButton();
 }
 
@@ -258,14 +260,26 @@ function stopTimer() {
 
 function disableStartButton() {
   $('.js-start-button, .timer__button')
-      .attr("disable", true)
-      .addClass('button--disabled');
+    .attr("disable", true)
+    .addClass('button--disabled');
 }
 
 function enableStartButton() {
   $('.js-start-button, .timer__button')
     .attr("disable", false)
     .removeClass('button--disabled');
+}
+
+function enablePauseButton() {
+  $('.js-pause-button')
+    .attr("disable", false)
+    .removeClass('button--disabled');
+}
+
+function disablePauseButton() {
+  $('.js-pause-button')
+    .attr("disable", true)
+    .addClass('button--disabled');
 }
 
 function unSelectAllTimerButtons() {
@@ -315,12 +329,12 @@ function startChallengeTimer() {
   unSelectAllTimerButtons();
 
   // Get the selected time, turn it into a date object
-  // let challengeLengthMinutes = $('#timer .minutes').text();
-  // let challengeLengthSeconds = $('#timer .seconds').text();
+  let challengeLengthMinutes = $('#timer .minutes').text();
+  let challengeLengthSeconds = $('#timer .seconds').text();
 
   // Fast timer for dev purposes
-  let challengeLengthMinutes = 0;
-  let challengeLengthSeconds = 3;
+  // let challengeLengthMinutes = 0;
+  // let challengeLengthSeconds = 3;
 
   // start the timer based on what's already on the clock
   let challengeLength = new Date( Date.parse( new Date() ) + ( 1 * 1 * challengeLengthMinutes * 60 * 1000 ) + ( 1 * 1 * challengeLengthSeconds * 1000 ) );
