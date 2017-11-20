@@ -17,6 +17,7 @@ export const prompts = {
     "Get after it!",
     "Waste not, want not!",
     "Zoltan!",
+    "Wax on, wax off!"
     "#disrupt",
     "Experience the power of design!",
     "I require more coffee",
