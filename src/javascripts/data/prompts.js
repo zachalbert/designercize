@@ -16,6 +16,8 @@ export const prompts = {
     "Perfect practice makes perfect!",
     "Get after it!",
     "Waste not, want not!",
+    "Zoltan!",
+    "Wax on, wax off!",
     "#disrupt",
     "Experience the power of design!",
     "I require more coffee",
