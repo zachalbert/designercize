@@ -333,12 +333,12 @@ function startChallengeTimer() {
   unSelectAllTimerButtons();
 
   // Get the selected time, turn it into a date object
-  // let challengeLengthMinutes = $('#timer .minutes').text();
-  // let challengeLengthSeconds = $('#timer .seconds').text();
+  let challengeLengthMinutes = $('#timer .minutes').text();
+  let challengeLengthSeconds = $('#timer .seconds').text();
 
   // Fast timer for dev purposes
-  let challengeLengthMinutes = 0;
-  let challengeLengthSeconds = 3;
+  // let challengeLengthMinutes = 0;
+  // let challengeLengthSeconds = 3;
 
   // start the timer based on what's already on the clock
   let challengeLength = new Date( Date.parse( new Date() ) + ( 1 * 1 * challengeLengthMinutes * 60 * 1000 ) + ( 1 * 1 * challengeLengthSeconds * 1000 ) );
