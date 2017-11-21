@@ -114,7 +114,6 @@ export const prompts = {
   },
   "audiences": {
     "easy": [
-      "kids",
       "families",
       "early adopters",
       "college students",
