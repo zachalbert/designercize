@@ -207,6 +207,17 @@ function rollNewPrompt(difficulty) {
   $('.drillinstructor--animated').show();
   $('.drillinstructor--still').hide();
 
+  // Randomize happy/sad Zake on out of time notification
+  if( Math.random() <= .5 ) {
+    // Happy
+    $('.out-of-time-response').hide();
+    $('#response-happy').show();
+  } else {
+    // #Sad
+    $('.out-of-time-response').hide();
+    $('#response-sad').show();
+  }
+
   // Iterate through the category string array
   for( let i = 0; i < categories.length; i++ ) {
     injectPrompt(i, categories[i], getRandomPromptByDifficulty(categories[i], difficulty));
