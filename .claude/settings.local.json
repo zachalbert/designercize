@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git:*)",
+      "Bash(mkdir -p /tmp/designercize-assets)",
+      "Bash(cp -r src/fonts /tmp/designercize-assets/)",
+      "Bash(cp -r src/images /tmp/designercize-assets/)",
+      "Bash(cp -r src/static /tmp/designercize-assets/)",
+      "Bash(cp src/sounds/button-down.mp3 /tmp/designercize-assets/)",
+      "Bash(npm create:*)",
+      "Bash(cp:*)",
+      "Bash(cp /tmp/designercize-assets/static/* public/)",
+      "Bash(cp /tmp/designercize-assets/button-down.mp3 public/)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

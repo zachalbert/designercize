@@ -1,0 +1,611 @@
+@import "tailwindcss";
+
+/* ===== Design Tokens ===== */
+@theme {
+  --color-gray-0: #FCFCFC;
+  --color-gray-1: #F8F8F8;
+  --color-gray-2: #BCBCBC;
+  --color-gray-3: #7C7C7C;
+
+  --color-blue-0: #A2E4FD;
+  --color-blue-1: #32BBFF;
+  --color-blue-2: #0074FC;
+  --color-blue-3: #0000FF;
+
+  --color-blue-purple-0: #B8B7FA;
+  --color-blue-purple-1: #6685FF;
+  --color-blue-purple-2: #0051FC;
+  --color-blue-purple-3: #0000BF;
+
+  --color-purple-0: #D9B6FA;
+  --color-purple-1: #9874FB;
+  --color-purple-2: #6839FF;
+  --color-purple-3: #441DBF;
+
+  --color-pink-0: #F9B6FA;
+  --color-pink-1: #FA73FB;
+  --color-pink-2: #C400B9;
+  --color-pink-3: #960086;
+
+  --color-pink-red-0: #FAA3C0;
+  --color-pink-red-1: #FA5598;
+  --color-pink-red-2: #E70056;
+  --color-pink-red-3: #AA001A;
+
+  --color-red-0: #F1D0AE;
+  --color-red-1: #FA7852;
+  --color-red-2: #FB3600;
+  --color-red-3: #AA0C00;
+
+  --color-orange-0: #FDE1A5;
+  --color-orange-1: #FEA137;
+  --color-orange-2: #E65C00;
+  --color-orange-3: #8A1200;
+
+  --color-yellow-0: #FDE1A5;
+  --color-yellow-1: #F9D971;
+  --color-yellow-2: #FAB900;
+  --color-yellow-3: #AD7D00;
+
+  --color-green-0: #B6F9D7;
+  --color-green-1: #52DA4B;
+  --color-green-2: #00A93E;
+  --color-green-3: #005900;
+
+  --color-crt-bg: #0000B9;
+  --color-crt-text: #4CF190;
+  --color-crt-dark: #003D56;
+  --color-border: #000001;
+  --color-panel-bg: #6839FF;
+  --color-panel-shadow: #441DBF;
+
+  --font-retro: '8008', sans-serif;
+  --font-retro-bold: '8008135', sans-serif;
+  --font-screen: '80085', 'DDCHardware', sans-serif;
+  --font-hardware: 'DDCHardware', sans-serif;
+}
+
+/* ===== Font Faces ===== */
+@font-face {
+  font-family: '8008';
+  src: url('./assets/fonts/8008-Regular.woff2') format('woff2'),
+       url('./assets/fonts/8008-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '8008135';
+  src: url('./assets/fonts/8008135-Regular.woff2') format('woff2'),
+       url('./assets/fonts/8008135-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: '80085';
+  src: url('./assets/fonts/80085-Regular.woff2') format('woff2'),
+       url('./assets/fonts/80085-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DDCHardware';
+  src: url('./assets/fonts/ddchardware-regular-webfont.woff2') format('woff2'),
+       url('./assets/fonts/ddchardware-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'DDCHardwareCompressed';
+  src: url('./assets/fonts/ddchardware-compressed-webfont.woff2') format('woff2'),
+       url('./assets/fonts/ddchardware-compressed-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ===== Base Styles ===== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-retro);
+  background-color: var(--color-panel-bg);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--color-crt-text);
+}
+
+/* ===== CRT Screen ===== */
+.crt-screen {
+  color: var(--color-crt-text);
+  border: 2px solid var(--color-border);
+  border-radius: 5px;
+  background: var(--color-crt-bg);
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.crt-screen::before {
+  content: '';
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: inset 0 8px 0 var(--color-border);
+  background: var(--color-crt-dark);
+  z-index: 1;
+  top: 4px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.crt-screen::after {
+  content: '';
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: inset 0 8px 0 var(--color-border);
+  background: linear-gradient(
+    to bottom,
+    transparent 50%,
+    rgba(0, 0, 0, 0.3) 51%
+  );
+  background-size: 100% 4px;
+  z-index: 2147483648;
+  top: 4px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  animation: scanlines 1s steps(30) infinite;
+  will-change: background-position;
+}
+
+@keyframes scanlines {
+  0% {
+    background-position: 0 50%;
+  }
+}
+
+.crt-screen > * {
+  position: relative;
+  z-index: 2;
+}
+
+.crt-screen img {
+  max-width: 100%;
+}
+
+/* ===== Retro 3D Button System ===== */
+.retro-btn {
+  padding: 0.7em 0.4em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: var(--font-retro);
+  font-size: 30px;
+  text-decoration: none;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 1;
+  text-align: center;
+  transition: all 0.12s ease-in-out;
+  box-shadow: 0 6px var(--color-panel-shadow);
+  outline: none !important;
+  background: none;
+  line-height: 1;
+}
+
+.retro-btn:disabled {
+  pointer-events: none;
+}
+
+/* Main visible face */
+.retro-btn::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: 4px;
+  border: 2px solid var(--color-border);
+  border-radius: 4px;
+  z-index: 0;
+  transition: all 0.12s ease-in-out;
+}
+
+/* Highlight line at top */
+.retro-btn::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 2px;
+  right: 2px;
+  border-radius: 2px;
+  height: 2px;
+  z-index: 2;
+  transition: all 0.12s ease-in-out;
+}
+
+.retro-btn__text {
+  z-index: 2;
+  position: relative;
+  top: -2px;
+  transition: all 0.12s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+/* ===== Button Color Variants ===== */
+
+/* Blue */
+.retro-btn--blue {
+  background: var(--color-blue-3);
+  color: var(--color-blue-3);
+  box-shadow: 0 6px var(--color-panel-shadow);
+}
+.retro-btn--blue::after { background-color: var(--color-blue-2); }
+.retro-btn--blue::before { background: var(--color-blue-1); }
+.retro-btn--blue .retro-btn__text { color: white; }
+.retro-btn--blue svg { fill: var(--color-blue-3); color: white; transition: all 0.12s ease-in-out; }
+
+.retro-btn--blue:hover .retro-btn__text,
+.retro-btn--blue:active .retro-btn__text,
+.retro-btn--blue.selected .retro-btn__text {
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+
+.retro-btn--blue:hover svg,
+.retro-btn--blue:active svg,
+.retro-btn--blue.selected svg {
+  fill: white;
+  color: white;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.retro-btn--blue:active::after, .retro-btn--blue:active .retro-btn__text,
+.retro-btn--blue.selected::after, .retro-btn--blue.selected .retro-btn__text {
+  bottom: -2px;
+  top: 6px;
+}
+.retro-btn--blue:active::before, .retro-btn--blue.selected::before {
+  top: 6px;
+  opacity: 0;
+}
+.retro-btn--blue:active::after, .retro-btn--blue.selected::after {
+  box-shadow: inset 0 6px var(--color-blue-3);
+  background-color: var(--color-blue-3);
+}
+.retro-btn--blue:active, .retro-btn--blue.selected {
+  background-color: var(--color-blue-purple-3);
+  box-shadow: 0 0px rgba(0,0,0,0);
+}
+
+/* Pink */
+.retro-btn--pink {
+  background: var(--color-pink-3);
+  color: var(--color-pink-3);
+  box-shadow: 0 6px var(--color-panel-shadow);
+}
+.retro-btn--pink::after { background-color: var(--color-pink-2); }
+.retro-btn--pink::before { background: var(--color-pink-1); }
+.retro-btn--pink .retro-btn__text { color: white; }
+.retro-btn--pink svg { fill: var(--color-pink-3); color: white; transition: all 0.12s ease-in-out; }
+
+.retro-btn--pink:hover .retro-btn__text,
+.retro-btn--pink:active .retro-btn__text,
+.retro-btn--pink.selected .retro-btn__text {
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+.retro-btn--pink:hover svg, .retro-btn--pink:active svg, .retro-btn--pink.selected svg {
+  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+}
+.retro-btn--pink:active::after, .retro-btn--pink:active .retro-btn__text,
+.retro-btn--pink.selected::after, .retro-btn--pink.selected .retro-btn__text {
+  bottom: -2px; top: 6px;
+}
+.retro-btn--pink:active::before, .retro-btn--pink.selected::before { top: 6px; opacity: 0; }
+.retro-btn--pink:active::after, .retro-btn--pink.selected::after {
+  box-shadow: inset 0 6px var(--color-pink-3);
+  background-color: var(--color-pink-3);
+}
+.retro-btn--pink:active, .retro-btn--pink.selected {
+  background-color: var(--color-blue-purple-3);
+  box-shadow: 0 0px rgba(0,0,0,0);
+}
+
+/* Yellow */
+.retro-btn--yellow {
+  background: var(--color-yellow-3);
+  color: var(--color-yellow-3);
+  box-shadow: 0 6px var(--color-panel-shadow);
+}
+.retro-btn--yellow::after { background-color: var(--color-yellow-2); }
+.retro-btn--yellow::before { background: var(--color-yellow-1); }
+.retro-btn--yellow .retro-btn__text { color: #4E2F02; }
+.retro-btn--yellow svg { fill: var(--color-yellow-3); color: #4E2F02; transition: all 0.12s ease-in-out; }
+
+.retro-btn--yellow:hover .retro-btn__text,
+.retro-btn--yellow:active .retro-btn__text,
+.retro-btn--yellow.selected .retro-btn__text {
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+.retro-btn--yellow:hover svg, .retro-btn--yellow:active svg, .retro-btn--yellow.selected svg {
+  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+}
+.retro-btn--yellow:active::after, .retro-btn--yellow:active .retro-btn__text,
+.retro-btn--yellow.selected::after, .retro-btn--yellow.selected .retro-btn__text {
+  bottom: -2px; top: 6px;
+}
+.retro-btn--yellow:active::before, .retro-btn--yellow.selected::before { top: 6px; opacity: 0; }
+.retro-btn--yellow:active::after, .retro-btn--yellow.selected::after {
+  box-shadow: inset 0 6px var(--color-yellow-3);
+  background-color: var(--color-yellow-3);
+}
+.retro-btn--yellow:active, .retro-btn--yellow.selected {
+  background-color: var(--color-blue-purple-3);
+  box-shadow: 0 0px rgba(0,0,0,0);
+}
+
+/* Red */
+.retro-btn--red {
+  background: var(--color-red-3);
+  color: var(--color-red-3);
+  box-shadow: 0 6px var(--color-panel-shadow);
+}
+.retro-btn--red::after { background-color: var(--color-red-2); }
+.retro-btn--red::before { background: var(--color-red-1); }
+.retro-btn--red .retro-btn__text { color: white; }
+.retro-btn--red svg { fill: var(--color-red-3); color: white; transition: all 0.12s ease-in-out; }
+
+.retro-btn--red:hover .retro-btn__text,
+.retro-btn--red:active .retro-btn__text,
+.retro-btn--red.selected .retro-btn__text {
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+.retro-btn--red:hover svg, .retro-btn--red:active svg, .retro-btn--red.selected svg {
+  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+}
+.retro-btn--red:active::after, .retro-btn--red:active .retro-btn__text,
+.retro-btn--red.selected::after, .retro-btn--red.selected .retro-btn__text {
+  bottom: -2px; top: 6px;
+}
+.retro-btn--red:active::before, .retro-btn--red.selected::before { top: 6px; opacity: 0; }
+.retro-btn--red:active::after, .retro-btn--red.selected::after {
+  box-shadow: inset 0 6px var(--color-red-3);
+  background-color: var(--color-red-3);
+}
+.retro-btn--red:active, .retro-btn--red.selected {
+  background-color: var(--color-blue-purple-3);
+  box-shadow: 0 0px rgba(0,0,0,0);
+}
+
+/* Green */
+.retro-btn--green {
+  background: var(--color-green-3);
+  color: var(--color-green-3);
+  box-shadow: 0 6px var(--color-panel-shadow);
+}
+.retro-btn--green::after { background-color: var(--color-green-2); }
+.retro-btn--green::before { background: var(--color-green-1); }
+.retro-btn--green .retro-btn__text { color: white; }
+.retro-btn--green svg { fill: var(--color-green-3); color: white; transition: all 0.12s ease-in-out; }
+
+.retro-btn--green:hover .retro-btn__text,
+.retro-btn--green:active .retro-btn__text,
+.retro-btn--green.selected .retro-btn__text {
+  color: white;
+  text-shadow: 0 0 20px white;
+}
+.retro-btn--green:hover svg, .retro-btn--green:active svg, .retro-btn--green.selected svg {
+  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+}
+.retro-btn--green:active::after, .retro-btn--green:active .retro-btn__text,
+.retro-btn--green.selected::after, .retro-btn--green.selected .retro-btn__text {
+  bottom: -2px; top: 6px;
+}
+.retro-btn--green:active::before, .retro-btn--green.selected::before { top: 6px; opacity: 0; }
+.retro-btn--green:active::after, .retro-btn--green.selected::after {
+  box-shadow: inset 0 6px var(--color-green-3);
+  background-color: var(--color-green-3);
+}
+.retro-btn--green:active, .retro-btn--green.selected {
+  background-color: var(--color-blue-purple-3);
+  box-shadow: 0 0px rgba(0,0,0,0);
+}
+
+/* ===== Disabled State (all colors) ===== */
+.retro-btn--disabled,
+.retro-btn:disabled {
+  pointer-events: none;
+  background: var(--color-blue-purple-3);
+  box-shadow: none;
+  color: var(--color-border);
+}
+.retro-btn--disabled::after,
+.retro-btn:disabled::after {
+  bottom: -2px;
+  top: 2px;
+}
+.retro-btn--disabled .retro-btn__text,
+.retro-btn:disabled .retro-btn__text {
+  top: 2px;
+  color: rgba(255,255,255,0.3);
+}
+.retro-btn--disabled::before,
+.retro-btn:disabled::before {
+  top: 4px;
+  opacity: 0;
+}
+/* Preserve face color on disabled */
+.retro-btn--blue:disabled::after, .retro-btn--blue.retro-btn--disabled::after { background: var(--color-blue-3); }
+.retro-btn--pink:disabled::after, .retro-btn--pink.retro-btn--disabled::after { background: var(--color-pink-3); }
+.retro-btn--yellow:disabled::after, .retro-btn--yellow.retro-btn--disabled::after { background: var(--color-yellow-3); }
+.retro-btn--red:disabled::after, .retro-btn--red.retro-btn--disabled::after { background: var(--color-red-3); }
+.retro-btn--green:disabled::after, .retro-btn--green.retro-btn--disabled::after { background: var(--color-green-3); }
+
+/* ===== Button Groups ===== */
+.retro-btn-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.retro-btn-group .retro-btn {
+  flex-grow: 1;
+  border-right-width: 0;
+}
+
+.retro-btn-group .retro-btn,
+.retro-btn-group .retro-btn::after {
+  border-radius: 0;
+}
+
+.retro-btn-group .retro-btn:first-child,
+.retro-btn-group .retro-btn:first-child::after {
+  border-radius: 4px 0 0 4px;
+}
+
+.retro-btn-group .retro-btn:last-child,
+.retro-btn-group .retro-btn:last-child::after {
+  border-radius: 0 4px 4px 0;
+  border-right-width: 2px;
+}
+
+/* ===== Small Buttons ===== */
+.retro-btn--small {
+  padding: 12px 4px;
+  font-size: 18px;
+}
+
+/* ===== Talk Bubble ===== */
+.talk-bubble {
+  background: var(--color-crt-text);
+  box-shadow: 4px 0 0 var(--color-crt-text), -4px 0 0 var(--color-crt-text), 0 4px 0 var(--color-crt-text), 0 -4px 0 var(--color-crt-text);
+  color: var(--color-crt-dark);
+  width: 90%;
+  margin: 0 auto 1rem;
+  padding: 2.5rem 0;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+  .talk-bubble { font-size: 1rem; }
+}
+@media (min-width: 768px) {
+  .talk-bubble { font-size: 1.25rem; }
+}
+
+.talk-bubble-arrow {
+  background: var(--color-crt-text);
+  width: 20px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+}
+
+.talk-bubble-arrow::after {
+  content: '';
+  background: var(--color-crt-text);
+  width: 12px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  transform: translateX(-50%);
+}
+
+.talk-bubble-arrow::before {
+  content: '';
+  background: var(--color-crt-text);
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top: -8px;
+  transform: translateX(-50%);
+}
+
+/* ===== Quote Box ===== */
+.quote-box {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+  display: inline-block;
+  padding: 1rem 1rem 0;
+}
+.quote-box::before { content: open-quote; }
+.quote-box::after { content: close-quote; }
+
+/* ===== Panel ===== */
+.panel {
+  background: var(--color-panel-bg);
+  border: 2px solid var(--color-border);
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 6px 0 var(--color-panel-shadow);
+}
+
+/* ===== Timer Display ===== */
+.timer-display {
+  font-family: var(--font-retro-bold);
+}
+
+/* ===== Scrollbar in CRT ===== */
+.crt-scrollable {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.crt-scrollable::-webkit-scrollbar {
+  width: 18px;
+  height: 10px;
+}
+
+.crt-scrollable::-webkit-scrollbar-thumb {
+  background-color: rgba(76, 241, 144, 0.65);
+  border-right: 10px solid var(--color-crt-dark);
+  max-height: 10px;
+}
+
+.crt-scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.crt-scrollable::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
+/* ===== Reduced Motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  .crt-screen::after {
+    animation: none;
+  }
+}
