@@ -1,10 +1,6 @@
-import { createBrowserRouter } from 'react-router-dom';
-import { lazy, Suspense } from 'react';
+import { createBrowserRouter, Navigate } from 'react-router-dom';
 import App from './App';
 import { HomePage } from './pages/HomePage';
-import { ChallengePage } from './pages/ChallengePage';
-
-const AboutPage = lazy(() => import('./pages/AboutPage').then(m => ({ default: m.AboutPage })));
 
 export const router = createBrowserRouter([
   {
@@ -12,8 +8,8 @@ export const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'about', element: <Suspense fallback={null}><AboutPage /></Suspense> },
-      { path: 'challenge', element: <ChallengePage /> },
+      { path: 'challenge', element: <HomePage /> },
+      { path: 'about', element: <Navigate to="/" replace /> },
     ],
   },
 ]);

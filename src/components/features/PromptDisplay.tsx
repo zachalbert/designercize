@@ -19,7 +19,7 @@ interface PromptLineProps {
 function PromptLine({ label, text, delay, onComplete }: PromptLineProps) {
   return (
     <div className="flex flex-col lg:flex-row items-center lg:items-baseline gap-0 lg:gap-3 mb-3">
-      <div className="font-[8008135] text-right whitespace-nowrap">{label}</div>
+      <div className="font-weight-fat text-right whitespace-nowrap">{label}</div>
       <div className="text-center lg:text-left">
         <TypedText text={text} startDelay={delay} onComplete={onComplete} />
       </div>

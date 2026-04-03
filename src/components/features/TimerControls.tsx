@@ -50,7 +50,7 @@ export function TimerControls({
 
   return (
     <div>
-      <div className="flex mb-3 items-stretch">
+      <div className="flex items-stretch" style={{ marginBottom: 'var(--space-control-gap)' }}>
         <RetroButton
           color="blue"
           small
@@ -62,9 +62,9 @@ export function TimerControls({
           <CaretDown size={20} weight="bold" />
         </RetroButton>
         <CrtScreen className="flex-1 flex items-center justify-center py-2">
-          <div className="timer-display text-2xl md:text-3xl" aria-live="polite">
+          <div className="timer-display" style={{ fontSize: '2rem' }} aria-live="polite">
             <span>{showConfiguredTime ? configuredMinutes : displayMinutes}</span>
-            <span>:</span>
+            <span> : </span>
             <span>{showConfiguredTime ? '00' : displaySeconds}</span>
           </div>
         </CrtScreen>

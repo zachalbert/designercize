@@ -1,6 +1,6 @@
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
-export type Scene = 'prompt' | 'countdown' | 'outOfTime';
+export type Scene = 'prompt' | 'countdown' | 'outOfTime' | 'about';
 
 export type TimerStatus = 'idle' | 'running' | 'paused';
 

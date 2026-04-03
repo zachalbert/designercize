@@ -65,6 +65,15 @@
   --font-hardware: 'DDCHardware', sans-serif;
 }
 
+/* ===== Spacing Tokens ===== */
+:root {
+  --space-layout: 12px;
+  --space-panel-gap: 16px;
+  --space-control-gap: 14px;
+  --space-panel-padding: 0.75rem;
+  --space-screen-padding: 1rem;
+}
+
 /* ===== Font Faces ===== */
 @font-face {
   font-family: '8008';
@@ -111,6 +120,11 @@
   font-display: swap;
 }
 
+/* ===== Utility: font-weight-fat (matches v1 .font-weight-fat class) ===== */
+.font-weight-fat {
+  font-family: '8008135', sans-serif;
+}
+
 /* ===== Base Styles ===== */
 html, body, #root {
   height: 100%;
@@ -120,66 +134,80 @@ html, body, #root {
 
 body {
   font-family: var(--font-retro);
+  font-size: 20px;
+  line-height: 1.5;
   background-color: var(--color-panel-bg);
   color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-retro);
+}
+
 a {
   color: var(--color-crt-text);
 }
 
-/* ===== CRT Screen ===== */
+/*
+ * ===== CRT Screen =====
+ *
+ * Scanline effect inspired by https://codepen.io/thisanimus/pen/OJpaqWz
+ * Uses two pseudo-elements for horizontal scanlines + vertical RGB sub-pixel
+ * columns, blended via mix-blend-mode: overlay for a realistic CRT look.
+ */
 .crt-screen {
   color: var(--color-crt-text);
   border: 2px solid var(--color-border);
   border-radius: 5px;
-  background: var(--color-crt-bg);
+  background: var(--color-crt-dark);
+  box-shadow: inset 0 8px 0 var(--color-border);
   position: relative;
   width: 100%;
   overflow: hidden;
+  font-family: var(--font-screen);
 }
 
+/* Horizontal scanlines */
 .crt-screen::before {
   content: '';
   position: absolute;
-  border-radius: 4px;
-  box-shadow: inset 0 8px 0 var(--color-border);
-  background: var(--color-crt-dark);
-  z-index: 1;
-  top: 4px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   pointer-events: none;
+  z-index: 10;
+  transform: translateZ(0);
+  mix-blend-mode: overlay;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgb(218, 49, 49) 0px,
+    rgb(112, 159, 115) 2px,
+    rgb(40, 129, 206) 4px
+  );
 }
 
+/* Vertical RGB sub-pixel columns */
 .crt-screen::after {
   content: '';
   position: absolute;
-  border-radius: 4px;
-  box-shadow: inset 0 8px 0 var(--color-border);
-  background: linear-gradient(
-    to bottom,
-    transparent 50%,
-    rgba(0, 0, 0, 0.3) 51%
-  );
-  background-size: 100% 4px;
-  z-index: 2147483648;
-  top: 4px;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
   pointer-events: none;
-  animation: scanlines 1s steps(30) infinite;
-  will-change: background-position;
-}
-
-@keyframes scanlines {
-  0% {
-    background-position: 0 50%;
-  }
+  z-index: 10;
+  transform: translateZ(0);
+  mix-blend-mode: overlay;
+  background: repeating-linear-gradient(
+    90deg,
+    rgb(218, 49, 49) 0px,
+    rgb(112, 159, 115) 1px,
+    rgb(40, 129, 206) 2px,
+    transparent 3px
+  );
 }
 
 .crt-screen > * {
@@ -270,7 +298,7 @@ a {
 .retro-btn--blue::after { background-color: var(--color-blue-2); }
 .retro-btn--blue::before { background: var(--color-blue-1); }
 .retro-btn--blue .retro-btn__text { color: white; }
-.retro-btn--blue svg { fill: var(--color-blue-3); color: white; transition: all 0.12s ease-in-out; }
+.retro-btn--blue svg { color: white; transition: all 0.12s ease-in-out; }
 
 .retro-btn--blue:hover .retro-btn__text,
 .retro-btn--blue:active .retro-btn__text,
@@ -282,7 +310,6 @@ a {
 .retro-btn--blue:hover svg,
 .retro-btn--blue:active svg,
 .retro-btn--blue.selected svg {
-  fill: white;
   color: white;
   filter: drop-shadow(0 0 10px white);
 }
@@ -314,7 +341,7 @@ a {
 .retro-btn--pink::after { background-color: var(--color-pink-2); }
 .retro-btn--pink::before { background: var(--color-pink-1); }
 .retro-btn--pink .retro-btn__text { color: white; }
-.retro-btn--pink svg { fill: var(--color-pink-3); color: white; transition: all 0.12s ease-in-out; }
+.retro-btn--pink svg { color: white; transition: all 0.12s ease-in-out; }
 
 .retro-btn--pink:hover .retro-btn__text,
 .retro-btn--pink:active .retro-btn__text,
@@ -323,7 +350,7 @@ a {
   text-shadow: 0 0 20px white;
 }
 .retro-btn--pink:hover svg, .retro-btn--pink:active svg, .retro-btn--pink.selected svg {
-  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+  color: white; filter: drop-shadow(0 0 10px white);
 }
 .retro-btn--pink:active::after, .retro-btn--pink:active .retro-btn__text,
 .retro-btn--pink.selected::after, .retro-btn--pink.selected .retro-btn__text {
@@ -348,7 +375,7 @@ a {
 .retro-btn--yellow::after { background-color: var(--color-yellow-2); }
 .retro-btn--yellow::before { background: var(--color-yellow-1); }
 .retro-btn--yellow .retro-btn__text { color: #4E2F02; }
-.retro-btn--yellow svg { fill: var(--color-yellow-3); color: #4E2F02; transition: all 0.12s ease-in-out; }
+.retro-btn--yellow svg { color: #4E2F02; transition: all 0.12s ease-in-out; }
 
 .retro-btn--yellow:hover .retro-btn__text,
 .retro-btn--yellow:active .retro-btn__text,
@@ -357,7 +384,7 @@ a {
   text-shadow: 0 0 20px white;
 }
 .retro-btn--yellow:hover svg, .retro-btn--yellow:active svg, .retro-btn--yellow.selected svg {
-  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+  color: white; filter: drop-shadow(0 0 10px white);
 }
 .retro-btn--yellow:active::after, .retro-btn--yellow:active .retro-btn__text,
 .retro-btn--yellow.selected::after, .retro-btn--yellow.selected .retro-btn__text {
@@ -382,7 +409,7 @@ a {
 .retro-btn--red::after { background-color: var(--color-red-2); }
 .retro-btn--red::before { background: var(--color-red-1); }
 .retro-btn--red .retro-btn__text { color: white; }
-.retro-btn--red svg { fill: var(--color-red-3); color: white; transition: all 0.12s ease-in-out; }
+.retro-btn--red svg { color: white; transition: all 0.12s ease-in-out; }
 
 .retro-btn--red:hover .retro-btn__text,
 .retro-btn--red:active .retro-btn__text,
@@ -391,7 +418,7 @@ a {
   text-shadow: 0 0 20px white;
 }
 .retro-btn--red:hover svg, .retro-btn--red:active svg, .retro-btn--red.selected svg {
-  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+  color: white; filter: drop-shadow(0 0 10px white);
 }
 .retro-btn--red:active::after, .retro-btn--red:active .retro-btn__text,
 .retro-btn--red.selected::after, .retro-btn--red.selected .retro-btn__text {
@@ -416,7 +443,7 @@ a {
 .retro-btn--green::after { background-color: var(--color-green-2); }
 .retro-btn--green::before { background: var(--color-green-1); }
 .retro-btn--green .retro-btn__text { color: white; }
-.retro-btn--green svg { fill: var(--color-green-3); color: white; transition: all 0.12s ease-in-out; }
+.retro-btn--green svg { color: white; transition: all 0.12s ease-in-out; }
 
 .retro-btn--green:hover .retro-btn__text,
 .retro-btn--green:active .retro-btn__text,
@@ -425,7 +452,7 @@ a {
   text-shadow: 0 0 20px white;
 }
 .retro-btn--green:hover svg, .retro-btn--green:active svg, .retro-btn--green.selected svg {
-  fill: white; color: white; filter: drop-shadow(0 0 10px white);
+  color: white; filter: drop-shadow(0 0 10px white);
 }
 .retro-btn--green:active::after, .retro-btn--green:active .retro-btn__text,
 .retro-btn--green.selected::after, .retro-btn--green.selected .retro-btn__text {
@@ -464,6 +491,13 @@ a {
   top: 4px;
   opacity: 0;
 }
+
+/* Force icons visible when disabled — override variant-specific colors */
+.retro-btn:disabled .retro-btn__text svg,
+.retro-btn--disabled .retro-btn__text svg {
+  color: rgba(255,255,255,0.35) !important;
+}
+
 /* Preserve face color on disabled */
 .retro-btn--blue:disabled::after, .retro-btn--blue.retro-btn--disabled::after { background: var(--color-blue-3); }
 .retro-btn--pink:disabled::after, .retro-btn--pink.retro-btn--disabled::after { background: var(--color-pink-3); }
@@ -513,12 +547,9 @@ a {
   margin: 0 auto 1rem;
   padding: 2.5rem 0;
   position: relative;
-  font-size: 0.9rem;
+  font-size: 1rem;
 }
 
-@media (min-width: 576px) {
-  .talk-bubble { font-size: 1rem; }
-}
 @media (min-width: 768px) {
   .talk-bubble { font-size: 1.25rem; }
 }
@@ -570,6 +601,7 @@ a {
   border: 2px solid var(--color-border);
   border-radius: 5px;
   position: relative;
+  padding: var(--space-panel-padding);
   box-shadow: 0 6px 0 var(--color-panel-shadow);
 }
 
@@ -605,7 +637,8 @@ a {
 
 /* ===== Reduced Motion ===== */
 @media (prefers-reduced-motion: reduce) {
+  .crt-screen::before,
   .crt-screen::after {
-    animation: none;
+    display: none;
   }
 }

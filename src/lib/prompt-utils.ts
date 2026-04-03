@@ -48,5 +48,5 @@ export function buildChallengeUrl(challenge: Challenge): string {
     for: slugify(challenge.useCase),
     'to-help': slugify(challenge.audience),
   });
-  return `/challenge?${params.toString()}`;
+  return `/?${params.toString()}`;
 }

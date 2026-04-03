@@ -12,7 +12,7 @@ export function OutOfTime({ challenge }: OutOfTimeProps) {
 
   return (
     <div className="flex flex-col items-center py-6 px-4" role="alert">
-      <h1 className="text-4xl md:text-6xl font-[8008135] text-center mb-6">Out of time!</h1>
+      <h1 className="text-4xl md:text-6xl font-weight-fat text-center mb-6">Out of time!</h1>
       <div className="max-w-md w-full">
         <img
           src={isHappy ? zacjakeHappy : zacjakeSad}

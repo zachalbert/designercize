@@ -40,10 +40,10 @@ export function ControlPanel({
   const isTimerActive = timerStatus === 'running' || timerStatus === 'paused';
 
   return (
-    <div className="flex flex-col gap-2 h-full">
+    <div className="flex flex-col h-full" style={{ gap: 'var(--space-panel-gap)' }}>
       {/* Instruction Screen */}
       <CrtScreen className="flex-1 flex flex-col min-h-0">
-        <div className="flex flex-col justify-center p-3 flex-1 crt-scrollable">
+        <div className="flex flex-col justify-center flex-1 crt-scrollable" style={{ padding: 'var(--space-screen-padding)' }}>
           <div className="flex items-center gap-3 mb-4">
             <div className="flex-shrink-0">
               <img
@@ -53,22 +53,22 @@ export function ControlPanel({
                 alt="Workout character"
               />
             </div>
-            <h2 className="font-[8008135] text-lg md:text-xl">Designercize</h2>
+            <h2 className="font-weight-fat" style={{ fontSize: '1.8rem' }}>Designercize</h2>
           </div>
-          <div className="text-sm">
-            <p className="mb-2">Random prompt generator for whiteboard design practice.</p>
+          <div>
+            <p className="mb-3">Random prompt generator for whiteboard design practice.</p>
             <ol className="list-decimal list-inside space-y-1">
               <li>Choose a difficulty</li>
               <li>Reload until you're happy</li>
               <li>Choose duration</li>
-              <li>Hit Play</li>
+              <li>Hit Play &#9654;</li>
             </ol>
           </div>
         </div>
       </CrtScreen>
 
       {/* Controls */}
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col" style={{ gap: 'var(--space-control-gap)' }}>
         <DifficultySelector
           difficulty={difficulty}
           onSelect={onDifficultyChange}

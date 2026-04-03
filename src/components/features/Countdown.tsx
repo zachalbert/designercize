@@ -29,7 +29,7 @@ export function Countdown({ onComplete }: CountdownProps) {
 
   return (
     <div className="flex items-center justify-center h-full min-h-[300px]" role="status" aria-live="assertive">
-      <h1 className="text-6xl md:text-8xl font-[8008135] text-center">{STEPS[index]}</h1>
+      <h1 className="text-6xl md:text-8xl font-weight-fat text-center">{STEPS[index]}</h1>
     </div>
   );
 }
