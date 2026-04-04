@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Next.js artifacts (project uses Vite; ignore if created by mistake)
+.next
+next-env.d.ts
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
